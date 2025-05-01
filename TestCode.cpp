@@ -416,7 +416,7 @@ int main()
 	pIn->GetPointClicked(x, y);
 
 
-	//delete pIn;
+	delete pIn;
 	delete pOut;
 	return 0;
 }
