@@ -5,10 +5,10 @@
 class LoadAction :public Action
 {
 private:
-	std::ifstream LoadFile; //File to load from
+	std::ofstream LoadFile; //File to load from
 	Point P1; //Point to load from
 public:
-	LoadAction(ApplicationManager* pApp); //Constructor
+	LoadAction(ApplicationManager* pApp, int incFig); //Constructor
 	void ReadActionParameters(); //Reads parameters required for action to execute
 	void Execute(); //Execute action (code depends on action type)
 	~LoadAction(); //Destructor

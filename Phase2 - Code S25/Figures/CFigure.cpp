@@ -28,5 +28,5 @@ void CFigure::setID(int id)
 
 int CFigure::incrementFig()
 {
-	return icrFig++;
+	return incFig++;
 }

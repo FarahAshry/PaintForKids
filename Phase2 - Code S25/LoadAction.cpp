@@ -8,15 +8,21 @@
 #include <fstream>
 using namespace std;
 
-LoadAction::LoadAction(ApplicationManager* pApp) :Action(pApp) {
+LoadAction::LoadAction(ApplicationManager* pApp, int incFig) :Action(pApp) {
 	this->pManager = pApp;
-	LoadFile.open("Figures.txt");
+	LoadFile.open("Figures.txt", ios::out);
 	if (!LoadFile.is_open()) {
 	    cout << "Error opening file" << endl;
 	}
 	else {
 		cout << "File opened successfully" << endl;
-		/*LoadFile<<*/
+		LoadFile << incFig << endl;
+		for (int i = 0; i < incFig; i++) {
+			CFigure* pFig = pManager->GetFigure(P1.x,P1.y);
+			if (pFig != nullptr) {
+				pFig->Load(LoadFile);
+			}
+		}
 	}
 }
 void LoadAction::ReadActionParameters() {
