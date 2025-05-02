@@ -290,7 +290,7 @@ void Output::DrawHexagon(Point P1, double length, GfxInfo HexGfxInfo, bool selec
 
 	double* xptrlist = new double[6];
 	double* yptrlist = new double[6];
-	int angle = 0;
+	float angle = 0;
 	for (int i = 0; i < 6; i++)
 	{
 		xptrlist[i] = P1.x + length * cos(angle);
