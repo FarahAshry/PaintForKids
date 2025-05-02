@@ -42,6 +42,8 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			
 			break;
 		
+	
+		
 		case STATUS:	//a click on the status bar ==> no action
 			return;
 	}
@@ -54,6 +56,15 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 		pAct = NULL;
 	}
 }
+
+void ApplicationManager::RemoveAction(Action* pAct) {
+	// If the action is not null, delete it
+	if (pAct!=NULL) {
+		delete pAct;
+		pAct = nullptr;
+	}
+}
+
 //==================================================================================//
 //						Figures Management Functions								//
 //==================================================================================//
@@ -76,6 +87,16 @@ CFigure *ApplicationManager::GetFigure(int x, int y) const
 
 	return NULL;
 }
+
+//this function is added by Farah
+void ApplicationManager::LoadAll() {
+	//Add your code here to save all figures in the file
+//You may need to create a new action for this purpose
+//and implement it in the Actions folder
+//You may also need to add a new function in the CFigure class
+//to save each figure in the file.
+}
+
 //==================================================================================//
 //							Interface Management Functions							//
 //==================================================================================//
