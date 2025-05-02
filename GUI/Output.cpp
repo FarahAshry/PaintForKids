@@ -294,7 +294,7 @@ void Output::DrawHexagon(Point P1, double length, GfxInfo HexGfxInfo, bool selec
 	for (int i = 0; i < 6; i++)
 	{
 		xptrlist[i] = P1.x + length * cos(angle);
-		yptrlist[i] = P1.x + length * sin(angle);
+		yptrlist[i] = P1.y + length * sin(angle);
 		angle = angle + pi / 3.0;
 	}
 	pWind->DrawPolygon(xptrlist, yptrlist, 6, style);
