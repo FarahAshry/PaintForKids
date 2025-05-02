@@ -107,7 +107,6 @@ void Output::CreateDrawToolBar() const
 	MenuItemImages[ITM_SAVE_GRAPH] = "images\\MenuItems\\Menu_Save.jpg";
 	MenuItemImages[ITM_LOAD_GRAPH] = "images\\MenuItems\\Menu_Load.jpg";
 	MenuItemImages[ITM_SWITCH_TO_PLAY] = "images\\MenuItems\\Menu_Play.jpg";
-	
 	MenuItemImages[ITM_EXIT] = "images\\MenuItems\\Menu_Exit.jpg";
 
 	//Draw menu item one image at a time
@@ -115,21 +114,10 @@ void Output::CreateDrawToolBar() const
 		pWind->DrawImage(MenuItemImages[i], i * UI.MenuItemWidth / 1.25, 0, UI.MenuItemWidth / 1.25, UI.ToolBarHeight);
 	}
 
+
 	//TODO: Prepare images for each menu item and add it to the list
 
-	UI.InterfaceMode = MODE_PLAY;
-
 	
-	string PlayMenuItem[PLAY_ITM_COUNT];
-	MenuItemImages[ITM_MATCHING_PAIRS] = "images\\MenuItems\\Menu_Matching.jpg";
-	MenuItemImages[ITM_MISSING_SHAPES] = "images\\MenuItems\\Menu_Missing.jpg";
-	MenuItemImages[ITM_SWITCH_TO_DRAW] = "images\\MenuItems\\Menu_Draw.jpg";
-
-	//Draw menu item one image at a time
-	for (int i = 0; i < PLAY_ITM_COUNT; i++) {
-		pWind->DrawImage(MenuItemImages[i], i * UI.MenuItemWidth/1.25, 0, UI.MenuItemWidth/1.25, UI.ToolBarHeight);
-	}
-
 	
 
 	//Draw a line under the toolbar
@@ -141,7 +129,21 @@ void Output::CreateDrawToolBar() const
 
 void Output::CreatePlayToolBar() const
 {
+
 	UI.InterfaceMode = MODE_PLAY;
+
+
+	string PlayMenuItem[PLAY_ITM_COUNT];
+	PlayMenuItem[ITM_MATCHING_PAIRS] = "images\\MenuItems\\Menu_Matching.jpg";
+	PlayMenuItem[ITM_MISSING_SHAPES] = "images\\MenuItems\\Menu_Missing.jpg";
+	PlayMenuItem[ITM_SWITCH_TO_DRAW] = "images\\MenuItems\\Menu_Draw.jpg";
+
+	//Draw menu item one image at a time
+	for (int i = 0; i < PLAY_ITM_COUNT; i++) {
+		pWind->DrawImage(PlayMenuItem[i], i * UI.MenuItemWidth / 1.25, 0, UI.MenuItemWidth / 1.25, UI.ToolBarHeight);
+	}
+
+
 	///TODO: write code to create Play mode menu
 }
 //////////////////////////////////////////////////////////////////////////////////////////

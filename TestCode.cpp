@@ -363,7 +363,7 @@ int main()
 
 		case TO_PLAY:
 			pOut->PrintMessage("Action: Switch to Play Mode, creating Design tool bar");
-
+			pOut->ClearToolBar();
 			pOut->CreatePlayToolBar();
 			break;
 
@@ -374,11 +374,11 @@ int main()
 			pOut->PrintMessage("Action: MISSING SHAPES MODE :), Click anywhere");
 			break;
 
-			/*case TO_DRAW:
-				pOut->PrintMessage("Action: Switch to Draw Mode, creating simualtion tool bar");
-				pOut->ClearToolBar();
-				pOut->CreateDrawToolBar();
-				break;*/
+		case TO_DRAW:
+			pOut->PrintMessage("Action: Switch to Draw Mode, creating simualtion tool bar");
+			pOut->ClearToolBar();
+			pOut->CreateDrawToolBar();
+			break;
 
 
 
