@@ -8,6 +8,7 @@ private:
 	ApplicationManager* pManager;
 	Point P1; 
 	CFigure* fig;
+	CFigure *fig2;
 	int score; 
 	bool hidden;
 
@@ -18,6 +19,7 @@ public:
 	void incScore();
 	void decScore();
 	int getScore();
+	void compare(CFigure& fig, CFigure& fig2);
 	void HideFigure(CFigure& fig, bool hide);
 	void ShowFigure(CFigure& fig, bool show);
 	bool isHidden();
