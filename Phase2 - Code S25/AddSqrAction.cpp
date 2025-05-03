@@ -26,12 +26,14 @@ void AddSqrAction::ReadActionParameters()
 	pOut->PrintMessage("New Square: Enter length");
 
 	//Read length using stod() function
+	//unsure of how to get length
 	Length = stod(pIn->GetSrting(pOut));
 
 	SqrGfxInfo.isFilled = false;	//default is not filled
 	//get drawing, filling colors and pen width from the interface
 	SqrGfxInfo.DrawClr = pOut->getCrntDrawColor();
 	SqrGfxInfo.FillClr = pOut->getCrntFillColor();
+
 
 	pOut->ClearStatusBar();
 
