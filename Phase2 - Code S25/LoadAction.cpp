@@ -15,12 +15,15 @@ LoadAction::LoadAction(ApplicationManager* pApp, int incFig) :Action(pApp) {
 	    cout << "Error opening file" << endl;
 	}
 	else {
+		ActionType ActType;
 		cout << "File opened successfully" << endl;
 		LoadFile << incFig << endl;
 		for (int i = 0; i < incFig; i++) {
 			CFigure* pFig = pManager->GetFigure(P1.x,P1.y);
 			if (pFig != nullptr) {
 				pFig->Load(LoadFile);
+
+				/*LoadFile << pFig->getID() << "   ";*/
 			}
 		}
 	}

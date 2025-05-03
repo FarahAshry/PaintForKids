@@ -20,10 +20,17 @@ void CFigure::ChngFillClr(color Fclr)
 	FigGfxInfo.isFilled = true;
 	FigGfxInfo.FillClr = Fclr; 
 }
-//Farah added these 2 functions
+//Farah added these 3 functions
+color CFigure::getColor() {
+	return FigColor;
+}
 void CFigure::setID(int id)
 {
 	ID = id;
+}
+
+int CFigure::getID() {
+	return ID;
 }
 
 int CFigure::incrementFig()

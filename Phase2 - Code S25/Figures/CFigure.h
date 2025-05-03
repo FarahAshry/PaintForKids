@@ -12,6 +12,7 @@ protected:
 	bool Selected;	//true if the figure is selected.
 	GfxInfo FigGfxInfo;	//Figure graphis info
 	int incFig=0;
+	color FigColor;
 	/// Add more parameters if needed.
 
 public:
@@ -30,7 +31,9 @@ public:
 
 	///Decide the parameters that you should pass to each function	
 	void setID(int id);
+	int getID();
 	int incrementFig();
+	color getColor();
 	//virtual void Save(ofstream &OutFile) = 0;	//Save the figure parameters to the file
 	virtual void Load(ofstream &Infile) = 0;	//Load the figure parameters to the file
 

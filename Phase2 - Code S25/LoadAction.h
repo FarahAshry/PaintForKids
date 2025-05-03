@@ -6,6 +6,8 @@ class LoadAction :public Action
 {
 private:
 	std::ofstream LoadFile; //File to load from
+
+
 	Point P1; //Point to load from
 public:
 	LoadAction(ApplicationManager* pApp, int incFig); //Constructor
