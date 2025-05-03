@@ -34,10 +34,14 @@ public:
 
 	///Decide the parameters that you should pass to each function	
 	color getColor();
+color GetFillColor() const;
+color GetDrawColor() const;
+bool IsFilled() const;
 	void setID(int id);
 
 	int getID();
 	int incrementFig();
+virtual void paste_clone(Point c)=0;
 
 	//virtual void Save(ofstream &OutFile) = 0;	//Save the figure parameters to the file
 	virtual void Load(ofstream &Infile) = 0;	//Load the figure parameters to the file
