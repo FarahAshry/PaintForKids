@@ -5,7 +5,7 @@
 #include "D:\Uni\Semester 2\Programming Techniques\Project\PT Project Phase1 - Code S25\Phase2 - Code S25\GUI\Output.h"
 #include "D:\Uni\Semester 2\Programming Techniques\Project\PT Project Phase1 - Code S25\Phase2 - Code S25\GUI\Input.h"
 
-Matching::Matching(ApplicationManager* pApp) :Action(pApp), pManager(pApp), score(0) {
+Matching::Matching(ApplicationManager* pApp, int score) :Action(pApp), pManager(pApp), score(0) {
 	this->pManager = pApp;
 	CRectangle* rect = pManager->GetFigure(P1.x, P1.y);
 
