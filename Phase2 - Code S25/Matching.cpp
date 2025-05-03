@@ -11,12 +11,16 @@ Matching::Matching(ApplicationManager* pApp, int score) :Action(pApp), pManager(
 
 }
 void Matching::compare(CFigure& fig1, CFigure& fig2) {
-	if (fig1.getColor() == fig2.getColor() ) {
 		Output* pOut = new Output;
+	if (fig1.getColor() == fig2.getColor() ) {
 		pOut->PrintMessage("Match found!");
+		incscore();
+	}
+	else {
+		pOut->PrintMessage("Match not found!");
 	}
 }
-int Matching::incscore(int score) {
+int Matching::incscore() {
 	return score++;
 }
 int Matching::getScore() {

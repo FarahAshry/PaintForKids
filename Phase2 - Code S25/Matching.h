@@ -16,7 +16,7 @@ public:
 
 	Matching(ApplicationManager* pApp, int score);
 	void compare(CFigure& fig1, CFigure& fig2);
-	int incscore(int score);
+	int incscore();
 	int getScore() ;
 	~Matching();
 
