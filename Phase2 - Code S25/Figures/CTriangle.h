@@ -11,8 +11,8 @@ private:
 	Point Corner3;
 public:
 	CTriangle(Point, Point, Point, GfxInfo FigureGfxInfo);
-	virtual void Draw(Output* pOut) const override;
-	virtual void Load(ifstream& Infile) override;
+	virtual void Draw(Output* pOut) const;
+	CFigure* Clone() const;
 };
 
 #endif
