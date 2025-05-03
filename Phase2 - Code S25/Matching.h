@@ -5,18 +5,22 @@ class Matching: public Action
 {
 private:
 	ApplicationManager* pManager;
-	Point P1;
-	Point P2;
-	/*CFigure fig1;
-	CFigure fig2;*/
+	Point P1, p2;
+	CFigure* fig1;
+	CFigure* fig2;
 	int score;
 
 
 public:
 
 	Matching(ApplicationManager* pApp, int score);
+
+	
+	void ReadActionParameters(); //Reads parameters required for action to execute
+	void Execute(); //Execute action (code depends on action type)
+
 	void compare(CFigure& fig1, CFigure& fig2);
-	int incscore(int score);
+	void incscore();
 	int getScore() ;
 	~Matching();
 
