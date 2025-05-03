@@ -3,7 +3,7 @@
 CSquare::CSquare(Point P1, double L, GfxInfo FigureGfxInfo) :CFigure(FigureGfxInfo)
 {
 	centre = P1;
-	lenght = L;
+	length = L;
 }
 
 

@@ -6,7 +6,7 @@
 #include "ApplicationManager.h"
 #include "Figures/CFigure.h"
 #include "Actions/Action.h"
-class Rotate
+class Rotate : public CFigure, public Action
 {
 	Rotate(ApplicationManager* pApp);
 };

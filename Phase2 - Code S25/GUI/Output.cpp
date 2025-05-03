@@ -1,6 +1,6 @@
 #include "Output.h"
 
-const float pi = 22 / 7;
+const float pi = (22 / 7);
 
 Output::Output()
 {
