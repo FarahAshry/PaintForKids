@@ -13,6 +13,7 @@ public:
 	virtual void Draw(Output* pOut) const;
 
 	CFigure* Clone() const;
+void paste_clone(Point c);
 };
 
 #endif
