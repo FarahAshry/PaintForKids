@@ -37,3 +37,18 @@ int CFigure::incrementFig()
 {
 	return incFig++;
 }
+color CFigure::GetFillColor() const
+{
+	return FigGfxInfo.FillClr; 
+}
+
+
+color CFigure::GetDrawColor()const
+{
+	return FigGfxInfo.DrawClr; 
+}
+
+bool CFigure::IsFilled()const
+{
+	return FigGfxInfo.isFilled; 
+}
