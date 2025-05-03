@@ -11,8 +11,7 @@ protected:
 	int ID;		//Each figure has an ID
 	bool Selected;	//true if the figure is selected.
 	GfxInfo FigGfxInfo;	//Figure graphis info
-	int incFig=0;
-	color FigColor;
+
 	/// Add more parameters if needed.
 
 public:
@@ -21,9 +20,8 @@ public:
 	void SetSelected(bool s);	//select/unselect the figure
 	bool IsSelected() const;	//check whether fig is selected
 
-	virtual void Draw(Output* pOut) const  = 0 ;		//Draw the figure
-	virtual CFigure* Clone() const = 0;
-	
+	virtual void Draw(Output* pOut) const = 0;		//Draw the figure
+
 	void ChngDrawClr(color Dclr);	//changes the figure's drawing color
 	void ChngFillClr(color Fclr);	//changes the figure's filling color
 
@@ -31,12 +29,10 @@ public:
 	///It should be overridden by each inherited figure
 
 	///Decide the parameters that you should pass to each function	
-	void setID(int id);
-	int getID();
-	int incrementFig();
-	color getColor();
+
+
 	//virtual void Save(ofstream &OutFile) = 0;	//Save the figure parameters to the file
-	virtual void Load(ofstream &Infile) = 0;	//Load the figure parameters to the file
+	//virtual void Load(ifstream &Infile) = 0;	//Load the figure parameters to the file
 
 	//virtual void PrintInfo(Output* pOut) = 0;	//print all figure info on the status bar
 };
