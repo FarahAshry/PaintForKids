@@ -17,25 +17,47 @@ enum DrawMenuItem //The items of the Draw menu (you should add more items)
 {
 	//Note: Items are **(ordered)** here as they appear in menu
 	//If you want to change the menu items order, change the order here
+	//OUTPUT
 	ITM_RECT,		//Recangle item in menu
-	
 	//TODO: Add more items names here
+	//INPUT
+	ITM_SQUARE,
+	ITM_TRI,
+	ITM_HEX,
+	ITM_CIRCLE,
 
-	ITM_EXIT,		//Exit item
-	
+	ITM_ADD_FIG,
+	ITM_SELECT,
+	ITM_SWAP,
+	ITM_ROTATE_FIG,
+	ITM_DELETE_FIG,
+	ITM_CLEAR_ALL,
+	ITM_COPY_FIG,
+	ITM_CUT_FIG,
+	ITM_PASTE_FIG,
+	ITM_SAVE_GRAPH,
+	ITM_LOAD_GRAPH,
+	ITM_SWITCH_TO_PLAY,
+
+
+	ITM_EXIT,	//Exit item
+
 	DRAW_ITM_COUNT		//no. of menu items ==> This should be the last line in this enum
-	
+
 };
 
 enum PlayMenuItem //The items of the Play menu (you should add more items)
 {
 	//Note: Items are **(ordered)** here as they appear in menu
 	//If you want to change the menu items order, change the order here
-	
-	//TODO: Add more items names here
 
+	//TODO: Add more items names here
+	//INPUT
+	ITM_MATCHING_PAIRS,
+	ITM_MISSING_SHAPES,
+	ITM_SWITCH_TO_DRAW,
 	PLAY_ITM_COUNT		//no. of menu items ==> This should be the last line in this enum
-	
+
 };
 
 
@@ -47,13 +69,14 @@ __declspec(selectany) //This line to prevent "redefinition error"
 struct UI_Info	//User Interface Info.
 {
 	GUI_MODE InterfaceMode;
-	
+
 	int	width, height,	    //Window width and height
-		wx , wy,			//Window starting coordinates
+		wx, wy,			//Window starting coordinates
 		StatusBarHeight,	//Status Bar Height
 		ToolBarHeight,		//Tool Bar Height (distance from top of window to bottom line of toolbar)
+		LineUnderTBWidth,	//line Under the Toolbar Pen Width
 		MenuItemWidth;		//Width of each item in toolbar menu
-	
+
 
 	color DrawColor;		//Drawing color
 	color FillColor;		//Filling color
@@ -64,7 +87,7 @@ struct UI_Info	//User Interface Info.
 	int PenWidth;			//width of the pen that draws shapes
 
 	/// Add more members if needed
-	
-}UI;	//create a global object UI
+
+}UI = {};	//create a global object UI
 
 #endif

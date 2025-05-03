@@ -1,3 +1,4 @@
+#pragma once
 #ifndef DEFS_H
 #define DEFS_H
 
@@ -7,9 +8,27 @@
 enum ActionType //The actions supported (you can add more if needed)
 {
 	DRAW_RECT,		//Draw Rectangle
-	EXIT,			//Exit
-	TO_DRAW,		//Switch interface to Draw mode
+	DRAW_SQUARE,
+	DRAW_TRI,
+	DRAW_HEX,
+	DRAW_CIRCLE,
+	ADD_FIG,
+	SELECT,
+	SWAP,
+	ROTATE_FIG,
+	DELETE_FIG,
+	CLEAR_ALL,
+	COPY_FIG,
+	CUT_FIG,
+	PASTE_FIG,
+	SAVE_GRAPH,
+	LOAD_GRAPH,
 	TO_PLAY,		//Switch interface to Play mode
+	EXIT,			//Exit
+
+	MATCHING_PAIRS,
+	MISSING_SHAPES,
+	TO_DRAW,		//Switch interface to Draw mode
 	EMPTY,			//A click on empty place in the toolbar
 	DRAWING_AREA,	//A click on the drawing area
 	STATUS			//A click on the status bar
@@ -18,7 +37,9 @@ enum ActionType //The actions supported (you can add more if needed)
 };
 
 struct Point	//To be used for figures points
-{ int x,y; };
+{
+	int x, y;
+};
 
 struct GfxInfo	//Graphical info of each figure (you may add more members)
 {
