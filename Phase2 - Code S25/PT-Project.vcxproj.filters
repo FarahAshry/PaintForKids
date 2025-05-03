@@ -160,9 +160,7 @@
     <ClCompile Include="Figures\CTriangle.cpp">
       <Filter>Figures Classes</Filter>
     </ClCompile>
-    <ClCompile Include="AddSqrAction.cpp">
-      <Filter>Action Classes</Filter>
-    </ClCompile>
+    <ClCompile Include="Actions\AddSqrAction.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CMUgraphicsLib\auxil.h">
@@ -262,9 +260,7 @@
     <ClInclude Include="Figures\CTriangle.h">
       <Filter>Figures Classes</Filter>
     </ClInclude>
-    <ClInclude Include="AddSqrAction.h">
-      <Filter>Action Classes</Filter>
-    </ClInclude>
+    <ClInclude Include="Actions\AddSqrAction.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
