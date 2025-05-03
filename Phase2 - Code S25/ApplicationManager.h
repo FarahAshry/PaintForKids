@@ -22,6 +22,10 @@ private:
 	Output *pOut;
 
 	CFigure* Clipboard;  //Pointer to copied/cut figure
+CFigure* CuttedFig;
+
+color DrawOg_Cut;
+color FillOg_Cut;
 
 public:	
 	ApplicationManager(); 
@@ -42,9 +46,15 @@ public:
 	void UpdateInterface() const;	//Redraws all the drawing window	
 	CFigure* RemoveAction(Action* pAct);
 	void LoadAll();
-	CFigure* GetSelected() const;
-	void SetClipboard(CFigure* pFig);
-	CFigure* GetClipboard() const;
+	void RemoveFig(CFigure* pFig);
+
+CFigure* GetSelected() const;
+
+void SetClipboard(CFigure* pFig,bool IsCut);
+CFigure* GetClipboard() const;
+
+void Clear_Clip();
+void Uncut();
 };
 
 #endif
