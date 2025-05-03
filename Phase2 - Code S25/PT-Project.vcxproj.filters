@@ -148,18 +148,20 @@
     <ClCompile Include="CMUgraphicsLib\colors.cpp">
       <Filter>CMUgraphicsLib</Filter>
     </ClCompile>
-    <ClCompile Include="CSquare.cpp">
+    <ClCompile Include="Actions\CSquare.cpp">
       <Filter>Figures Classes</Filter>
     </ClCompile>
-    <ClCompile Include="CCircle.cpp">
+    <ClCompile Include="Actions\CCircle.cpp">
       <Filter>Figures Classes</Filter>
     </ClCompile>
-    <ClCompile Include="CHexagon.cpp">
+    <ClCompile Include="Actions\CHexagon.cpp">
       <Filter>Figures Classes</Filter>
     </ClCompile>
-    <ClCompile Include="CTriangle.cpp">
+    <ClCompile Include="Actions\CTriangle.cpp">
       <Filter>Figures Classes</Filter>
     </ClCompile>
+    <ClCompile Include="Actions\AddSquAction.cpp" />
+    <ClCompile Include="Actions\AddTriAction.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CMUgraphicsLib\auxil.h">
@@ -247,18 +249,21 @@
       <Filter>Application Manager</Filter>
     </ClInclude>
     <ClInclude Include="DEFS.h" />
-    <ClInclude Include="CSquare.h">
+    <ClInclude Include="Actions\CSquare.h">
       <Filter>Figures Classes</Filter>
     </ClInclude>
-    <ClInclude Include="CCircle.h">
+    <ClInclude Include="Actions\CCircle.h">
       <Filter>Figures Classes</Filter>
     </ClInclude>
-    <ClInclude Include="CHexagon.h">
+    <ClInclude Include="Actions\CHexagon.h">
       <Filter>Figures Classes</Filter>
     </ClInclude>
-    <ClInclude Include="CTriangle.h">
+    <ClInclude Include="Actions\CTriangle.h">
       <Filter>Figures Classes</Filter>
     </ClInclude>
+    <ClInclude Include="Actions\AddSquAction.h" />
+    <ClInclude Include="Actions\AddTriAction.h" />
+    <ClInclude Include="Actions\AssSquAction.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

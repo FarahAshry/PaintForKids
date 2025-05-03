@@ -6,6 +6,8 @@
 #include "..\GUI\input.h"
 #include "..\GUI\Output.h"
 
+using namespace std;
+
 AddSquAction::AddSquAction(ApplicationManager* pApp) :Action(pApp)
 {
 }
@@ -22,7 +24,8 @@ void AddSquAction::ReadActionParameters()
 
 	pOut->PrintMessage("New square: Enter length");
 	//Read length of square sides
-	pIn->GetSrting(pOut);
+	//Convert string to double using stod()
+	Length = stod(pIn->GetSrting(pOut));
 
 	SqrGfxInfo.isFilled = false;	//default is not filled
 	//get drawing, filling colors and pen width from the interface
