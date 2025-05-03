@@ -11,6 +11,8 @@ protected:
 	int ID;		//Each figure has an ID
 	bool Selected;	//true if the figure is selected.
 	GfxInfo FigGfxInfo;	//Figure graphis info
+	color FigColor;
+	int incFig;
 
 	/// Add more parameters if needed.
 
