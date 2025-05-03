@@ -1,10 +1,9 @@
 #include "LoadAction.h"
 #include "ApplicationManager.h"
-#include "D:\Uni\Semester 2\Programming Techniques\Project\PT Project Phase1 - Code S25\Phase2 - Code S25\Figures\CFigure.h"
-#include "D:\Uni\Semester 2\Programming Techniques\Project\PT Project Phase1 - Code S25\Phase2 - Code S25\GUI\Output.h"
-#include "D:\Uni\Semester 2\Programming Techniques\Project\PT Project Phase1 - Code S25\Phase2 - Code S25\GUI\Input.h"
+#include "Figures\CFigure.h"
+#include "GUI\Output.h"
+#include "GUI\Input.h"
 #include <iostream>
-#include "D:\Uni\Semester 2\Programming Techniques\Project\PT Project Phase1 - Code S25\Phase2 - Code S25\Figures\CRectangle.h"
 #include <fstream>
 using namespace std;
 
@@ -22,8 +21,8 @@ LoadAction::LoadAction(ApplicationManager* pApp, int incFig) :Action(pApp) {
 			CFigure* pFig = pManager->GetFigure(P1.x,P1.y);
 			if (pFig != nullptr) {
 				pFig->Load(LoadFile);
-
-				/*LoadFile << pFig->getID() << "   ";*/
+				pFig->setID(i);
+				LoadFile <<pFig pFig->getID() <<"\t";
 			}
 		}
 	}
