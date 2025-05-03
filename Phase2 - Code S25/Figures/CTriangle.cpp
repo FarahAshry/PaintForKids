@@ -15,3 +15,7 @@ void CTriangle::Draw(Output* pOut) const
 }
 
 void CTriangle::Load(ifstream& Infile) {}
+
+CFigure* CTriangle::Clone() const {
+	return new CTriangle(*this);
+}
