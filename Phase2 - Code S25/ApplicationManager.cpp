@@ -2,6 +2,9 @@
 #include "Actions\AddRectAction.h"
 #include "Actions/COPY.h"
 #include "C:\Users\LOQ\Desktop\Sem 2\PT\PROJECT\phase 2\Phase2 - Code S25\Actions\CopyAction.h"
+#include"Actions/CUT.h"
+#include"Actions/PASTE.h"
+
 
 
 
@@ -18,6 +21,10 @@ ApplicationManager::ApplicationManager()
 	for (int i = 0; i < MaxFigCount; i++)
 		FigList[i] = NULL;
 	Clipboard = nullptr;
+	CuttedFig = nullptr;
+IsClip_Cut = false;
+IsFilled_Cut = false;
+	
 }
 
 //==================================================================================//
@@ -52,6 +59,13 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 	case COPY_FIG:
 		pAct = new COPY(this);
 		break;
+	case CUT_FIG:
+	        pAct = new CUT(this);
+	        break;
+
+        case PASTE_FIG:
+	      pAct = new PASTE(this);
+	      break;
 	}
 
 	//Execute the created action
@@ -106,14 +120,23 @@ Output* ApplicationManager::GetOutput() const
 	return pOut;
 }
 ////////////////////////////////////////////////////////////////////////////////////
-//Destructor
-ApplicationManager::~ApplicationManager()
-{
-	for (int i = 0; i < FigCount; i++)
-		delete FigList[i];
-	delete pIn;
-	delete pOut;
 
+void ApplicationManager::RemoveFig(CFigure* pFig)
+{
+	for (int i = 0; i < FigCount; ++i)
+	{
+		if (FigList[i] == pFig)
+		{
+			delete FigList[i];
+
+			for (int j = i; j < FigCount - 1; ++j)
+			{
+				FigList[j] = FigList[j + 1];
+			}
+			FigList[--FigCount] = nullptr;
+			break;
+		}
+	}
 }
 
 CFigure* ApplicationManager::GetSelected() const {
@@ -134,14 +157,64 @@ CFigure* ApplicationManager::GetSelected() const {
 		return nullptr;
 	}
 }
-
-void ApplicationManager::SetClipboard(CFigure* pFig)
+void ApplicationManager::Uncut()
 {
-	if (Clipboard)
+	if (IsClip_Cut && CuttedFig)
+	{
+		CuttedFig->ChngFillClr(FillOg_Cut);
+		CuttedFig->ChngDrawClr(DrawOg_Cut);
+
+		CuttedFig = nullptr;
+		IsClip_Cut = false;
+		Clipboard = nullptr;
+	}
+}
+
+void ApplicationManager::SetClipboard(CFigure* pFig,bool IsCut)
+{
+	Uncut();
+	if (Clipboard && !IsClip_Cut)
 	{
 		delete Clipboard;
-		Clipboard = pFig;
 	}
+	Clipboard = pFig;
+	IsClip_Cut = IsCut;
+	
+	if (IsCut)
+	{
+		CuttedFig = pFig;
+
+		FillOg_Cut = pFig->GetFillColor();
+		DrawOg_Cut = pFig->GetDrawColor();
+
+		pFig->ChngFillClr(GRAY);
+		pFig->ChngDrawClr(GRAY);
+
+	}
+	else
+		CuttedFig = nullptr;
+
+}
+void ApplicationManager::Clear_Clip()
+{
+	
+	if (IsClip_Cut)
+	{
+		if (CuttedFig)
+		{
+			CuttedFig->ChngFillClr(UI.FillColor);
+			CuttedFig->ChngDrawClr(UI.DrawColor);
+		}
+	}
+
+	else if (Clipboard)
+	{
+		delete Clipboard;
+	}
+
+	Clipboard = nullptr;
+	CuttedFig = nullptr;
+	IsClip_Cut = false;
 
 
 }
@@ -149,3 +222,19 @@ CFigure* ApplicationManager::GetClipboard() const
 {
 	return Clipboard;
 }
+
+CFigure* ApplicationManager::GetClipboard() const
+{
+	return Clipboard;
+}
+
+//Destructor
+ApplicationManager::~ApplicationManager()
+{
+	for (int i = 0; i < FigCount; i++)
+		delete FigList[i];
+	delete pIn;
+	delete pOut;
+
+}
+
