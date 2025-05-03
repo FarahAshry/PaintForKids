@@ -40,8 +40,11 @@ public:
 	Input *GetInput() const; //Return pointer to the input
 	Output *GetOutput() const; //Return pointer to the output
 	void UpdateInterface() const;	//Redraws all the drawing window	
-	void RemoveAction(Action* pAct);
+	CFigure* RemoveAction(Action* pAct);
 	void LoadAll();
+	CFigure* GetSelected() const;
+	void SetClipboard(CFigure* pFig);
+	CFigure* GetClipboard() const;
 };
 
 #endif

@@ -16,3 +16,6 @@ void CRectangle::Draw(Output* pOut) const
 void CRectangle::Load(ifstream& Infile) {
 	
 }
+ CFigure* CRectangle::Clone() const {
+	return new CRectangle(*this);
+}

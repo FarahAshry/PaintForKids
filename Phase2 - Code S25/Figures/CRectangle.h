@@ -6,12 +6,13 @@
 class CRectangle : public CFigure
 {
 private:
-	Point Corner1;	
+	Point Corner1;
 	Point Corner2;
 public:
-	CRectangle(Point , Point, GfxInfo FigureGfxInfo );
-	virtual void Draw(Output* pOut) const override;
-	virtual void Load(ifstream& Infile) override;
+	CRectangle(Point, Point, GfxInfo FigureGfxInfo);
+	virtual void Draw(Output* pOut) const;
+
+	CFigure* Clone() const;
 };
 
 #endif
