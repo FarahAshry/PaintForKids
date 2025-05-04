@@ -1,4 +1,5 @@
 #include "CTriangle.h"
+#include <ofstream>
 
 CTriangle::CTriangle(Point P1, Point P2, Point P3, GfxInfo FigureGfxInfo) :CFigure(FigureGfxInfo)
 {
