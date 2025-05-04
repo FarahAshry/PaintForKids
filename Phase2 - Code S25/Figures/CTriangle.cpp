@@ -19,4 +19,20 @@ void CTriangle::Load(ofstream& Infile) {}
 CFigure* CTriangle::Clone() const {
 	return new CTriangle(*this);
 }
+void CTriangle::paste_clone(Point c)
+{
+	int N_X = ((Corner1.x + Corner2.x+ Corner3.x) / 3);
+	int N_Y = ((Corner1.y + Corner2.y+ Corner3.y) / 3);
+	int P_X = c.x - N_X;
+	int P_Y = c.y - N_Y;
+
+	Corner1.x = Corner1.x + P_X;
+	Corner2.x = Corner2.x + P_X;
+	Corner3.x = Corner3.x + P_X;
+
+	Corner1.y = Corner1.x + P_Y;
+	Corner2.y = Corner2.x + P_Y;
+	Corner3.y = Corner3.y + P_X;
+
+}
 }
