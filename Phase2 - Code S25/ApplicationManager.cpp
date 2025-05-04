@@ -6,7 +6,7 @@
 #include "Actions\AddTriAction.h"
 #include "Actions\Select.h"
 #include "Actions/COPY.h"
-#include "C:\Users\LOQ\Desktop\Sem 2\PT\PROJECT\phase 2\Phase2 - Code S25\Actions\CopyAction.h"
+#include "Actions\CopyAction.h"
 #include"Actions/CUT.h"
 #include"Actions/PASTE.h"
 
@@ -245,3 +245,19 @@ ApplicationManager::~ApplicationManager()
 
 }
 
+color ApplicationManager::StringToColor(string color) {
+	if (color == "RED")
+		return RED;
+	else if (color == "GREEN")
+		return GREEN;
+	else if (color == "BLUE")
+		return BLUE;
+	else if (color == "YELLOW")
+		return YELLOW;
+	else if (color == "BLACK")
+		return BLACK;
+	else if (color == "WHITE")
+		return WHITE;
+	else
+		return;
+}
