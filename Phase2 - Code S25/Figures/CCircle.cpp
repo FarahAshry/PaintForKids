@@ -13,8 +13,10 @@ void CCircle::Draw(Output* pOut) const
 	pOut->DrawCircle(centre, radius, FigGfxInfo, Selected);
 }
 
-void CCircle::Load(ifstream& Infile) {}
+void CCircle::Load(ofstream& Infile) {
 
+}
 CFigure* CCircle::Clone() const {
 	return new CCircle(*this);
+}
 }
