@@ -24,4 +24,4 @@ void CHexagon::paste_clone(Point c)
 {
 	centre = c;
 }
-}
+
