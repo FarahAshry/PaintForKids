@@ -9,10 +9,8 @@
 #include "GUI\Output.h"
 #include "GUI\Input.h"
 
-Matching::Matching(ApplicationManager* pApp, int score) :Action(pApp), pManager(pApp), score(0) {
-	this->pManager = pApp;
-	
-}
+Matching::Matching(ApplicationManager* pApp, int score) 
+	:Action(pApp), pManager(pApp), score(0) {}
 
 void Matching::ReadActionParameters() {
 	Output* pOut = pManager->GetOutput();
@@ -34,17 +32,17 @@ void Matching::Execute() {
 
 	Output* pOut = pManager->GetOutput();
 
-	compare(*fig1, *fig2); 
+	compare(*fig1, *fig2);
 
 }
 
 void Matching::compare(CFigure& fig1, CFigure& fig2) {
-		Output* pOut = new Output;
-		bool match = false;
-		if (fig1.getColor() == fig2.getColor()) {
-			match = true;
-		}
-	if (match==true ) {
+	Output* pOut = new Output;
+	bool match = false;
+	if (fig1.getColor() == fig2.getColor() || fig1.getFigureType()==fig2.getFigureType()) {
+		match = true;
+	}
+	if (match == true) {
 		pOut->PrintMessage("Match found!");
 		incScore();
 	}
@@ -53,6 +51,9 @@ void Matching::compare(CFigure& fig1, CFigure& fig2) {
 		decScore();
 	}
 }
+
+void Matching::Load(ofstream& Infile) {}
+
 void Matching::incScore() {
 	score++;
 }
