@@ -32,10 +32,7 @@ void SaveAction::Execute(bool readparameters)
 	else
 		file << (pOut->getCrntDrawColor()) << "  " << (pOut->getCrntFillColor()) << endl;
 
-	for (int i = 0; i < /*figure count*/; i++)
-	{
-		FigList[i]->Save(file);
-	}
+	pManager->saveAll();
 	file.close();
 }
 
