@@ -262,7 +262,7 @@ class window {
   	// The number of elements in ipX and ipY must be the same, and iVertices must be 
   	// no greater than the number of elements in the two arrays, or your program may
   	// very well crash.  There is no way I can really guard against this problem
-    void DrawPolygon(const int* ipX, const int* ipY, const int iVertices, const drawstyle dsStyle = FILLED);
+    void DrawPolygon(const double* ipX, const double* ipY, const int iVertices, const drawstyle dsStyle = FILLED);
 
     // Draws a circle centered at (iX, iY) with a radius of iRadius.  Valid drawstyles 
     // are FRAME, FILLED, and INVERTED.
