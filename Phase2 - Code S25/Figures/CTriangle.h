@@ -11,6 +11,7 @@ private:
 	Point Corner3;
 public:
 	CTriangle(Point, Point, Point, GfxInfo FigureGfxInfo);
+virtual void Draw(Output* pOut) const;
 virtual void Load(ofstream& Infile);
 virtual CFigure* Clone() const;
 virtual void paste_clone(Point c);
