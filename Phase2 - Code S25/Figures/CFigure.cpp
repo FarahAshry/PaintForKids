@@ -21,7 +21,36 @@ void CFigure::ChngFillClr(color Fclr)
 	FigGfxInfo.FillClr = Fclr; 
 }
 //Farah added these 3 functions
+string CFigure::getFigureType() {
+		
+}
+ 
+//to get the color of the figure
 color CFigure::getColor() {
+	if (FigGfxInfo.isFilled == true) {
+		FigColor = FigGfxInfo.FillClr;
+		if (FigColor == RED) {
+			FigColor = Red_ID;
+		}
+		else if (FigColor == BLUE) {
+			FigColor = Blue_ID;
+		}
+		else if (FigColor == YELLOW) {
+			FigColor = Yellow_ID;
+		}
+		else if (FigColor == BLACK) {
+			FigColor = Black_ID;
+		}
+		else if (FigColor == ORANGE) {
+			FigColor = Orange_ID;
+		}
+		else if (FigColor == GREEN) {
+			FigColor = Green_ID;
+		}
+		else {
+			FigColor = No_Fill_ID;
+		}
+	}
 	return FigColor;
 }
 void CFigure::setID(int id)
