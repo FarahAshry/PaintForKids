@@ -15,7 +15,18 @@ void CSquare::Draw(Output* pOut) const
 }
 
 void CSquare::Load(ifstream& Infile) {
-	
+	// read the square's data from the file
+	Infile >> centre.x >> centre.y >> length;
+	string drawColor, fillColor;
+	Infile >> drawColor >> fillColor;
+	FigGfxInfo.DrawClr = StringToColor(drawColor);
+	if (fillColor == "No_Fill")
+		FigGfxInfo.isFilled = false;
+	else
+	{
+		FigGfxInfo.isFilled = true;
+		FigGfxInfo.FillClr = StringToColor(fillColor);
+	}
 }
 
 CFigure* CSquare::Clone() const {
