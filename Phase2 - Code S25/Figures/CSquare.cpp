@@ -22,3 +22,15 @@ void CSquare::paste_clone(Point c)
 {
 	centre = c;
 }
+void CSquare::save(ofstream& OutFile) const 
+{
+    outputFile << "SQR" << '\t'
+     	       << ID << '\t'
+               << centre.x << '\t' << centre.y << '\t'
+               << length <<
+    	       << FigGfxInfo.DrawClr << '\t';
+    
+    if(FigGfxInfo.isFilled) outputFile << FigGfxInfo.FillClr;
+    else outputFile << "NO_FILL";
+    outputFile << '\n';
+}
