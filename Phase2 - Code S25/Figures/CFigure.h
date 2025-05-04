@@ -33,16 +33,17 @@ public:
 	///It should be overridden by each inherited figure
 
 	///Decide the parameters that you should pass to each function	
-	color getColor();
-color GetFillColor() const;
-color GetDrawColor() const;
-bool IsFilled() const;
+	string getFigureType();	//returns the figure type for matching game check
+	color getColor(); 	//returns the color of the figure for matching game check
+	color GetFillColor() const;
+	color GetDrawColor() const;
+	bool IsFilled() const;
 	void setID(int id);
 
 	int getID();
 	int incrementFig();
-virtual CFigure* Clone() const = 0;
-virtual void paste_clone(Point c)=0;
+	virtual CFigure* Clone() const = 0;
+	virtual void paste_clone(Point c)=0;
 
 
 	//virtual void Save(ofstream &OutFile) = 0;	//Save the figure parameters to the file
