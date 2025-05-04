@@ -296,13 +296,29 @@ void Output::DrawHexagon(Point P1, double length, GfxInfo HexGfxInfo, bool selec
 
 	double* xptrlist = new double[6];
 	double* yptrlist = new double[6];
-	float angle = 0;
-	for (int i = 0; i < 6; i++)
-	{
-		xptrlist[i] = P1.x + length * cos(angle);
-		yptrlist[i] = P1.y + length * sin(angle);
-		angle = angle + pi / 3.0;
-	}
+
+	xptrlist[0] = P1.x - length;
+	xptrlist[1] = P1.x - length * 0.5;
+	xptrlist[2] = P1.x + length * 0.5;
+	xptrlist[3] = P1.x + length;
+	xptrlist[4] = xptrlist[2];
+	xptrlist[5] = xptrlist[1];
+
+	yptrlist[0] = P1.y;
+	yptrlist[1] = P1.y + length * cos(pi / 3);
+	yptrlist[2] = yptrlist[1];
+	yptrlist[3] = P1.y;
+	yptrlist[4] = P1.y - length * cos(pi / 3);
+	yptrlist[5] = yptrlist[4];
+
+	//float angle = 0;
+	//for (int i = 0; i < 6; i++)
+	//{
+	//	xptrlist[i] = P1.x + length * cos(angle);
+	//	yptrlist[i] = P1.y + length * sin(angle);
+	//	angle = angle + pi / 3.0;
+	//}
+
 	pWind->DrawPolygon(xptrlist, yptrlist, 6, style);
 	delete[]xptrlist;
 	delete[]yptrlist;
