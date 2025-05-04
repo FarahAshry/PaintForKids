@@ -20,4 +20,8 @@ CFigure* CHexagon::Clone()const
 {
 	return new CHexagon(*this);
 }
+void CHexagon::paste_clone(Point c)
+{
+	centre = c;
+}
 }
