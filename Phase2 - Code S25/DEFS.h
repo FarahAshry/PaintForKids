@@ -50,4 +50,22 @@ struct GfxInfo	//Graphical info of each figure (you may add more members)
 
 };
 
+enum ColorID {
+	Red_ID = 0,
+	Blue_ID = 1,
+	Yellow_ID = 2,
+	Black_ID = 3,
+	Orange_ID = 4,
+	Green_ID = 5,
+	No_Fill_ID = -1
+};
+
+enum FigureType {
+	Rect_ID = 6,
+	Square_ID = 7,
+	Tri_ID = 8,
+	Hexagon_ID = 9,
+	Circle_ID = 10
+};
+
 #endif
