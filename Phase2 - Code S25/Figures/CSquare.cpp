@@ -13,7 +13,7 @@ void CSquare::Draw(Output* pOut) const
 	pOut->DrawSquare(centre, length, FigGfxInfo, Selected);
 }
 
-void CSquare::Load(ifstream& Infile) {}
+void CSquare::Load(ofstream& Infile) {}
 
 CFigure* CSquare::Clone() const {
 	return new CSquare(*this);
