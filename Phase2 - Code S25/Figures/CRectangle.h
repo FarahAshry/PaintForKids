@@ -11,9 +11,10 @@ private:
 public:
 	CRectangle(Point, Point, GfxInfo FigureGfxInfo);
 	virtual void Draw(Output* pOut) const;
-virtual void Load(ofstream& Infile);
-virtual CFigure* Clone() const;
-virtual void paste_clone(Point c);
+	FigureType getFigureType() const;
+	virtual void Load(ofstream& Infile);
+	virtual CFigure* Clone() const;
+	virtual void paste_clone(Point c);
 };
 
 #endif
