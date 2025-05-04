@@ -27,7 +27,7 @@ void CSquare::save(ofstream& OutFile) const
     outputFile << "SQR" << '\t'
      	       << ID << '\t'
                << centre.x << '\t' << centre.y << '\t'
-               << length <<
+               << length << '\t'
     	       << FigGfxInfo.DrawClr << '\t';
     
     if(FigGfxInfo.isFilled) outputFile << FigGfxInfo.FillClr;
