@@ -18,3 +18,7 @@ void CSquare::Load(ofstream& Infile) {}
 CFigure* CSquare::Clone() const {
 	return new CSquare(*this);
 }
+void CSquare::paste_clone(Point c)
+{
+	centre = c;
+}
