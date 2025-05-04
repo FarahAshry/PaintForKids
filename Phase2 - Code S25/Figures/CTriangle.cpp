@@ -35,4 +35,4 @@ void CTriangle::paste_clone(Point c)
 	Corner3.y = Corner3.y + P_X;
 
 }
-}
+
