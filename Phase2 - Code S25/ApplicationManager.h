@@ -55,6 +55,9 @@ CFigure* GetClipboard() const;
 
 void Clear_Clip();
 void Uncut();
+
+color StringToColor(string color); //Convert string to color
+
 };
 
 #endif
