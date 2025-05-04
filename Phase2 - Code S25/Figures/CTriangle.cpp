@@ -14,8 +14,9 @@ void CTriangle::Draw(Output* pOut) const
 	pOut->DrawTriangle(Corner1, Corner2, Corner3, FigGfxInfo, Selected);
 }
 
-void CTriangle::Load(ifstream& Infile) {}
+void CTriangle::Load(ofstream& Infile) {}
 
 CFigure* CTriangle::Clone() const {
 	return new CTriangle(*this);
+}
 }
