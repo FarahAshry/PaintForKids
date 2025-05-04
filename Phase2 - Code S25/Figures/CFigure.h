@@ -28,7 +28,7 @@ public:
 	void ChngFillClr(color Fclr);	//changes the figure's filling color
 
 	//function for SaveAction
-	virtual void Save(ofstream& OutFile) const = 0;
+	virtual void save(ofstream& OutFile) const = 0;
 	
 
 	///The following functions should be supported by the figure class
