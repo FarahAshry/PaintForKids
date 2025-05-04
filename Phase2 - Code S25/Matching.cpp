@@ -1,6 +1,10 @@
 #include "Matching.h"
 #include "Figures\CFigure.h"
 #include "Figures\CRectangle.h"
+#include "Figures/CSquare.h" 
+#include "Figures/CTriangle.h" 
+#include "Figures/CHexagon.h"
+#include "Figures/CCircle.h"
 #include "ApplicationManager.h"
 #include "GUI\Output.h"
 #include "GUI\Input.h"
@@ -59,5 +63,4 @@ int Matching::getScore() {
 	return score;
 }
 Matching::~Matching() {
-
 }
