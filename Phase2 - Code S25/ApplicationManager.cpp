@@ -91,12 +91,12 @@ CFigure* ApplicationManager::GetFigure(int x, int y) const
 {
 	//If a figure is found return a pointer to it.
 	//if this point (x,y) does not belong to any figure return NULL
-
-
 	//Add your code here to search for a figure given a point x,y	
 	//Remember that ApplicationManager only calls functions do NOT implement it.
-
-	return NULL;
+	for (int i = FigCount-1; i >= 0; i--) {
+        	if (FigList[i]->ContainsPoint(x, y)) return FigList[i];
+    	}
+    	return nullptr;
 }
 //==================================================================================//
 //							Interface Management Functions							//
