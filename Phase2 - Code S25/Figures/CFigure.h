@@ -27,6 +27,8 @@ public:
 	void ChngDrawClr(color Dclr);	//changes the figure's drawing color
 	void ChngFillClr(color Fclr);	//changes the figure's filling color
 
+	//function for SaveAction
+	virtual void Save(ofstream& OutFile) const = 0;
 	
 
 	///The following functions should be supported by the figure class
