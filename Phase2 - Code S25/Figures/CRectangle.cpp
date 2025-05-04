@@ -34,6 +34,18 @@ void CRectangle::paste_clone(Point c)
  Corner2.x = Corner2.x + P_X;
  Corner1.y = Corner1.x + P_Y;
  Corner2.y = Corner2.x + P_Y;
-
-
 }
+
+void CRectangle::save(ofstream& OutFile) const 
+{
+    outputFile << "RECT" << '\t'
+     	       << ID << '\t'
+               << Corner1.x << '\t' << Corner1.y << '\t'
+               << Corner2.x << '\t' << Corner2.y << '\t'
+    	       << FigGfxInfo.DrawClr << '\t';
+    
+    if(FigGfxInfo.isFilled) outputFile << FigGfxInfo.FillClr;
+    else outputFile << "NO_FILL";
+    outputFile << '\n';
+}
+
