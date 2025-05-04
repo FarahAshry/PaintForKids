@@ -19,4 +19,8 @@ void CCircle::Load(ofstream& Infile) {
 CFigure* CCircle::Clone() const {
 	return new CCircle(*this);
 }
+void CCircle::paste_clone(Point c)
+{
+	centre = c;
+}
 }
