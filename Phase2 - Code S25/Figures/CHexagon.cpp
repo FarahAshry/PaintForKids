@@ -12,8 +12,12 @@ void CHexagon::Draw(Output* pOut) const
 	pOut->DrawHexagon(centre, length, FigGfxInfo, Selected);
 }
 
-void CHexagon::Load(ifstream& Infile) {}
+void CHexagon::Load(ofstream& Infile)
+{
 
-CFigure* CHexagon::Clone() const {
+}
+CFigure* CHexagon::Clone()const
+{
 	return new CHexagon(*this);
+}
 }
