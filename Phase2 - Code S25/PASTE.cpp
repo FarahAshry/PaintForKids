@@ -39,5 +39,6 @@ void PASTE::Execute()
 	paste->paste_clone(c);
 	paste->SetSelected(false);
 	pManager->AddFigure(paste);
+	pManager->Uncut();
 	pOut->PrintMessage("Pasted :)");
 }
