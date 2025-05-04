@@ -13,9 +13,21 @@ void CHexagon::Draw(Output* pOut) const
 	pOut->DrawHexagon(centre, length, FigGfxInfo, Selected);
 }
 
-void CHexagon::Load(ofstream& Infile)
+void CHexagon::Load(ifstream& Infile)
 {
-
+	// Load the hexagon's data from the file
+	Infile >> centre.x >> centre.y >> length;
+	 string drawColor, fillColor;
+	 Infile >> drawColor >> fillColor;
+	
+	 FigGfxInfo.DrawClr = StringToColor(drawColor);
+	 if (fillColor == "No_Fill")
+	     FigGfxInfo.isFilled = false;
+	 else
+	 {
+	     FigGfxInfo.isFilled = true;
+	     FigGfxInfo.FillClr = StringToColor(fillColor);
+	 }
 }
 CFigure* CHexagon::Clone()const
 {
