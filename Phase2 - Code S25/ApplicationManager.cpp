@@ -223,10 +223,7 @@ CFigure* ApplicationManager::GetClipboard() const
 	return Clipboard;
 }
 
-CFigure* ApplicationManager::GetClipboard() const
-{
-	return Clipboard;
-}
+
 
 //Destructor
 ApplicationManager::~ApplicationManager()
