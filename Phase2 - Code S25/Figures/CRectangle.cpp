@@ -19,7 +19,21 @@ FigureType CRectangle::getFigureType() const {
 }
 
 void CRectangle::Load(ofstream& Infile) {
+	// Read the rectangle's data from the file
+	Infile >> Corner1.x >> Corner1.y >> Corner2.x >> Corner2.y;
 	
+	// Read the figure's graphics info (e.g., colors, pen width)
+	string drawColor, fillColor;
+	Infile >> drawColor >> fillColor;
+	
+	FigGfxInfo.DrawClr = StringToColor(drawColor);
+	if (fillColor == "No_Fill")
+	    FigGfxInfo.isFilled = false;
+	else
+	{
+	    FigGfxInfo.isFilled = true;
+	    FigGfxInfo.FillClr = StringToColor(fillColor);
+	}
 }
  CFigure* CRectangle::Clone() const {
 	return new CRectangle(*this);
