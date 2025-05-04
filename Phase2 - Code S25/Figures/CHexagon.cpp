@@ -1,4 +1,5 @@
 #include "CHexagon.h"
+#include <ofstream>
 
 CHexagon::CHexagon(Point P1, double L, GfxInfo FigureGfxInfo) :CFigure(FigureGfxInfo)
 {
