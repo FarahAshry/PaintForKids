@@ -14,8 +14,20 @@ void CCircle::Draw(Output* pOut) const
 	pOut->DrawCircle(centre, radius, FigGfxInfo, Selected);
 }
 
-void CCircle::Load(ofstream& Infile) {
-
+void CCircle::Load(ifstream& Infile) {
+	// Read the circle's data from the file
+	Infile >> centre.x >> centre.y >> radius;
+	
+	string drawColor, fillColor;
+	Infile >> drawColor >> fillColor;
+	FigGfxInfo.DrawClr = StringToColor(drawColor);
+	if (fillColor == "No_Fill")
+		FigGfxInfo.isFilled = false;
+	else
+	{
+		FigGfxInfo.isFilled = true;
+		FigGfxInfo.FillClr = StringToColor(fillColor);
+	}
 }
 CFigure* CCircle::Clone() const {
 	return new CCircle(*this);
