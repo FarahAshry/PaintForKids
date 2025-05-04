@@ -1,4 +1,5 @@
 #include "CSquare.h"
+#include <ofstream>
 
 CSquare::CSquare(Point P1, double L, GfxInfo FigureGfxInfo) :CFigure(FigureGfxInfo)
 {
