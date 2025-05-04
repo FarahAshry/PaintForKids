@@ -13,7 +13,7 @@ void CRectangle::Draw(Output* pOut) const
 	pOut->DrawRect(Corner1, Corner2, FigGfxInfo, Selected);
 }
 
-void CRectangle::Load(ifstream& Infile) {
+void CRectangle::Load(ofstream& Infile) {
 	
 }
  CFigure* CRectangle::Clone() const {
