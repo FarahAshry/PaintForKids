@@ -15,7 +15,23 @@ void CTriangle::Draw(Output* pOut) const
 	pOut->DrawTriangle(Corner1, Corner2, Corner3, FigGfxInfo, Selected);
 }
 
-void CTriangle::Load(ofstream& Infile) {}
+void CTriangle::Load(ofstream& Infile) {
+	 // Read the triangle's data from the file
+	 Infile >> Corner1.x >> Corner1.y >> Corner2.x >> Corner2.y >> Corner3.x >> Corner3.y;
+	
+	 // Read the figure's graphics info (e.g., colors, pen width)
+	 string drawColor, fillColor;
+	 Infile >> drawColor >> fillColor;
+	
+	 FigGfxInfo.DrawClr = StringToColor(drawColor);
+	 if (fillColor == "No_Fill")
+	     FigGfxInfo.isFilled = false;
+	 else
+	 {
+	     FigGfxInfo.isFilled = true;
+	     FigGfxInfo.FillClr = StringToColor(fillColor);
+	 }
+}
 
 CFigure* CTriangle::Clone() const {
 	return new CTriangle(*this);
