@@ -228,7 +228,12 @@ CFigure* ApplicationManager::GetClipboard() const
 	return Clipboard;
 }
 
-
+// Save all figures 
+void ApplicationManager:: saveAll(ofstream & file) const
+{
+	file<< FigCount<< endl;
+	for (int i = 0; i < FigCount; i++)FigList[i]->Save(file);
+}
 
 //Destructor
 ApplicationManager::~ApplicationManager()
