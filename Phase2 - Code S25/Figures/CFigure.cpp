@@ -20,9 +20,10 @@ void CFigure::ChngFillClr(color Fclr)
 	FigGfxInfo.isFilled = true;
 	FigGfxInfo.FillClr = Fclr; 
 }
-//Farah added these 3 functions
+//Farah added these 4 functions
 string CFigure::getFigureType() {
-		
+	cout << FigType << endl;
+	return FigType;	
 }
  
 //to get the color of the figure
