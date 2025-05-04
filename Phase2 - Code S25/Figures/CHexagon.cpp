@@ -25,3 +25,15 @@ void CHexagon::paste_clone(Point c)
 	centre = c;
 }
 
+void CHexagon::save(ofstream& OutFile) const 
+{
+    outputFile << "HEX" << '\t'
+     	       << ID << '\t'
+               << centre.x << '\t' << centre.y << '\t'
+               << length << '\t'
+    	       << FigGfxInfo.DrawClr << '\t';
+    
+    if(FigGfxInfo.isFilled) outputFile << FigGfxInfo.FillClr;
+    else outputFile << "NO_FILL";
+    outputFile << '\n';
+}
