@@ -15,7 +15,7 @@ void CTriangle::Draw(Output* pOut) const
 	pOut->DrawTriangle(Corner1, Corner2, Corner3, FigGfxInfo, Selected);
 }
 
-void CTriangle::Load(ofstream& Infile) {
+void CTriangle::Load(ifstream& Infile) {
 	 // Read the triangle's data from the file
 	 Infile >> Corner1.x >> Corner1.y >> Corner2.x >> Corner2.y >> Corner3.x >> Corner3.y;
 	
