@@ -23,4 +23,4 @@ void CCircle::paste_clone(Point c)
 {
 	centre = c;
 }
-}
+
