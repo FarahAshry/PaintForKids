@@ -10,8 +10,9 @@ private:
 	double length;
 public:
 	CSquare(Point, double, GfxInfo FigureGfxInfo);
-	virtual void Draw(Output* pOut) const;
-	CFigure* Clone() const;
+virtual void Load(ofstream& Infile);
+virtual CFigure* Clone() const;
+virtual void paste_clone(Point c);
 };
 
 #endif
