@@ -13,6 +13,10 @@ void CRectangle::Draw(Output* pOut) const
 	pOut->DrawRect(Corner1, Corner2, FigGfxInfo, Selected);
 }
 
+FigureType CRectangle::getFigureType() const {
+	return Rect_ID; // Return the correct enum value
+}
+
 void CRectangle::Load(ofstream& Infile) {
 	
 }
