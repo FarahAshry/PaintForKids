@@ -18,7 +18,7 @@ FigureType CRectangle::getFigureType() const {
 	return Rect_ID; // Return the correct enum value
 }
 
-void CRectangle::Load(ofstream& Infile) {
+void CRectangle::Load(ifstream& Infile) {
 	// Read the rectangle's data from the file
 	Infile >> Corner1.x >> Corner1.y >> Corner2.x >> Corner2.y;
 	
