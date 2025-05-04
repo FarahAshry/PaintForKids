@@ -15,12 +15,12 @@ Matching::Matching(ApplicationManager* pApp, int score)
 void Matching::ReadActionParameters() {
 	Output* pOut = pManager->GetOutput();
 	Input* pIn = pManager->GetInput();
-
+	
 	pOut->PrintMessage("Matching Game: Click on the first figure.");
-	pIn->GetPointClicked(P1.x, P1.y); // Get the first click
+	fig1 = pManager->GetFigure(P1.x, P1.y); // Get the first click
 
 	pOut->PrintMessage("Matching Game: Click on the second figure.");
-	pIn->GetPointClicked(P2.x, P2.y); // Get the second click
+	fig2 = pManager->GetFigure(P2.x, P2.y);// Get the second click
 
 	pOut->ClearStatusBar();
 }
