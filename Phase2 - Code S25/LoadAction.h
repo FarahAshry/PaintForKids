@@ -13,6 +13,7 @@ public:
 	LoadAction(ApplicationManager* pApp, int incFig); //Constructor
 	void ReadActionParameters(); //Reads parameters required for action to execute
 	void Execute(); //Execute action (code depends on action type)
+	virtual void Load(ofstream &Infile);
 	~LoadAction(); //Destructor
 };
 
