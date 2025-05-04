@@ -27,7 +27,7 @@ public:
 	void ChngDrawClr(color Dclr);	//changes the figure's drawing color
 	void ChngFillClr(color Fclr);	//changes the figure's filling color
 
-	virtual CFigure* Clone() const = 0;
+	
 
 	///The following functions should be supported by the figure class
 	///It should be overridden by each inherited figure
@@ -41,7 +41,9 @@ bool IsFilled() const;
 
 	int getID();
 	int incrementFig();
+virtual CFigure* Clone() const = 0;
 virtual void paste_clone(Point c)=0;
+
 
 	//virtual void Save(ofstream &OutFile) = 0;	//Save the figure parameters to the file
 	virtual void Load(ofstream &Infile) = 0;	//Load the figure parameters to the file
