@@ -1,4 +1,5 @@
 #include "CCircle.h"
+#include <ofstream>
 
 CCircle::CCircle(Point P1, double R, GfxInfo FigureGfxInfo) :CFigure(FigureGfxInfo)
 {
