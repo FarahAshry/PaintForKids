@@ -14,7 +14,7 @@ virtual void Draw(Output* pOut) const;
 virtual void Load(ofstream& Infile);
 virtual CFigure* Clone() const;
 virtual void paste_clone(Point c);
-void save(ofstream& OutFile) const;
+virtual void save(ofstream& OutFile) const;
 };
 
 #endif
