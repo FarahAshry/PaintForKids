@@ -1,5 +1,4 @@
 #include "ClearAll.h"
-#pragma once
 #include "Action.h"
 #include "../GUI/Input.h"
 #include "../GUI/Output.h"

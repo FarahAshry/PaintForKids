@@ -1,4 +1,4 @@
-#pragma once
+
 #include "Swap.h"
 #include "Action.h"        
 #include "../ApplicationManager.h" 
