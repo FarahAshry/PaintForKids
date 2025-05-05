@@ -193,7 +193,7 @@ void ApplicationManager::SetClipboard(CFigure* pFig, bool IsCut)
 	{
 		Uncut();
 	}
-	if(IsCut)
+	if (IsCut)
 	{
 		CuttedFig = pFig;
 		if (pFig->IsFilled())
@@ -208,11 +208,12 @@ void ApplicationManager::SetClipboard(CFigure* pFig, bool IsCut)
 			IsHighlighted_Cut = true;
 			IsFilled_Cut = false;
 		}
-		
+
 		pFig->ChngFillClr(GRAY);
 		pFig->ChngDrawClr(GRAY);
-
+	}
 }
+
 
 
 CFigure* ApplicationManager::GetClipboard() const
@@ -231,14 +232,17 @@ void ApplicationManager::Clear_Clip()
 		}
 	}
 
-	else if (Clipboard)
+	else
 	{
-		delete Clipboard;
-	}
+		if (Clipboard)
+		{
+			delete Clipboard;
+		}
 
-	Clipboard = nullptr;
-	CuttedFig = nullptr;
-	IsClip_Cut = false;
+		Clipboard = nullptr;
+		CuttedFig = nullptr;
+		IsClip_Cut = false;
+	}
 }
 
 CFigure* ApplicationManager::GetSelected() const {
