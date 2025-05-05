@@ -80,7 +80,7 @@ public:
 
 	void saveAll(ofstream& file) const;
 
-	color StringToColor(string color); //Convert string to color
+	/*color StringToColor(string color);*/ //Convert string to color
 };
 
 #endif
