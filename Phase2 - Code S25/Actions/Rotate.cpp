@@ -5,18 +5,23 @@
 #include "../Figures/CFigure.h"
 #include "../Actions/Action.h"
 
-Rotate :: Rotate(ApplicationManager* pApp, CFigure* C) :Action(pApp) {
-	
+Rotate::Rotate(ApplicationManager* pApp) :Action(pApp) {
+
+}
+void ReadActionParameters() {
+
+}
+void Execute() {
 	Output* pOut;
 
-	if (C->IsSelected()==1) {
+	if (->IsSelected() == 1) {
 		int ID = C->getID();
 
 		if (ID == ITM_SQUARE || ID == ITM_HEX) {
 			pOut->PrintMessage("No effect on figure");
 			C->SetSelected(false);
 		}
-		else{	
+		else {
 		}
 	}
 	else {
