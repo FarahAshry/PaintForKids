@@ -37,6 +37,15 @@ void CSquare::paste_clone(Point c)
 {
 	centre = c;
 }
+
+void CSquare::printInfo()const
+{
+    cout << "SQR" << '\t'
+       << ID << '\t'
+       << centre.x << '\t' << centre.y << '\t'
+       << length << '\t'
+       << colourString(FigGfxInfo.DrawClr) << '\t';
+}
 void CSquare::save(ofstream& OutFile) const 
 {
     OutFile << "SQR" << '\t'
