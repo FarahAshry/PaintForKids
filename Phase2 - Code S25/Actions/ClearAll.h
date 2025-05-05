@@ -4,8 +4,11 @@
 #include "../GUI/Output.h"
 #include "../ApplicationManager.h"
 
-class ClearAll
+class ClearAll :public Action
 {
+public:
 	ClearAll(ApplicationManager* pApp);
-};
+	void ReadActionParameters();
+	void Execute();
 
+};
