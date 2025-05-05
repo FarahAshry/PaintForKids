@@ -67,6 +67,12 @@ FigureType CSquare::getFigureType() const
 {
 	return SQUARE;
 }
+
+FigureID CSquare::getFigureID() const
+{
+	return Square_ID;
+}
+
 Point CSquare :: getCentre() const {
 	return centre;
 }
