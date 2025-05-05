@@ -334,6 +334,7 @@ void Output::setCrntFillColor(color FillColor)	//set current filling color
 	UI.FillColor = FillColor;
 }
 
+
 //////////////////////////////////////////////////////////////////////////////////////////
 Output::~Output()
 {

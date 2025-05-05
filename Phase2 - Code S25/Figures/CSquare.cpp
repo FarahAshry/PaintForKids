@@ -1,6 +1,7 @@
 #include "CSquare.h"
 #include <fstream>
-
+#include <iostream>
+#include "..\ApplicationManager.h"
 CSquare::CSquare(Point P1, double L, GfxInfo FigureGfxInfo) :CFigure(FigureGfxInfo)
 {
 	centre = P1;
@@ -22,25 +23,28 @@ void CSquare::paste_clone(Point c)
 	centre = c;
 }
 
-void CSquare::printInfo() const
+void CSquare::printInfo()const
 {
 	cout << "SQR" << '\t'
-    	     << ID << '\t'
-             << centre.x << '\t' << centre.y << '\t'
-             << length << '\t'
-	     << colouString(FigGfxInfo.DrawClr0 << '\t';
+		<< ID << '\t'
+		<< centre.x << '\t' << centre.y << '\t'
+		<< length << '\t'
+		<< colourString(FigGfxInfo.DrawClr) << '\t';
+	if (FigGfxInfo.isFilled) cout << colourString(FigGfxInfo.FillClr);
+	else cout << "NO_FILL";
+	cout << '\n';
 }
 
-void CSquare::save(ofstream& outputFile) const 
+void CSquare::save(ofstream& outputFile) const
 {
 	outputFile << "SQR" << '\t'
-    	     	<< ID << '\t'
-            	<< centre.x << '\t' << centre.y << '\t'
-             	<< length << '\t'
-		<< colouString(FigGfxInfo.DrawClr << '\t';
-   
-	if (FigGfxInfo.isFilled)outputFile << colourString(FigGfxInfo.FillClr);
-   	else outputFile << "NO_FILL";
+		<< ID << '\t'
+		<< centre.x << '\t' << centre.y << '\t'
+		<< length << '\t'
+		<< colourString(FigGfxInfo.DrawClr) << '\t';
+
+	if (FigGfxInfo.isFilled) outputFile << colourString(FigGfxInfo.FillClr);
+	else outputFile << "NO_FILL";
 	outputFile << '\n';
 }
 

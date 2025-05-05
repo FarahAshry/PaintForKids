@@ -1,6 +1,8 @@
 #include "CCircle.h"
 #include <fstream>
+#include <iostream>
 #include "..\ApplicationManager.h"
+using namespace std;
 
 CCircle::CCircle(Point P1, double R, GfxInfo FigureGfxInfo) :CFigure(FigureGfxInfo)
 {
@@ -17,29 +19,36 @@ void CCircle::Draw(Output* pOut) const
 CFigure* CCircle::Clone() const {
 	return new CCircle(*this);
 }
+
 void CCircle::paste_clone(Point c)
 {
 	centre = c;
 }
 
-void CCircle::save(ofstream& OutFile) const
+void CCircle::printInfo() const
 {
+	cout << "CIRC" << '\t'
+		<< ID << '\t'
+		<< centre.x << '\t' << centre.y << '\t'
+		<< radius << '\t'
+		<< colourString(FigGfxInfo.DrawClr) << '\t';
+	if (FigGfxInfo.isFilled)cout << colourString(FigGfxInfo.FillClr);
+	else cout << "NO_FILL";
+	cout << '\n';
 }
 
-//void CCircle::save(ofstream& OutFile) const 
-//{
-//    // NADA TODO
-//
-//    outputFile << "CIRC" << '\t'
-//     	       << ID << '\t'
-//               << centre.x << '\t' << centre.y << '\t'
-//               << radius << '\t'
-//    	       << FigGfxInfo.DrawClr << '\t';
-//    
-//    if(FigGfxInfo.isFilled) outputFile << FigGfxInfo.FillClr;
-//    else outputFile << "NO_FILL";
-//    outputFile << '\n';
-//}
+void CCircle::save(ofstream& outputFile) const
+{
+	outputFile << "CIRC" << '\t'
+		<< ID << '\t'
+		<< centre.x << '\t' << centre.y << '\t'
+		<< radius << '\t'
+		<< colourString(FigGfxInfo.DrawClr) << '\t';
+
+	if (FigGfxInfo.isFilled)outputFile << colourString(FigGfxInfo.FillClr);
+	else outputFile << "NO_FILL";
+	outputFile << '\n';
+}
 
 void CCircle::Load(ifstream& Infile) {
 	// Read the circle's data from the file

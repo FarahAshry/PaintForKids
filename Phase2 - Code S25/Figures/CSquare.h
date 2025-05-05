@@ -14,7 +14,7 @@ public:
 	virtual CFigure* Clone() const;
 	virtual void paste_clone(Point c);
 	virtual void printInfo()const;
-	virtual void save(ofstream& OutFile) const;
+	virtual void save(ofstream& outputFile) const;
 	virtual void Load(ifstream& Infile);
 	virtual color StringToColor(string color);
 };
