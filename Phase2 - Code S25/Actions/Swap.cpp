@@ -32,6 +32,7 @@ void Swap::ReadActionParameters() {
 		}
 		countS = 0;
 		SuccessfulyS = 0;
+		return;
 
 	}
 	else {
@@ -40,21 +41,31 @@ void Swap::ReadActionParameters() {
 	}
 }
 void Swap::Execute() {
-	ReadActionParameters();
-	if (!SuccessfulyS) 
-		return;
 	Output* pOut = pManager->GetOutput();
 	CFigure* figList = pManager->GetFigureList();
 	int figCount = pManager->GetFigureCount();
 
-	if (SuccessfulyS) {
-		for (int i = 0; i < figCount; i++)
-		{
-			if (figList[i].IsSelected())
-			{
-				Point C1=figList[i].getCentre();
-				break;
-			}
+	CFigure* selected[2];
+	int j = 0;
+
+	// Get 2 figures 
+	for (int i = 0; i < pManager->GetFigureCount(); i++) {
+
+		if (figList[i].IsSelected()) {
+			selected[j++] = &figList[i];
 		}
+		if (j == 2) 
+			break;
 	}
+
+	// take centers
+	Point c1 = selected[0]->getCentre();
+	Point c2 = selected[1]->getCentre();
+	//move each shape from its center to new center
+	selected[0]->paste_clone(c2);
+	selected[1]->paste_clone(c1);
+	pManager->deselect();
+	pManager->UpdateInterface(); // Redraw scene
+}
+
 }

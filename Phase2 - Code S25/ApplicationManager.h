@@ -83,6 +83,8 @@ public:
 	CFigure** GetFigureList() const;
 
 	int GetFigureCount() const;
+	void deselect() const;
+	CFigure* GetFigureByIndex(int index) const;
 
 
 	/*color StringToColor(string color);*/ //Convert string to color

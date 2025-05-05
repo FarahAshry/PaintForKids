@@ -344,3 +344,22 @@ CFigure* ApplicationManager::GetFigureList() const { return FigList; }
 
 int ApplicationManager::GetFigureCount() const { return FigCount;}
 
+void ApplicationManager::deselect() const{
+
+		for (int i = 0; i < FigCount; i++)
+	{
+		if (FigList[i]->IsSelected())
+		{
+			FigList[i]->SetSelected(false);
+			FigList[i]->ChngDrawClr(BLACK);
+		}
+	}
+}
+CFigure* ApplicationManager::GetFigureByIndex(int index) const
+{
+	if (index >= 0 && index < FigCount) {
+		return FigList[index];  // Return the figure at requested index
+	}
+	return nullptr;  // Return null for invalid indices
+}
+
