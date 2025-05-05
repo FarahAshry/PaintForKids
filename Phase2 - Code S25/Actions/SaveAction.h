@@ -11,7 +11,7 @@ public:
 	//default constractor
 	SaveAction(ApplicationManager* pApplication);
 	virtual void ReadActionParameters();
-	virtual void Execute(bool readparameters = true);
+	virtual void Execute();
 
 	~SaveAction(void);
 };

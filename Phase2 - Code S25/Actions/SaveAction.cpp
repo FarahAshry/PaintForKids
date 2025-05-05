@@ -1,10 +1,11 @@
 #include "SaveAction.h"
-#include "../Figures\CFigure.h"
+#include "../Figures/CFigure.h"
 #include <fstream>
 #include <string>
 #include "../GUI/Input.h"
 #include "../GUI/Output.h"
 #include "../ApplicationManager.h"
+
 
 SaveAction::SaveAction(ApplicationManager* pApplication) : Action(pApplication){}
 
@@ -19,28 +20,26 @@ void SaveAction::ReadActionParameters()
 	pOut->PrintMessage("File Saved ");
 }
 
-void SaveAction::Execute(bool readparameters)
+void SaveAction::Execute()
 {
 	Output* pOut = pManager->GetOutput();
 	ReadActionParameters();
 	ofstream file;
 	file.open(name, ios::out);
 
-	// HOPE GIRLS
-
-	/*if (CFigure::IsFilled() == false)
+	if (CFigure::IsFilled() == false)
 	{
-		file << (pOut->getCrntDrawColor()) << "  " << "No_Fill" << endl;
+		file << colourString(pOut->getCrntDrawColor()) << "  " << "No_Fill" << endl;
 	}
 	else
-		file << (pOut->getCrntDrawColor()) << "  " << (pOut->getCrntFillColor()) << endl;
+		file << colourString(pOut->getCrntDrawColor()) << "  " << colourString(pOut->getCrntFillColor()) << endl;
 
-	for (int i = 0; i < pManager->getFigureCount(); i++)
+	for (int i = 0; i < pManager->GetFigureCount(); i++)
 	{
 		CFigure* fig = pManager->GetFigureByIndex(i);
 		fig->save(file);
 	}
-	file.close();*/
+	file.close();
 }
 
 SaveAction::~SaveAction(void){}
