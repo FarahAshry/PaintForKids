@@ -93,3 +93,19 @@ bool CFigure::IsFilled()const
 {
 	return FigGfxInfo.isFilled; 
 }
+color CFigure::StringToColor(string color) {
+	if (color == "RED")
+		return RED;
+	else if (color == "GREEN")
+		return GREEN;
+	else if (color == "BLUE")
+		return BLUE;
+	else if (color == "YELLOW")
+		return YELLOW;
+	else if (color == "BLACK")
+		return BLACK;
+	else if (color == "WHITE")
+		return WHITE;
+	else
+		return WHITE; // The function must return a color so let white be the default
+}
