@@ -1,6 +1,7 @@
 #include "CTriangle.h"
 #include <fstream>
 #include "../ApplicationManager.h"
+using namespace std;
 
 CTriangle::CTriangle(Point P1, Point P2, Point P3, GfxInfo FigureGfxInfo) :CFigure(FigureGfxInfo)
 {
