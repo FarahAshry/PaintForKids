@@ -303,25 +303,6 @@ ApplicationManager::~ApplicationManager()
 	delete pOut;
 }
 
-CFigure* ApplicationManager::GetFigureList()
-{
-	return nullptr;
-}
-
-int ApplicationManager::GetFigureCount()
-{
-	return 0;
-}
-
-int ApplicationManager::GetSelectedCount()
-{
-	return 0;
-}
-
-int ApplicationManager::GetSelectedFigureCount(DrawMenuItem item)
-{
-	return 0;
-}
 int ApplicationManager::GetSelectedCount() const 
 {
     int count = 0;
@@ -331,12 +312,18 @@ int ApplicationManager::GetSelectedCount() const
 }
 
 int ApplicationManager::GetSelectedFigureCount(FigureType type) const {
-    int count = 0;
+	string typeString;
+	if (type == ITM_RECT) typeString = "RECT";
+	if (type == ITM_SQUARE) typeString = "SQR";
+	if (type == ITM_TRI) typeString = "TRI";
+	if (type == ITM_CIRCLE) typeString = "CIRC";
+	if (type == ITM_HEX) typeString = "HEX";
+	int count = 0;
     for (int i = 0; i < FigCount; i++)
-        if (FigList[i]->IsSelected() && FigList[i]->getFigureType() == type) count++;
+        if (FigList[i]->IsSelected() && FigList[i]->getFigureType() == typeString) count++;
     return count;
 }
 
-CFigure** ApplicationManager::GetFigureList() const { return FigList; }
+CFigure** ApplicationManager::GetFigureList() const { return FigList;}
 
-int ApplicationManager::GetFigureCount() const { return FigCount; }
+int ApplicationManager::GetFigureCount() const { return FigCount;}

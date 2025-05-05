@@ -60,15 +60,7 @@ public:
 	void LoadAll();
 	
 	void RemoveFig(CFigure* pFig);
-
-	CFigure* GetFigureList();
 	
-	int GetFigureCount();
-	
-	int GetSelectedCount();
-	
-	int GetSelectedFigureCount(DrawMenuItem item);
-
 	CFigure* GetSelected() const;
 
 	void SetClipboard(CFigure* pFig,bool IsCut);
@@ -82,6 +74,14 @@ public:
 	void saveAll(ofstream& file) const;
 
 	bool GetIsCut();
+
+	int GetSelectedCount() const;
+
+	int GetSelectedFigureCount(FigureType type) const;
+
+	CFigure** GetFigureList() const;
+
+	int GetFigureCount() const;
 
 	/*color StringToColor(string color);*/ //Convert string to color
 };
