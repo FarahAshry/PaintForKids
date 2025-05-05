@@ -4,6 +4,7 @@
 #include "Action.h"        
 #include "../ApplicationManager.h" 
 #include "../GUI/Output.h"
+#include "../Figures/CFigure.h"
 
 
 Swap::Swap(ApplicationManager* pApp) :Action(pApp) {
@@ -28,7 +29,7 @@ void Swap::ReadActionParameters() {
 				{
 					figList[i].SetSelected(false);
 					figList[i].ChngDrawClr(BLACK);
-					pManager->GetSelectedCount()--;
+			
 				}
 			}
 		countS = 0;
@@ -40,7 +41,19 @@ void Swap::ReadActionParameters() {
 	}
 }
 void Swap::Execute() {
-	if (SuccessfulyS) {
+	ReadActionParameters();
+	Output* pOut = pManager->GetOutput();
+	CFigure* figList = pManager->GetFigureList();
+	int figCount = pManager->GetFigureCount();
 
+	if (SuccessfulyS) {
+		for (int i = 0; i < figCount; i++)
+		{
+			if (figList[i].IsSelected())
+			{
+				Point C1=figList[i].getCentre();
+				break;
+			}
+		}
 	}
 }

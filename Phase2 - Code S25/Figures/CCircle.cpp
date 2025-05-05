@@ -69,3 +69,6 @@ FigureType CCircle::getFigureType() const
 {
 	return CIRCLE;
 }
+ Point CCircle::getCentre() const  {
+	 return centre;
+}

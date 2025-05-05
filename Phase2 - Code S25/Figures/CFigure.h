@@ -30,8 +30,7 @@ public:
 	void ChngDrawClr(color Dclr);	//changes the figure's drawing color
 	void ChngFillClr(color Fclr);	//changes the figure's filling color
 
-	//function for SaveAction
-	virtual void save(ofstream& OutFile) const = 0;
+
 
 	virtual void Load(ifstream& Infile) = 0;	//Load the figure parameters to the file
 
@@ -65,6 +64,7 @@ public:
 	void SetShown();
 	bool isHidden();
 	string colourString(color c) const;
+	virtual Point getCentre() const =0 ;
 };
 
 #endif

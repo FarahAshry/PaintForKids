@@ -67,3 +67,7 @@ FigureType CSquare::getFigureType() const
 {
 	return SQUARE;
 }
+Point CSquare :: getCentre() const {
+	return centre;
+}
+

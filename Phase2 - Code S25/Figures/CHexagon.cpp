@@ -71,3 +71,6 @@ void CHexagon::save(ofstream& outputFile) const
 FigureType CHexagon::getFigureType() const {
     return HEXAGON;
 }
+Point CHexagon::getCentre() const {
+	return centre;
+}

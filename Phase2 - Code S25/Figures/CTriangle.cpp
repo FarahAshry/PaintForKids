@@ -86,3 +86,11 @@ FigureType CTriangle::getFigureType() const
 {
 	return TRI;
 }
+Point CTriangle::getCentre() const {
+	int N_X = ((Corner1.x + Corner2.x + Corner3.x) / 3);
+	int N_Y = ((Corner1.y + Corner2.y + Corner3.y) / 3);
+	Point center;
+	center.x = N_X;
+	center.y = N_Y;
+	return center;
+ }

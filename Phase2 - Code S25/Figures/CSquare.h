@@ -18,6 +18,7 @@ public:
 	virtual void Load(ifstream& Infile);
 	virtual color StringToColor(string color);
 	virtual FigureType getFigureType() const override;
+	virtual Point getCentre() const override;
 };
 
 #endif

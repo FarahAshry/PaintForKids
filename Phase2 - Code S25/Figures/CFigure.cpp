@@ -130,3 +130,4 @@ string CFigure::colourString(color c) const
 	if (c == GREEN) return "GREEN";
 	if (c == BLUE) return "BLUE";
 }
+

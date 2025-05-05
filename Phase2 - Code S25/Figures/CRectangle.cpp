@@ -81,3 +81,10 @@ FigureType CRectangle::getFigureType() const
 {
 	return RECT;
 }
+Point CRectangle::getCentre() const
+{
+	Point center;
+	center.x = (Corner1.x + Corner2.x) / 2;
+	center.y = (Corner1.y + Corner2.y) / 2;
+	return center;
+}
