@@ -51,22 +51,22 @@ void CHexagon::save(ofstream& outputFile) const
     outputFile << '\n';
 }
 
-//void CHexagon::Load(ifstream& Infile)
-//{
-//	// Load the hexagon's data from the file
-//	Infile >> centre.x >> centre.y >> length;
-//	string drawColor, fillColor;
-//	Infile >> drawColor >> fillColor;
-//
-//	FigGfxInfo.DrawClr = StringToColor(drawColor);
-//	if (fillColor == "No_Fill")
-//		FigGfxInfo.isFilled = false;
-//	else
-//	{
-//		FigGfxInfo.isFilled = true;
-//		FigGfxInfo.FillClr = StringToColor(fillColor);
-//	}
-//}
+void CHexagon::Load(ifstream& Infile)
+{
+	// Load the hexagon's data from the file
+	Infile >> centre.x >> centre.y >> length;
+	string drawColor, fillColor;
+	Infile >> drawColor >> fillColor;
+
+	FigGfxInfo.DrawClr = StringToColor(drawColor);
+	if (fillColor == "No_Fill")
+		FigGfxInfo.isFilled = false;
+	else
+	{
+		FigGfxInfo.isFilled = true;
+		FigGfxInfo.FillClr = StringToColor(fillColor);
+	}
+}
 
 FigureType CHexagon::getFigureType() const {
     return HEXAGON;
