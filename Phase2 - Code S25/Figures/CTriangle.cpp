@@ -63,18 +63,20 @@ void CTriangle::printInfo()const
                << Corner2.x << '\t' << Corner2.y << '\t'
 	       << Corner3.x << '\t' << Corner3.y << '\t'
     	       << colourString(FigGfxInfo.DrawClr) << '\t';
+	if(FigGfxInfo.isFilled) cout << colourString(FigGfxInfo.FillClr);
+    	else cout << "NO_FILL";
 }
 
-void CTriangle::save(ofstream& OutFile) const 
+void CTriangle::save(ofstream& outputFile) const 
 {
-	OutFile << "TRI" << '\t'
+	outputFile << "TRI" << '\t'
      	       << ID << '\t'
                << Corner1.x << '\t' << Corner1.y << '\t'
                << Corner2.x << '\t' << Corner2.y << '\t'
 	       << Corner3.x << '\t' << Corner3.y << '\t'
     	       << colourString(FigGfxInfo.DrawClr) << '\t';
     
-    if(FigGfxInfo.isFilled) OutFile << colourString(FigGfxInfo.FillClr);
-    else OutFile << "NO_FILL";
-	OutFile << '\n';
+    if(FigGfxInfo.isFilled) outputFile << colourString(FigGfxInfo.FillClr);
+    else outputFile << "NO_FILL";
+    outputFile << '\n';
 }
