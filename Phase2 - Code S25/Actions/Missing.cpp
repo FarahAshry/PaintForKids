@@ -11,7 +11,6 @@ using namespace std;
 
 Missing::Missing(ApplicationManager* pApp, int score) :Action(pApp), pManager(pApp), score(0), fig(nullptr) {
 	this->pManager = pApp;
-	
 }
 
 void Missing::ReadActionParameters() {
@@ -40,7 +39,7 @@ void Missing::Execute() {
 
 void Missing::compare(CFigure& fig, CFigure& fig2) {
 	Output* pOut = new Output;
-	// HOPE GIRLS
+	//
 
 	/*if (fig == fig2) {
 		pOut->PrintMessage("Match found!");
