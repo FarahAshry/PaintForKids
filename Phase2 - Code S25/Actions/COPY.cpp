@@ -11,23 +11,22 @@ void COPY::ReadActionParameters()
 
 void COPY::Execute()
 {
-    ReadActionParameters();
-
     CFigure* selected;
     selected = pManager->GetSelected();
     Output* pOut = pManager->GetOutput();
 
     if (selected == nullptr)
     {
-        pOut->PrintMessage("You should select only one figure to copy");
+        pOut->PrintMessage("You should select one figure to copy");
         return;
     }
 
+    if (pManager->GetIsCut()) 
+    {
+        pManager->Uncut();
+    }
 
     CFigure* copy = selected->Clone();
-
-
     pManager->SetClipboard(copy,false);
-
     pOut->PrintMessage("Figure copied :) ");
 }
