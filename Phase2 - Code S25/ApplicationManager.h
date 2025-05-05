@@ -80,7 +80,8 @@ public:
 	void Uncut();
 
 	void saveAll(ofstream& file) const;
-bool GetIsCut();
+
+	bool GetIsCut();
 
 	/*color StringToColor(string color);*/ //Convert string to color
 };

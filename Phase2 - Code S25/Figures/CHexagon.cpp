@@ -1,4 +1,8 @@
 #include "CHexagon.h"
+#include <fstream>
+#include <iostream>
+#include "..\ApplicationManager.h"
+using namespace std;
 
 CHexagon::CHexagon(Point P1, double L, GfxInfo FigureGfxInfo) :CFigure(FigureGfxInfo)
 {
@@ -22,23 +26,30 @@ void CHexagon::paste_clone(Point c)
 	centre = c;
 }
 
-void CHexagon::save(ofstream& OutFile) const
+void CHexagon::printInfo()const
 {
+    cout << "HEX" << '\t'
+        << ID << '\t'
+        << centre.x << '\t' << centre.y << '\t'
+        << length << '\t'
+        << colourString(FigGfxInfo.DrawClr) << '\t';
+    if (FigGfxInfo.isFilled) cout << colourString(FigGfxInfo.FillClr);
+    else cout << "NO_FILL";
+    cout << '\n';
 }
 
+void CHexagon::save(ofstream& outputFile) const
+{
+    outputFile << "HEX" << '\t'
+        << ID << '\t'
+        << centre.x << '\t' << centre.y << '\t'
+        << length << '\t'
+        << colourString(FigGfxInfo.DrawClr) << '\t';
 
-//void CHexagon::save(ofstream& OutFile) const 
-//{
-//    outputFile << "HEX" << '\t'
-//     	       << ID << '\t'
-//               << centre.x << '\t' << centre.y << '\t'
-//               << length << '\t'
-//    	       << FigGfxInfo.DrawClr << '\t';
-//    
-//    if(FigGfxInfo.isFilled) outputFile << FigGfxInfo.FillClr;
-//    else outputFile << "NO_FILL";
-//    outputFile << '\n';
-//}
+    if (FigGfxInfo.isFilled) outputFile << colourString(FigGfxInfo.FillClr);
+    else outputFile << "NO_FILL";
+    outputFile << '\n';
+}
 
 //void CHexagon::Load(ifstream& Infile)
 //{

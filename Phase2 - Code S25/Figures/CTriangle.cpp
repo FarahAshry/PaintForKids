@@ -1,5 +1,8 @@
 #include "CTriangle.h"
 #include <fstream>
+#include <iostream>
+#include "..\ApplicationManager.h"
+using namespace std;
 
 CTriangle::CTriangle(Point P1, Point P2, Point P3, GfxInfo FigureGfxInfo) :CFigure(FigureGfxInfo)
 {
@@ -35,27 +38,30 @@ void CTriangle::paste_clone(Point c)
 
 }
 
-void CTriangle::printInfo() const
+void CTriangle::printInfo()const
 {
 	cout << "TRI" << '\t'
 		<< ID << '\t'
 		<< Corner1.x << '\t' << Corner1.y << '\t'
 		<< Corner2.x << '\t' << Corner2.y << '\t'
-		<< Corner3.x << '\t' << Corner3.y << '\t';
-		<< colouString(FigGfxInfo.DrawClr0 << '\t';
+		<< Corner3.x << '\t' << Corner3.y << '\t'
+		<< colourString(FigGfxInfo.DrawClr) << '\t';
+	if (FigGfxInfo.isFilled) cout << colourString(FigGfxInfo.FillClr);
+	else cout << "NO_FILL";
+	cout << '\n';
 }
 
-void CTriangle::save(ofstream& outputFile) const 
+void CTriangle::save(ofstream& outputFile) const
 {
 	outputFile << "TRI" << '\t'
 		<< ID << '\t'
 		<< Corner1.x << '\t' << Corner1.y << '\t'
 		<< Corner2.x << '\t' << Corner2.y << '\t'
-		<< Corner3.x << '\t' << Corner3.y << '\t';
-		<< colouString(FigGfxInfo.DrawClr << '\t';
-   
-	if (FigGfxInfo.isFilled)outputFile << colourString(FigGfxInfo.FillClr);
-   	else outputFile << "NO_FILL";
+		<< Corner3.x << '\t' << Corner3.y << '\t'
+		<< colourString(FigGfxInfo.DrawClr) << '\t';
+
+	if (FigGfxInfo.isFilled) outputFile << colourString(FigGfxInfo.FillClr);
+	else outputFile << "NO_FILL";
 	outputFile << '\n';
 }
 

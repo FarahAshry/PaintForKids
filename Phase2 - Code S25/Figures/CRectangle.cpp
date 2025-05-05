@@ -1,5 +1,7 @@
 #include "CRectangle.h"
 #include <fstream>
+#include <iostream>
+#include "..\ApplicationManager.h"
 
 CRectangle::CRectangle(Point P1, Point P2, GfxInfo FigureGfxInfo):CFigure(FigureGfxInfo)
 {
@@ -33,23 +35,29 @@ void CRectangle::paste_clone(Point c)
  Corner2.y = Corner2.x + P_Y;
 }
 
-void CRectangle::save(ofstream& OutFile) const
+void CRectangle::printInfo() const
 {
+	cout << "RECT" << '\t'
+		<< ID << '\t'
+		<< Corner1.x << '\t' << Corner1.y << '\t'
+		<< Corner2.x << '\t' << Corner2.y << '\t'
+		<< colourString(FigGfxInfo.DrawClr) << '\t';
+	if (FigGfxInfo.isFilled)cout << colourString(FigGfxInfo.FillClr);
+	else cout << "NO_FILL";
+	cout << '\n';
 }
 
-
-//void CRectangle::save(ofstream& OutFile) const 
-//{
-//   outputFile << "RECT" << '\t'
-//     	       << ID << '\t'
-//               << Corner1.x << '\t' << Corner1.y << '\t'
-//               << Corner2.x << '\t' << Corner2.y << '\t'
-//    	         << FigGfxInfo.DrawClr << '\t';
-//    
-//    if(FigGfxInfo.isFilled) outputFile << FigGfxInfo.FillClr;
-//    else outputFile << "NO_FILL";
-//    outputFile << '\n';
-//}
+void CRectangle::save(ofstream& outputFile) const
+{
+	outputFile << "RECT" << '\t'
+		<< ID << '\t'
+		<< Corner1.x << '\t' << Corner1.y << '\t'
+		<< Corner2.x << '\t' << Corner2.y << '\t'
+		<< colourString(FigGfxInfo.DrawClr) << '\t';
+	if (FigGfxInfo.isFilled)cout << colourString(FigGfxInfo.FillClr);
+	else outputFile << "NO_FILL";
+	outputFile << '\n';
+}
 
 void CRectangle::Load(ifstream& Infile) {
 	// Read the rectangle's data from the file

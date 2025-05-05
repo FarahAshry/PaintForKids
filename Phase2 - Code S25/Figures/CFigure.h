@@ -62,7 +62,7 @@ public:
 
 	void SetHidden(bool hide);
 	bool isHidden();
-
+	string colourString(color c) const;
 };
 
 #endif
