@@ -52,6 +52,14 @@ void CRectangle::paste_clone(Point c)
  Corner2.y = Corner2.x + P_Y;
 }
 
+void CRectangle::printInfo()
+{
+	cout << "RECT" << '\t'
+     	       << ID << '\t'
+               << Corner1.x << '\t' << Corner1.y << '\t'
+               << Corner2.x << '\t' << Corner2.y << '\t'
+    	       << colourString(FigGfxInfo.DrawClr) << '\t';
+}
 void CRectangle::save(ofstream& OutFile) const 
 {
     OutFile << "RECT" << '\t'
