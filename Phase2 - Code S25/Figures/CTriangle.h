@@ -16,6 +16,7 @@ public:
 	virtual void paste_clone(Point c);
 	virtual void save(ofstream& OutFile) const;
 	virtual void Load(ifstream& Infile);
+	virtual color StringToColor(string color);
 };
 
 #endif
