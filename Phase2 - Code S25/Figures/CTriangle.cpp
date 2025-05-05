@@ -54,6 +54,16 @@ void CTriangle::paste_clone(Point c)
 
 }
 
+void CTriangle::printInfo()const
+{
+	cout << "TRI" << '\t'
+     	       << ID << '\t'
+               << Corner1.x << '\t' << Corner1.y << '\t'
+               << Corner2.x << '\t' << Corner2.y << '\t'
+	       << Corner3.x << '\t' << Corner3.y << '\t'
+    	       << colourString(FigGfxInfo.DrawClr) << '\t';
+}
+
 void CTriangle::save(ofstream& OutFile) const 
 {
 	OutFile << "TRI" << '\t'
