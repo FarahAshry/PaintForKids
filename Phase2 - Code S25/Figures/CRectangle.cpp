@@ -75,7 +75,7 @@ void CRectangle::Load(ifstream& Infile) {
 
 FigureType CRectangle::getFigureType() const
 {
-	return RECT;
+	return RECTANGLE;
 }
 
 FigureID CRectangle::getFigureID() const
