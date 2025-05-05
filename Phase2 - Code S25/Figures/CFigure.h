@@ -30,7 +30,7 @@ public:
 	void ChngFillClr(color Fclr);	//changes the figure's filling color
 
 	//function for SaveAction
-	virtual void save(ofstream& OutFile) const = 0;
+	virtual void save(ofstream& outputFile) const = 0;
 
 	//function for ptinting
 	virtual void printInfo() const = 0;
