@@ -34,7 +34,6 @@ void AddSqrAction::ReadActionParameters()
 	SqrGfxInfo.FillClr = pOut->getCrntFillColor();
 
 	pOut->ClearStatusBar();
-
 }
 
 //Execute the action
@@ -49,4 +48,3 @@ void AddSqrAction::Execute()
 	//Add the square to the list of figures
 	pManager->AddFigure(S);
 }
-

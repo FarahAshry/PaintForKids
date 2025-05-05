@@ -38,35 +38,49 @@ public:
 	// -- Action-Related Functions
 	//Reads the input command from the user and returns the corresponding action type
 	ActionType GetUserAction() const;
+	
 	void ExecuteAction(ActionType) ; //Creates an action and executes it
 	
 	// -- Figures Management Functions
 	void AddFigure(CFigure* pFig);          //Adds a new figure to the FigList
+	
 	CFigure *GetFigure(int x, int y) const; //Search for a figure given a point inside the figure
 		
+
 	// -- Interface Management Functions
 	Input *GetInput() const; //Return pointer to the input
+	
 	Output *GetOutput() const; //Return pointer to the output
+	
 	void UpdateInterface() const;	//Redraws all the drawing window	
+	
 	CFigure* RemoveAction(Action* pAct);
+	
 	void LoadAll();
+	
 	void RemoveFig(CFigure* pFig);
 
 	CFigure* GetFigureList();
+	
 	int GetFigureCount();
+	
 	int GetSelectedCount();
+	
 	int GetSelectedFigureCount(DrawMenuItem item);
 
+	CFigure* GetSelected() const;
 
-CFigure* GetSelected() const;
+	void SetClipboard(CFigure* pFig,bool IsCut);
+	
+	CFigure* GetClipboard() const;
 
-void SetClipboard(CFigure* pFig,bool IsCut);
-CFigure* GetClipboard() const;
+	void Clear_Clip();
+	
+	void Uncut();
 
-void Clear_Clip();
-void Uncut();
+	void saveAll(ofstream& file) const;
 
-void saveAll(ofstream& file) const;
+	color StringToColor(string color); //Convert string to color
 };
 
 #endif

@@ -13,9 +13,6 @@
 #include <iostream>
 #include <fstream>
 
-
-
-
 //Constructor
 ApplicationManager::ApplicationManager()
 {
@@ -28,13 +25,14 @@ ApplicationManager::ApplicationManager()
 	//Create an array of figure pointers and set them to NULL		
 	for (int i = 0; i < MaxFigCount; i++)
 		FigList[i] = NULL;
+
 	Clipboard = nullptr;
 	CuttedFig = nullptr;
 
-IsClip_Cut = false;
-IsFilled_Cut = false;
-	
+	IsClip_Cut = false;
+	IsFilled_Cut = false;	
 }
+
 
 //==================================================================================//
 //								Actions Related Functions							//
@@ -85,10 +83,11 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 		pAct = NULL;
 	}
 }
+
+
 //==================================================================================//
 //						Figures Management Functions								//
 //==================================================================================//
-
 //Add a figure to the list of figures
 void ApplicationManager::AddFigure(CFigure* pFig)
 {
@@ -103,43 +102,65 @@ CFigure* ApplicationManager::GetFigure(int x, int y) const
 	//Add your code here to search for a figure given a point x,y	
 	//Remember that ApplicationManager only calls functions do NOT implement it.
 	
-	// NADA TODO
-
-	/*for (int i = FigCount-1; i >= 0; i--) {
+	for (int i = FigCount-1; i >= 0; i--) {
         	if (FigList[i]->ContainsPoint(x, y)) return FigList[i];
-    	}*/
+	}
 
     	return nullptr;
 }
+
+
 //==================================================================================//
 //							Interface Management Functions							//
 //==================================================================================//
-
 //Draw all figures on the user interface
 void ApplicationManager::UpdateInterface() const
 {
 	for (int i = 0; i < FigCount; i++)
 		FigList[i]->Draw(pOut);		//Call Draw function (virtual member fn)
 }
+
 CFigure* ApplicationManager::RemoveAction(Action* pAct)
 {
 	return nullptr;
 }
+
 void ApplicationManager::LoadAll()
 {
 }
+
 ////////////////////////////////////////////////////////////////////////////////////
 //Return a pointer to the input
 Input* ApplicationManager::GetInput() const
 {
 	return pIn;
 }
+
 //Return a pointer to the output
 Output* ApplicationManager::GetOutput() const
 {
 	return pOut;
 }
+
 ////////////////////////////////////////////////////////////////////////////////////
+CFigure* ApplicationManager::GetSelected() const {
+	CFigure* selected = nullptr;
+	int c = 0;
+	for (int i = 0; i < FigCount; ++i) {
+		if (FigList[i]->IsSelected()) {
+			c++;
+			selected = FigList[i];
+		}
+	}
+	if (c == 1)
+	{
+		return selected;
+	}
+	else
+	{
+		return nullptr;
+	}
+}
 
 void ApplicationManager::RemoveFig(CFigure* pFig)
 {
@@ -159,44 +180,6 @@ void ApplicationManager::RemoveFig(CFigure* pFig)
 	}
 }
 
-CFigure* ApplicationManager::GetFigureList()
-{
-	return nullptr;
-}
-
-int ApplicationManager::GetFigureCount()
-{
-	return 0;
-}
-
-int ApplicationManager::GetSelectedCount()
-{
-	return 0;
-}
-
-int ApplicationManager::GetSelectedFigureCount(DrawMenuItem item)
-{
-	return 0;
-}
-
-CFigure* ApplicationManager::GetSelected() const {
-	CFigure* selected = nullptr;
-	int c = 0;
-	for (int i = 0; i < FigCount; ++i) {
-		if (FigList[i]->IsSelected()) {
-			c++;
-			selected = FigList[i];
-		}
-	}
-	if (c == 1)
-	{
-		return selected;
-	}
-	else
-	{
-		return nullptr;
-	}
-}
 void ApplicationManager::Uncut()
 {
 	if (IsClip_Cut && CuttedFig)
@@ -235,9 +218,9 @@ void ApplicationManager::SetClipboard(CFigure* pFig,bool IsCut)
 		CuttedFig = nullptr;
 
 }
+
 void ApplicationManager::Clear_Clip()
 {
-	
 	if (IsClip_Cut)
 	{
 		if (CuttedFig)
@@ -255,9 +238,8 @@ void ApplicationManager::Clear_Clip()
 	Clipboard = nullptr;
 	CuttedFig = nullptr;
 	IsClip_Cut = false;
-
-
 }
+
 CFigure* ApplicationManager::GetClipboard() const
 {
 	return Clipboard;
@@ -267,12 +249,9 @@ CFigure* ApplicationManager::GetClipboard() const
 void ApplicationManager:: saveAll(ofstream & file) const
 {
 	file << FigCount<< endl;
-
-	// NADA TODO
-	//for (int i = 0; i < FigCount; i++)FigList[i]->Save(file);
+	
+	for (int i = 0; i < FigCount; i++)FigList[i]->save(file);
 }
-
-
 
 //Destructor
 ApplicationManager::~ApplicationManager()
@@ -281,6 +260,42 @@ ApplicationManager::~ApplicationManager()
 		delete FigList[i];
 	delete pIn;
 	delete pOut;
-
 }
 
+color ApplicationManager::StringToColor(string color) {
+	if (color == "RED")
+		return RED;
+	else if (color == "GREEN")
+		return GREEN;
+	else if (color == "BLUE")
+		return BLUE;
+	else if (color == "YELLOW")
+		return YELLOW;
+	else if (color == "BLACK")
+		return BLACK;
+	else if (color == "WHITE")
+		return WHITE;
+	else
+		return WHITE; // The function must return a color so let white be the default
+}
+
+// HOPE GIRLS
+CFigure* ApplicationManager::GetFigureList()
+{
+	return nullptr;
+}
+
+int ApplicationManager::GetFigureCount()
+{
+	return 0;
+}
+
+int ApplicationManager::GetSelectedCount()
+{
+	return 0;
+}
+
+int ApplicationManager::GetSelectedFigureCount(DrawMenuItem item)
+{
+	return 0;
+}

@@ -14,8 +14,6 @@ void CSquare::Draw(Output* pOut) const
 	pOut->DrawSquare(centre, length, FigGfxInfo, Selected);
 }
 
-void CSquare::Load(ofstream& Infile) {}
-
 CFigure* CSquare::Clone() const {
 	return new CSquare(*this);
 }
@@ -23,17 +21,39 @@ void CSquare::paste_clone(Point c)
 {
 	centre = c;
 }
-void CSquare::save(ofstream& OutFile) const 
-{
-    // NADA TODO
 
-   /* outputFile << "SQR" << '\t'
-     	       << ID << '\t'
-               << centre.x << '\t' << centre.y << '\t'
-               << length << '\t'
-    	       << FigGfxInfo.DrawClr << '\t';
-    
-    if(FigGfxInfo.isFilled) outputFile << FigGfxInfo.FillClr;
-    else outputFile << "NO_FILL";
-    outputFile << '\n';*/
+void CSquare::save(ofstream& OutFile) const
+{
 }
+
+void CSquare::Load(ifstream& Infile)
+{
+}
+
+//void CSquare::save(ofstream& OutFile) const 
+//{
+//   outputFile << "SQR" << '\t'
+//     	       << ID << '\t'
+//               << centre.x << '\t' << centre.y << '\t'
+//               << length << '\t'
+//    	       << FigGfxInfo.DrawClr << '\t';
+//    
+//    if(FigGfxInfo.isFilled) outputFile << FigGfxInfo.FillClr;
+//    else outputFile << "NO_FILL";
+//    outputFile << '\n';
+//}
+
+//void CSquare::Load(ifstream& Infile) {
+//	// read the square's data from the file
+//	Infile >> centre.x >> centre.y >> length;
+//	string drawColor, fillColor;
+//	Infile >> drawColor >> fillColor;
+//	FigGfxInfo.DrawClr = StringToColor(drawColor);
+//	if (fillColor == "No_Fill")
+//		FigGfxInfo.isFilled = false;
+//	else
+//	{
+//		FigGfxInfo.isFilled = true;
+//		FigGfxInfo.FillClr = StringToColor(fillColor);
+//	}
+//}

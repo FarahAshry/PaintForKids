@@ -8,8 +8,12 @@
 class AddCircAction : public Action
 {
 private:
-	Point P1; //circle centre
-	double radius; //circle radius
+	//circle centre
+	Point P1; 
+
+	//circle radius
+	double radius; 
+
 	GfxInfo CircGfxInfo;
 public:
 	AddCircAction(ApplicationManager* pApp);

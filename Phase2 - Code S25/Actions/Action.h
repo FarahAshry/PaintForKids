@@ -10,18 +10,18 @@ class ApplicationManager; //forward class declaration
 class Action
 {
 protected:
-	ApplicationManager *pManager;	//Actions needs AppMngr to do their job
+	//Actions needs AppMngr to do their job
+	ApplicationManager *pManager;	
 
 public:
-
-	Action(ApplicationManager *pApp) { pManager = pApp; }	//constructor
+	//constructor
+	Action(ApplicationManager *pApp) { pManager = pApp; }	
 
 	//Reads parameters required for action to execute (code depends on action type)
 	virtual void ReadActionParameters() =0;
 	
 	//Execute action (code depends on action type)
 	virtual void Execute() =0;
-
 };
 
 #endif

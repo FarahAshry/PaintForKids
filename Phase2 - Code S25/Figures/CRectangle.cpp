@@ -6,7 +6,6 @@ CRectangle::CRectangle(Point P1, Point P2, GfxInfo FigureGfxInfo):CFigure(Figure
 	Corner1 = P1;
 	Corner2 = P2;
 }
-	
 
 void CRectangle::Draw(Output* pOut) const
 {
@@ -18,9 +17,6 @@ FigureType CRectangle::getFigureType() const {
 	return Rect_ID; // Return the correct enum value
 }
 
-void CRectangle::Load(ofstream& Infile) {
-	
-}
  CFigure* CRectangle::Clone() const {
 	return new CRectangle(*this);
 }
@@ -37,17 +33,41 @@ void CRectangle::paste_clone(Point c)
  Corner2.y = Corner2.x + P_Y;
 }
 
-void CRectangle::save(ofstream& OutFile) const 
+void CRectangle::save(ofstream& OutFile) const
 {
-    // NADA TODO
-   /* outputFile << "RECT" << '\t'
-     	       << ID << '\t'
-               << Corner1.x << '\t' << Corner1.y << '\t'
-               << Corner2.x << '\t' << Corner2.y << '\t'
-    	       << FigGfxInfo.DrawClr << '\t';
-    
-    if(FigGfxInfo.isFilled) outputFile << FigGfxInfo.FillClr;
-    else outputFile << "NO_FILL";
-    outputFile << '\n';*/
 }
 
+void CRectangle::Load(ifstream& Infile)
+{
+}
+
+//void CRectangle::save(ofstream& OutFile) const 
+//{
+//   outputFile << "RECT" << '\t'
+//     	       << ID << '\t'
+//               << Corner1.x << '\t' << Corner1.y << '\t'
+//               << Corner2.x << '\t' << Corner2.y << '\t'
+//    	         << FigGfxInfo.DrawClr << '\t';
+//    
+//    if(FigGfxInfo.isFilled) outputFile << FigGfxInfo.FillClr;
+//    else outputFile << "NO_FILL";
+//    outputFile << '\n';
+//}
+
+//void CRectangle::Load(ifstream& Infile) {
+//	// Read the rectangle's data from the file
+//	Infile >> Corner1.x >> Corner1.y >> Corner2.x >> Corner2.y;
+//
+//	// Read the figure's graphics info (e.g., colors, pen width)
+//	string drawColor, fillColor;
+//	Infile >> drawColor >> fillColor;
+//
+//	FigGfxInfo.DrawClr = StringToColor(drawColor);
+//	if (fillColor == "No_Fill")
+//		FigGfxInfo.isFilled = false;
+//	else
+//	{
+//		FigGfxInfo.isFilled = true;
+//		FigGfxInfo.FillClr = StringToColor(fillColor);
+//	}
+//}

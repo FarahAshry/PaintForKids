@@ -40,6 +40,8 @@ void Missing::Execute() {
 
 void Missing::compare(CFigure& fig, CFigure& fig2) {
 	Output* pOut = new Output;
+	// HOPE GIRLS
+
 	/*if (fig == fig2) {
 		pOut->PrintMessage("Match found!");
 		incScore();

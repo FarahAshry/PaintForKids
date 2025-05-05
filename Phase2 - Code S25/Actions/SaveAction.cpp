@@ -26,7 +26,7 @@ void SaveAction::Execute(bool readparameters)
 	ofstream file;
 	file.open(name, ios::out);
 
-	// NADA TODO
+	// HOPE GIRLS
 
 	/*if (CFigure::IsFilled() == false)
 	{

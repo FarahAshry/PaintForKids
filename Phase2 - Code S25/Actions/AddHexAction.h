@@ -8,9 +8,14 @@
 class AddHexAction : public Action
 {
 private:
-	Point P1; //hexagon centre
-	double Length; //Length of hexagon sides
+	//hexagon centre
+	Point P1; 
+
+	//Length of hexagon sides
+	double Length; 
+
 	GfxInfo HexGfxInfo;
+
 public:
 	AddHexAction(ApplicationManager* pApp);
 

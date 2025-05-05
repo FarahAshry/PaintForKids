@@ -37,10 +37,8 @@ void AddTriAction::ReadActionParameters()
 	TriGfxInfo.FillClr = pOut->getCrntFillColor();
 
 	pOut->ClearStatusBar();
-
 }
 
-//Execute the action
 void AddTriAction::Execute()
 {
 	//This action needs to read some parameters first

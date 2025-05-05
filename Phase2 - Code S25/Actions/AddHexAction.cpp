@@ -37,7 +37,6 @@ void AddHexAction::ReadActionParameters()
 
 }
 
-//Execute the action
 void AddHexAction::Execute()
 {
 	//This action needs to read some parameters first

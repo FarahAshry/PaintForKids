@@ -8,8 +8,12 @@
 class AddSqrAction : public Action
 {
 private:
-	Point P1; //Square centre
-	double Length; //Square length
+	//Square centre
+	Point P1; 
+
+	//Square length
+	double Length; 
+
 	GfxInfo SqrGfxInfo;
 public:
 	AddSqrAction(ApplicationManager* pApp);

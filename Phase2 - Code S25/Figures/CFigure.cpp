@@ -74,6 +74,10 @@ string CFigure::GetInfoString()
 {
 	return string();
 }
+boolean CFigure::ContainsPoint(int x, int y) const
+{
+	return boolean();
+}
 color CFigure::GetFillColor() const
 {
 	return FigGfxInfo.FillClr; 

@@ -28,16 +28,16 @@ void AddCircAction::ReadActionParameters()
 	//Read radius of the circle
 	radius = stod(pIn->GetSrting(pOut));
 
-	CircGfxInfo.isFilled = false;	//default is not filled
+	//default is not filled
+	CircGfxInfo.isFilled = false;	
+
 	//get drawing, filling colors and pen width from the interface
 	CircGfxInfo.DrawClr = pOut->getCrntDrawColor();
 	CircGfxInfo.FillClr = pOut->getCrntFillColor();
 
 	pOut->ClearStatusBar();
-
 }
 
-//Execute the action
 void AddCircAction::Execute()
 {
 	//This action needs to read some parameters first
@@ -49,4 +49,3 @@ void AddCircAction::Execute()
 	//Add the circle to the list of figures
 	pManager->AddFigure(C);
 }
-

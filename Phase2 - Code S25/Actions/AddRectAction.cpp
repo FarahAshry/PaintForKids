@@ -31,7 +31,6 @@ void AddRectAction::ReadActionParameters()
 	RectGfxInfo.FillClr = pOut->getCrntFillColor();
 
 	pOut->ClearStatusBar();
-
 }
 
 //Execute the action

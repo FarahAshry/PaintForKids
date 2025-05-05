@@ -324,6 +324,15 @@ void Output::DrawHexagon(Point P1, double length, GfxInfo HexGfxInfo, bool selec
 	delete[]yptrlist;
 }
 
+void Output::setCrntDrawColor(color DrawColor)	//set current drawing color
+{
+	UI.DrawColor = DrawColor;
+}
+
+void Output::setCrntFillColor(color FillColor)	//set current filling color
+{
+	UI.FillColor = FillColor;
+}
 
 //////////////////////////////////////////////////////////////////////////////////////////
 Output::~Output()

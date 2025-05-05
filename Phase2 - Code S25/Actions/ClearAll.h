@@ -7,6 +7,5 @@
 class ClearAll
 {
 	ClearAll(ApplicationManager* pApp);
-
 };
 
