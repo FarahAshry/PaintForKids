@@ -20,7 +20,7 @@ void CUT::Execute()
 
     if (selected == nullptr)
     {
-        pOut->PrintMessage("Error!! you can only select one figure to cut");
+        pOut->PrintMessage("You should only select one figure to cut");
         return;
     }
 
