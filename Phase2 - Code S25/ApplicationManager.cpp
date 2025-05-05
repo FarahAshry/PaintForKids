@@ -261,6 +261,7 @@ void ApplicationManager::RemoveFig(CFigure* pFig)
 	}
 }
 
+
 bool ApplicationManager::GetIsCut()
 {
 	if (IsClip_Cut)
@@ -294,14 +295,6 @@ void ApplicationManager:: saveAll(ofstream & file) const
 	for (int i = 0; i < FigCount; i++)FigList[i]->save(file);
 }
 
-//Destructor
-ApplicationManager::~ApplicationManager()
-{
-	for (int i = 0; i < FigCount; i++)
-		delete FigList[i];
-	delete pIn;
-	delete pOut;
-}
 
 int ApplicationManager::GetSelectedCount() const 
 {
@@ -327,3 +320,26 @@ int ApplicationManager::GetSelectedFigureCount(FigureType type) const {
 CFigure** ApplicationManager::GetFigureList() const { return FigList;}
 
 int ApplicationManager::GetFigureCount() const { return FigCount;}
+
+CFigure* ApplicationManager::Get2Selected(CFigure*) const {
+	CFigure* Fig1 = nullptr;
+	CFigure* Fig2= nullptr;
+if (Fig1->IsSelected() && GetSelectedCount() == 2) {
+	Fig1 = FigList[0];
+	Fig2 = FigList[2];
+	}
+else {
+	return  Fig1;
+		}
+	
+
+}
+
+//Destructor
+ApplicationManager::~ApplicationManager()
+{
+	for (int i = 0; i < FigCount; i++)
+		delete FigList[i];
+	delete pIn;
+	delete pOut;
+}

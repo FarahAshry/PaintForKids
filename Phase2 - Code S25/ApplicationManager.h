@@ -62,6 +62,7 @@ public:
 	void RemoveFig(CFigure* pFig);
 	
 	CFigure* GetSelected() const;
+	CFigure* Get2Selected() const;
 
 	void SetClipboard(CFigure* pFig,bool IsCut);
 	
@@ -79,9 +80,11 @@ public:
 
 	int GetSelectedFigureCount(FigureType type) const;
 
+
 	CFigure** GetFigureList() const;
 
 	int GetFigureCount() const;
+	CFigure* Get2Selected(CFigure*) const;
 
 	/*color StringToColor(string color);*/ //Convert string to color
 };

@@ -12,10 +12,12 @@ Swap::Swap(ApplicationManager* pApp) :Action(pApp) {
 void Swap::ReadActionParameters() {
 	Output* pOut = pManager->GetOutput();
 	int countS = 0;
-	countS = pManager->GetSelectedCount();
+	countS = (pManager->GetSelectedCount());
 	if (countS < 2) {
 		pOut->PrintMessage("Please select atleast 2 figures to swap");
+
 		countS = 0;
+
 	
 		
 	}
