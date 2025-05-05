@@ -38,7 +38,10 @@ public:
 	///It should be overridden by each inherited figure
 
 	///Decide the parameters that you should pass to each function	
+
 	virtual FigureType getFigureType() const =0 ;	//returns the figure type
+	virtual FigureID getFigureID() const = 0;	//returns the figure ID
+
 	color getColor(); 	//returns the color of the figure for matching game check
 	color GetFillColor() const;
 	color GetDrawColor() const;
@@ -52,7 +55,7 @@ public:
 	virtual color StringToColor(string color);
 
 
-	virtual void Save(ofstream &outputFile) const= 0;	//Save the figure parameters to the file
+	virtual void save(ofstream &outputFile) const= 0;	//Save the figure parameters to the file
 	//virtual void Load(ifstream &Infile) = 0;	//Load the figure parameters to the file
 
 	virtual void printInfo() const = 0;	//print all figure info on the status bar
