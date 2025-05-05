@@ -49,6 +49,7 @@ public:
 	int incrementFig();
 	virtual CFigure* Clone() const = 0;
 	virtual void paste_clone(Point c)=0;
+	virtual color StringToColor(string color);
 
 
 	//virtual void Save(ofstream &OutFile) = 0;	//Save the figure parameters to the file
