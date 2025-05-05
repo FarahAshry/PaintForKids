@@ -7,16 +7,20 @@
 
 
 Swap::Swap(ApplicationManager* pApp) :Action(pApp) {
-
 }
 void Swap::ReadActionParameters() {
+	
 	Output* pOut = pManager->GetOutput();
 	int countS = 0;
 	countS = (pManager->GetSelectedCount());
-	if (countS < 2) {
-		pOut->PrintMessage("Please select atleast 2 figures to swap");
-			CFigure* figList = pManager->GetFigureList();
-			int figCount = pManager->GetFigureCount();
+	if (countS !=2) {
+		if (countS<2)
+			pOut->PrintMessage("Please select atleast 2 figures to swap");
+		if (countS > 2)
+			pOut->PrintMessage("Select only 2 figures to swap");
+
+		CFigure* figList = pManager->GetFigureList();
+		int figCount = pManager->GetFigureCount();
 
 			for (int i = 0; i < figCount; i++)
 			{
@@ -27,21 +31,16 @@ void Swap::ReadActionParameters() {
 					pManager->GetSelectedCount()--;
 				}
 			}
-		}
 		countS = 0;
 
-	
-		
-	}
-	else if (countS > 2)
-	{
-		pOut->PrintMessage("Select only 2 figures to swap");
 	}
 	else {
 		pOut->PrintMessage("Selected 2 figures to swap");
-
+		SuccessfulyS = 1;
 	}
 }
 void Swap::Execute() {
+	if (SuccessfulyS) {
 
+	}
 }

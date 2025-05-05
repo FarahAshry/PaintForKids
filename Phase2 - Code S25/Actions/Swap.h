@@ -5,6 +5,10 @@
 
 class Swap : public Action
 {
+private:
+	bool SuccessfulyS = 0;
+public:
+
 	Swap(ApplicationManager* pApp);
 	void ReadActionParameters();
 	void Execute();
