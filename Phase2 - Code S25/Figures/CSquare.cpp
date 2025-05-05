@@ -45,16 +45,19 @@ void CSquare::printInfo()const
        << centre.x << '\t' << centre.y << '\t'
        << length << '\t'
        << colourString(FigGfxInfo.DrawClr) << '\t';
+	if(FigGfxInfo.isFilled) cout << colourString(FigGfxInfo.FillClr);
+	else cout << "NO_FILL";
+	cout << '\n';
 }
-void CSquare::save(ofstream& OutFile) const 
+void CSquare::save(ofstream& outputFile) const 
 {
-    OutFile << "SQR" << '\t'
+    outputFile << "SQR" << '\t'
      	       << ID << '\t'
                << centre.x << '\t' << centre.y << '\t'
                << length << '\t'
     	       << colourString(FigGfxInfo.DrawClr) << '\t';
     
-    if(FigGfxInfo.isFilled) OutFile << colourString(FigGfxInfo.FillClr);
-    else OutFile << "NO_FILL";
-	OutFile << '\n';
+    if(FigGfxInfo.isFilled) outputFile << colourString(FigGfxInfo.FillClr);
+    else outputFile << "NO_FILL";
+	outputFile << '\n';
 }
