@@ -67,3 +67,7 @@ void CHexagon::save(ofstream& outputFile) const
 //		FigGfxInfo.FillClr = StringToColor(fillColor);
 //	}
 //}
+
+FigureType CHexagon::getFigureType() const {
+    return HEXAGON;
+}
