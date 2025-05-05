@@ -35,26 +35,29 @@ void CTriangle::paste_clone(Point c)
 
 }
 
-void CTriangle::save(ofstream& OutFile) const
+void CTriangle::printInfo() const
 {
+	cout << "TRI" << '\t'
+		<< ID << '\t'
+		<< Corner1.x << '\t' << Corner1.y << '\t'
+		<< Corner2.x << '\t' << Corner2.y << '\t'
+		<< Corner3.x << '\t' << Corner3.y << '\t';
+		<< colouString(FigGfxInfo.DrawClr0 << '\t';
 }
 
-//void CTriangle::save(ofstream& OutFile) const 
-//{
-//	OutFile << "TRI" << '\t'
-//		<< ID << '\t'
-//		<< Corner1.x << '\t' << Corner1.y << '\t'
-//		<< Corner2.x << '\t' << Corner2.y << '\t'
-//		<< Corner3.x << '\t' << Corner3.y << '\t';
-//		<< FigGfxInfo.DrawClr << '\t';
-//    
-//	if (FigGfxInfo.isFilled)
-//		OutFile << FigGfxInfo.FillClr;
-//    else 
-//		OutFile << "NO_FILL";
-//
-//    OutFile << '\n';
-//}
+void CTriangle::save(ofstream& outputFile) const 
+{
+	outputFile << "TRI" << '\t'
+		<< ID << '\t'
+		<< Corner1.x << '\t' << Corner1.y << '\t'
+		<< Corner2.x << '\t' << Corner2.y << '\t'
+		<< Corner3.x << '\t' << Corner3.y << '\t';
+		<< colouString(FigGfxInfo.DrawClr << '\t';
+   
+	if (FigGfxInfo.isFilled)outputFile << colourString(FigGfxInfo.FillClr);
+   	else outputFile << "NO_FILL";
+	outputFile << '\n';
+}
 
 void CTriangle::Load(ifstream& Infile) {
 	// Read the triangle's data from the file
