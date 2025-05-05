@@ -16,7 +16,7 @@ protected:
 	int incFig;
 
 	string FigType;
-
+	bool hidden;
 	/// Add more parameters if needed.
 
 public:
@@ -59,6 +59,9 @@ public:
 
 	string GetInfoString();
 	boolean ContainsPoint(int x, int y) const;	//checks if a point is inside the figure
+
+	void SetHidden(bool hide);
+	bool isHidden();
 
 };
 
