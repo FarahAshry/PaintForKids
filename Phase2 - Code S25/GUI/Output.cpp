@@ -335,6 +335,14 @@ void Output::DrawHexagon(Point P1, double length, GfxInfo HexGfxInfo, bool selec
 	delete[]yptrlist;
 }
 
+string Output::colourString(color c) 
+{
+	if (c == BLACK) return "BLACK";
+	if (c == YELLOW) return "YELLOW";
+	if (c == ORANGE) return "ORANGE";
+	if (c == RED) return "RED";
+	if (c == GREEN) return "GREEN";
+}
 
 //////////////////////////////////////////////////////////////////////////////////////////
 Output::~Output()
