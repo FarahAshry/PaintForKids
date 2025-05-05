@@ -15,7 +15,19 @@ void Swap::ReadActionParameters() {
 	countS = (pManager->GetSelectedCount());
 	if (countS < 2) {
 		pOut->PrintMessage("Please select atleast 2 figures to swap");
+			CFigure* figList = pManager->GetFigureList();
+			int figCount = pManager->GetFigureCount();
 
+			for (int i = 0; i < figCount; i++)
+			{
+				if (figList[i].IsSelected())
+				{
+					figList[i].SetSelected(false);
+					figList[i].ChngDrawClr(BLACK);
+					pManager->GetSelectedCount()--;
+				}
+			}
+		}
 		countS = 0;
 
 	
