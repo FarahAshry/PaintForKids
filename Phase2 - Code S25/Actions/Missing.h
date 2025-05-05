@@ -15,14 +15,15 @@ private:
 public:
 	Missing(ApplicationManager* pApp, int score);
 	void ReadActionParameters();
-	void Execute();
+	void Execute(ActionType ActType);
 	void incScore();
 	void decScore();
 	int getScore();
 	void compare(CFigure& fig, CFigure& fig2);
-	void HideFigure(CFigure& fig, bool hide);
+	void HideFigure(CFigure* fig, bool hide);
 	void ShowFigure(CFigure& fig, bool show);
-	bool isHidden();
+
+
 	~Missing();
 };
 
