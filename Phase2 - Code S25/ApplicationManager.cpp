@@ -13,7 +13,6 @@
 #include "Actions/LoadAction.h"
 #include"Actions\SwitchToPlay.h"
 #include"Actions/SaveAction.h"
-#include "Actions/Select.h"
 
 #include <iostream>
 #include <fstream>
@@ -80,7 +79,9 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 
 	case EXIT:
 		///create ExitAction here
-
+		pOut->PrintMessage("EXIT");
+		pOut->ClearStatusBar();
+		pOut->ClearDrawArea();
 		break;
 
 	case STATUS:	//a click on the status bar ==> no action
@@ -90,15 +91,17 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 		pAct = new COPY(this);
 		break;
 	case CUT_FIG:
-	        pAct = new CUT(this);
-	        break;
+		pAct = new CUT(this);
+		break;
 
-    case PASTE_FIG:
-	    pAct = new PASTE(this);
-	    break;
-case TO_PLAY:
-	pAct = new SwitchToPlay(this);
-	break;
+	case PASTE_FIG:
+		pAct = new PASTE(this);
+		break;
+
+	case TO_PLAY:
+		pAct = new SwitchToPlay(this);
+		break;
+
 	case MISSING_SHAPES:
 		pAct = new Missing(this, 0);
 		break;
@@ -108,21 +111,16 @@ case TO_PLAY:
 		break;
 
 	case TO_DRAW:
-		
-		break;
-
-	case TO_PLAY:
 
 		break;
 
-	}
-
-	//Execute the created action
-	if (pAct != NULL)
-	{
-		pAct->Execute();//Execute
-		delete pAct;	//You may need to change this line depending to your implementation
-		pAct = NULL;
+		//Execute the created action
+		if (pAct != NULL)
+		{
+			pAct->Execute();//Execute
+			delete pAct;	//You may need to change this line depending to your implementation
+			pAct = NULL;
+		}
 	}
 }
 
@@ -214,8 +212,8 @@ void ApplicationManager::SetClipboard(CFigure* pFig, bool IsCut)
 		pFig->ChngFillClr(GRAY);
 		pFig->ChngDrawClr(GRAY);
 
-	}
 }
+
 
 CFigure* ApplicationManager::GetClipboard() const
 {

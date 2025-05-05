@@ -83,7 +83,7 @@ public:
 	CFigure** GetFigureList() const;
 
 	int GetFigureCount() const;
-	void deselect() F;
+	void deselect() ;
 	CFigure* GetFigureByIndex(int index) const;
 
 

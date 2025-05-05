@@ -106,5 +106,5 @@ void CRectangle::setCentre(Point c)
 
 		Corner2.x = c.x + w / 2;
 		Corner2.y = c.y + h / 2;
-	}
+	
 }
