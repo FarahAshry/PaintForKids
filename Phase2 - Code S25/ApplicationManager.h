@@ -28,8 +28,9 @@ private:
 	color DrawOg_Cut;
 	color FillOg_Cut;
 
-	boolean IsClip_Cut;
-	boolean IsFilled_Cut;
+	bool IsClip_Cut;
+	bool IsFilled_Cut;
+        bool IsHighlighted_Cut;
 
 public:	
 	ApplicationManager(); 
