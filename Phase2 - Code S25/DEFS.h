@@ -65,7 +65,7 @@ enum FigureType {
 	SQUARE,
 	TRI,
 	HEXAGON,
-	CIRCLE
+	CIRCLE,
 
 	Rect_ID = 6,
 	Square_ID = 7,
