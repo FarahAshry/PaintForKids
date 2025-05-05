@@ -162,6 +162,68 @@ Output* ApplicationManager::GetOutput() const
 }
 
 ////////////////////////////////////////////////////////////////////////////////////
+void ApplicationManager::SetClipboard(CFigure* pFig, bool IsCut)
+{
+	IsClip_Cut = IsCut;
+	
+	if (Clipboard)
+	{
+		delete Clipboard;
+		Clipboard = nullptr;
+	}
+
+	if (IsClip_Cut && CuttedFig)
+	{
+		Uncut();
+	}
+	if(IsCut)
+	{
+		CuttedFig = pFig;
+		if (pFig->IsFilled())
+		{
+			IsHighlighted_Cut = true;
+			IsFilled_Cut = true;
+			DrawOg_Cut = pFig->GetDrawColor();
+			FillOg_Cut = pFig->GetFillColor();
+		}
+		else
+		{
+			IsHighlighted_Cut = true;
+			IsFilled_Cut = false;
+		}
+		
+		pFig->ChngFillClr(GRAY);
+		pFig->ChngDrawClr(GRAY);
+
+	}
+}
+
+CFigure* ApplicationManager::GetClipboard() const
+{
+	return Clipboard;
+}
+
+void ApplicationManager::Clear_Clip()
+{
+	if (IsClip_Cut)
+	{
+		if (CuttedFig)
+		{
+			CuttedFig->ChngFillClr(UI.FillColor);
+			CuttedFig->ChngDrawClr(UI.DrawColor);
+		}
+	}
+
+	else if (Clipboard)
+	{
+		delete Clipboard;
+	}
+
+	Clipboard = nullptr;
+	CuttedFig = nullptr;
+	IsClip_Cut = false;
+}
+
 CFigure* ApplicationManager::GetSelected() const {
 	CFigure* selected = nullptr;
 	int c = 0;
@@ -199,45 +261,6 @@ void ApplicationManager::RemoveFig(CFigure* pFig)
 	}
 }
 
-void ApplicationManager::Uncut()
-{
-	if (IsClip_Cut && CuttedFig)
-	{
-		CuttedFig->ChngFillClr(FillOg_Cut);
-		CuttedFig->ChngDrawClr(DrawOg_Cut);
-
-		CuttedFig = nullptr;
-		IsClip_Cut = false;
-		Clipboard = nullptr;
-	}
-}
-
-void ApplicationManager::SetClipboard(CFigure* pFig,bool IsCut)
-{
-	Uncut();
-	if (Clipboard && !IsClip_Cut)
-	{
-		delete Clipboard;
-	}
-	Clipboard = pFig;
-	IsClip_Cut = IsCut;
-	
-	if (IsCut)
-	{
-		CuttedFig = pFig;
-
-		FillOg_Cut = pFig->GetFillColor();
-		DrawOg_Cut = pFig->GetDrawColor();
-
-		pFig->ChngFillClr(GRAY);
-		pFig->ChngDrawClr(GRAY);
-
-	}
-	else
-		CuttedFig = nullptr;
-
-}
-
 bool ApplicationManager::GetIsCut()
 {
 	if (IsClip_Cut)
@@ -249,30 +272,18 @@ bool ApplicationManager::GetIsCut()
 		return false;
 	}
 }
-void ApplicationManager::Clear_Clip()
+
+void ApplicationManager::Uncut()
 {
-	if (IsClip_Cut)
+	if (IsClip_Cut && CuttedFig)
 	{
-		if (CuttedFig)
-		{
-			CuttedFig->ChngFillClr(UI.FillColor);
-			CuttedFig->ChngDrawClr(UI.DrawColor);
-		}
+		CuttedFig->ChngFillClr(FillOg_Cut);
+		CuttedFig->ChngDrawClr(DrawOg_Cut);
+
+		CuttedFig = nullptr;
+		IsClip_Cut = false;
+		Clipboard = nullptr;
 	}
-
-	else if (Clipboard)
-	{
-		delete Clipboard;
-	}
-
-	Clipboard = nullptr;
-	CuttedFig = nullptr;
-	IsClip_Cut = false;
-}
-
-CFigure* ApplicationManager::GetClipboard() const
-{
-	return Clipboard;
 }
 
 // Save all figures 
