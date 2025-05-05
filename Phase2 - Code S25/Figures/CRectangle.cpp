@@ -60,16 +60,16 @@ void CRectangle::printInfo()
                << Corner2.x << '\t' << Corner2.y << '\t'
     	       << colourString(FigGfxInfo.DrawClr) << '\t';
 }
-void CRectangle::save(ofstream& OutFile) const 
+void CRectangle::save(ofstream& outputFile) const 
 {
-    OutFile << "RECT" << '\t'
+    outputFile << "RECT" << '\t'
      	       << ID << '\t'
                << Corner1.x << '\t' << Corner1.y << '\t'
                << Corner2.x << '\t' << Corner2.y << '\t'
     	       << colourString(FigGfxInfo.DrawClr) << '\t';
     
-    if(FigGfxInfo.isFilled) OutFile << colourString(FigGfxInfo.FillClr);
-    else OutFile << "NO_FILL";
-	OutFile << '\n';
+    if(FigGfxInfo.isFilled) outputFile << colourString(FigGfxInfo.FillClr);
+    else outputFile << "NO_FILL";
+	outputFile << '\n';
 }
 
