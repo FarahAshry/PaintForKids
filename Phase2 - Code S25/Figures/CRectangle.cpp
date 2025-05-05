@@ -58,9 +58,9 @@ void CRectangle::save(ofstream& OutFile) const
      	       << ID << '\t'
                << Corner1.x << '\t' << Corner1.y << '\t'
                << Corner2.x << '\t' << Corner2.y << '\t'
-    	       << FigGfxInfo.DrawClr << '\t';
+    	       << colourString(FigGfxInfo.DrawClr) << '\t';
     
-    if(FigGfxInfo.isFilled) OutFile << FigGfxInfo.FillClr;
+    if(FigGfxInfo.isFilled) OutFile << colourString(FigGfxInfo.FillClr);
     else OutFile << "NO_FILL";
 	OutFile << '\n';
 }
