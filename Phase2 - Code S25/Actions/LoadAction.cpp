@@ -58,26 +58,25 @@ void LoadAction::Execute(bool readparameters) {
 	{
 		CFigure* pFig = nullptr;
 
-		// HOPE GIRLS
+		Point center, p1, p2, p3;
+		double length;
+		GfxInfo gfxInfo;
 
-		/*if (figureType == "RECT")
-			pFig = new CRectangle();
+
+		if (figureType == "RECT")
+			pFig = new CRectangle(p1,p2,gfxInfo);
 		else if (figureType == "CIRC")
-			pFig = new CCircle();
+			pFig = new CCircle(center, length, gfxInfo);
 		else if (figureType == "SQR")
-			pFig = new CSquare();
+			pFig = new CSquare(center, length, gfxInfo);
 		else if (figureType == "TRI")
-			pFig = new CTriangle();
+			pFig = new CTriangle(p1,p2, p3, gfxInfo);
 		else if (figureType == "HEX")
-			pFig = new CHexagon();*/
+			pFig = new CHexagon(p1, length, gfxInfo);
 
-		if (pFig)
-		{
-			// HOPE GIRLS
-			
-			//pFig->Load(LoadFile);
+			pFig->Load(LoadFile);
 			pManager->AddFigure(pFig); // Add to ApplicationManager
-		}
+		
 	}
 
 	LoadFile.close();
