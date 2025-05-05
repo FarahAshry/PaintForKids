@@ -312,15 +312,9 @@ int ApplicationManager::GetSelectedCount() const
 }
 
 int ApplicationManager::GetSelectedFigureCount(FigureType type) const {
-	string typeString;
-	if (type == ITM_RECT) typeString = "RECT";
-	if (type == ITM_SQUARE) typeString = "SQR";
-	if (type == ITM_TRI) typeString = "TRI";
-	if (type == ITM_CIRCLE) typeString = "CIRC";
-	if (type == ITM_HEX) typeString = "HEX";
 	int count = 0;
     for (int i = 0; i < FigCount; i++)
-        if (FigList[i]->IsSelected() && FigList[i]->getFigureType() == typeString) count++;
+        if (FigList[i]->IsSelected() && FigList[i]->getFigureType() == type) count++;
     return count;
 }
 
