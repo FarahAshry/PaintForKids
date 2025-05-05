@@ -26,10 +26,6 @@ void CSquare::save(ofstream& OutFile) const
 {
 }
 
-void CSquare::Load(ifstream& Infile)
-{
-}
-
 //void CSquare::save(ofstream& OutFile) const 
 //{
 //   outputFile << "SQR" << '\t'
@@ -43,17 +39,17 @@ void CSquare::Load(ifstream& Infile)
 //    outputFile << '\n';
 //}
 
-//void CSquare::Load(ifstream& Infile) {
-//	// read the square's data from the file
-//	Infile >> centre.x >> centre.y >> length;
-//	string drawColor, fillColor;
-//	Infile >> drawColor >> fillColor;
-//	FigGfxInfo.DrawClr = StringToColor(drawColor);
-//	if (fillColor == "No_Fill")
-//		FigGfxInfo.isFilled = false;
-//	else
-//	{
-//		FigGfxInfo.isFilled = true;
-//		FigGfxInfo.FillClr = StringToColor(fillColor);
-//	}
-//}
+void CSquare::Load(ifstream& Infile) {
+	// read the square's data from the file
+	Infile >> centre.x >> centre.y >> length;
+	string drawColor, fillColor;
+	Infile >> drawColor >> fillColor;
+	FigGfxInfo.DrawClr = StringToColor(drawColor);
+	if (fillColor == "No_Fill")
+		FigGfxInfo.isFilled = false;
+	else
+	{
+		FigGfxInfo.isFilled = true;
+		FigGfxInfo.FillClr = StringToColor(fillColor);
+	}
+}
