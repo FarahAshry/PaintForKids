@@ -28,11 +28,27 @@ void AddHexAction::ReadActionParameters()
 	//Read length of the hexagon
 	Length = stod(pIn->GetSrting(pOut));
 
-	HexGfxInfo.isFilled = false;	//default is not filled
+	//get drawing, filling colors and pen width from the interface
+	HexGfxInfo.DrawClr = pOut->getCrntDrawColor();
+
+	pOut->PrintMessage("Choose drawing color (b=Black, y=Yellow, o=Orange, r=Red, g=Green, u=blue.)");
+	HexGfxInfo.DrawClr = pIn->GetColour(pOut);
+
+	//default is not filled
+	HexGfxInfo.isFilled = false;
+	// Ask if user wants filled shape
+	pOut->PrintMessage("Fill shape? (y/n)");
+	string fill = pIn->GetSrting(pOut);
+	HexGfxInfo.isFilled = (tolower(fill[0]) == 'y');
+
+	if (HexGfxInfo.isFilled) {
+		pOut->PrintMessage("Choose fill color");
+		HexGfxInfo.FillClr = pIn->GetColour(pOut);
+	}
+	else HexGfxInfo.FillClr = UI.FillColor; // Default no-fill color
 	//get drawing, filling colors and pen width from the interface
 	HexGfxInfo.DrawClr = pOut->getCrntDrawColor();
 	HexGfxInfo.FillClr = pOut->getCrntFillColor();
-
 	pOut->ClearStatusBar();
 
 }

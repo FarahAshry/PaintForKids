@@ -31,7 +31,24 @@ void AddTriAction::ReadActionParameters()
 	//Read 3rd corner and store in point P3
 	pIn->GetPointClicked(P3.x, P3.y);
 
-	TriGfxInfo.isFilled = false;	//default is not filled
+	//get drawing, filling colors and pen width from the interface
+	TriGfxInfo.DrawClr = pOut->getCrntDrawColor();
+
+	pOut->PrintMessage("Choose drawing color (b=Black, y=Yellow, o=Orange, r=Red, g=Green, u=blue.)");
+	TriGfxInfo.DrawClr = pIn->GetColour(pOut);
+
+	//default is not filled
+	TriGfxInfo.isFilled = false;
+	// Ask if user wants filled shape
+	pOut->PrintMessage("Fill shape? (y/n)");
+	string fill = pIn->GetSrting(pOut);
+	TriGfxInfo.isFilled = (tolower(fill[0]) == 'y');
+
+	if (TriGfxInfo.isFilled) {
+		pOut->PrintMessage("Choose fill color");
+		TriGfxInfo.FillClr = pIn->GetColour(pOut);
+	}
+	else TriGfxInfo.FillClr = UI.FillColor; // Default no-fill color
 	//get drawing, filling colors and pen width from the interface
 	TriGfxInfo.DrawClr = pOut->getCrntDrawColor();
 	TriGfxInfo.FillClr = pOut->getCrntFillColor();

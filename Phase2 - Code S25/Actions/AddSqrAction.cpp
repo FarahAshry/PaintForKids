@@ -28,11 +28,27 @@ void AddSqrAction::ReadActionParameters()
 	//Read length of the square
 	Length = stod(pIn->GetSrting(pOut));
 
-	SqrGfxInfo.isFilled = false;	//default is not filled
+	//get drawing, filling colors and pen width from the interface
+	SqrGfxInfo.DrawClr = pOut->getCrntDrawColor();
+
+	pOut->PrintMessage("Choose drawing color (b=Black, y=Yellow, o=Orange, r=Red, g=Green, u=blue.)");
+	SqrGfxInfo.DrawClr = pIn->GetColour(pOut);
+
+	//default is not filled
+	SqrGfxInfo.isFilled = false;
+	// Ask if user wants filled shape
+	pOut->PrintMessage("Fill shape? (y/n)");
+	string fill = pIn->GetSrting(pOut);
+	SqrGfxInfo.isFilled = (tolower(fill[0]) == 'y');
+
+	if (SqrGfxInfo.isFilled) {
+		pOut->PrintMessage("Choose fill color");
+		SqrGfxInfo.FillClr = pIn->GetColour(pOut);
+	}
+	else SqrGfxInfo.FillClr = UI.FillColor; // Default no-fill color
 	//get drawing, filling colors and pen width from the interface
 	SqrGfxInfo.DrawClr = pOut->getCrntDrawColor();
 	SqrGfxInfo.FillClr = pOut->getCrntFillColor();
-
 	pOut->ClearStatusBar();
 }
 

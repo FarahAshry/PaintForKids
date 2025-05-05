@@ -28,9 +28,24 @@ void AddCircAction::ReadActionParameters()
 	//Read radius of the circle
 	radius = stod(pIn->GetSrting(pOut));
 
-	//default is not filled
-	CircGfxInfo.isFilled = false;	
+	//get drawing, filling colors and pen width from the interface
+	CircGfxInfo.DrawClr = pOut->getCrntDrawColor();
 
+	pOut->PrintMessage("Choose drawing color (b=Black, y=Yellow, o=Orange, r=Red, g=Green, u=blue.)");
+	CircGfxInfo.DrawClr = pIn->GetColour(pOut);
+
+	//default is not filled
+	CircGfxInfo.isFilled = false;
+	// Ask if user wants filled shape
+	pOut->PrintMessage("Fill shape? (y/n)");
+	string fill = pIn->GetSrting(pOut);
+	CircGfxInfo.isFilled = (tolower(fill[0]) == 'y');
+
+	if (CircGfxInfo.isFilled) {
+		pOut->PrintMessage("Choose fill color");
+		CircGfxInfo.FillClr = pIn->GetColour(pOut);
+	}
+	else CircGfxInfo.FillClr = UI.FillColor; // Default no-fill color
 	//get drawing, filling colors and pen width from the interface
 	CircGfxInfo.DrawClr = pOut->getCrntDrawColor();
 	CircGfxInfo.FillClr = pOut->getCrntFillColor();

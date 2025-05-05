@@ -25,13 +25,13 @@ void AddRectAction::ReadActionParameters()
 	//Read 2nd corner and store in point P2
 	pIn->GetPointClicked(P2.x, P2.y);
 
-	RectGfxInfo.isFilled = false;	//default is not filled
 	//get drawing, filling colors and pen width from the interface
 	RectGfxInfo.DrawClr = pOut->getCrntDrawColor();
 
 	pOut->PrintMessage("Choose drawing color (b=Black, y=Yellow, o=Orange, r=Red, g=Green, u=blue.)");
 	RectGfxInfo.DrawClr = pIn->GetColour(pOut);
 
+	RectGfxInfo.isFilled = false;	//default is not filled
 	// Ask if user wants filled shape
 	pOut->PrintMessage("Fill shape? (y/n)");
 	string fill = pIn->GetSrting(pOut);
