@@ -1,16 +1,17 @@
-#ifndef CSQU_H
-#define CSQU_H
+#ifndef CRECT_H
+#define CRECT_H
 
 #include "CFigure.h"
 
-class CSquare : public CFigure
+class CRectangle : public CFigure
 {
 private:
-	Point centre;
-	double length;
+	Point Corner1;
+	Point Corner2;
 public:
-	CSquare(Point, double, GfxInfo FigureGfxInfo);
+	CRectangle(Point, Point, GfxInfo FigureGfxInfo);
 	virtual void Draw(Output* pOut) const;
+	FigureType getFigureType() const;
 	virtual CFigure* Clone() const;
 	virtual void paste_clone(Point c);
 	virtual void printInfo()const;
@@ -19,5 +20,4 @@ public:
 	virtual color StringToColor(string color);
 	virtual FigureType getFigureType() const override;
 };
-
 #endif
