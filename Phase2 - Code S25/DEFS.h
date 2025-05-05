@@ -65,13 +65,13 @@ enum FigureType {
 	SQUARE,
 	TRI,
 	HEXAGON,
-	CIRCLE
+	CIRCLE,
 
-	/*Rect_ID = 6,
+	Rect_ID = 6,
 	Square_ID = 7,
 	Tri_ID = 8,
 	Hexagon_ID = 9,
-	Circle_ID = 10*/
+	Circle_ID = 10
 };
 
 #endif
