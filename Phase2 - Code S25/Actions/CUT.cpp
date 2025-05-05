@@ -12,22 +12,22 @@ void CUT::ReadActionParameters()
 
 void CUT::Execute()
 {
-    ReadActionParameters();
-
     CFigure* selected;
     selected = pManager->GetSelected();
     Output* pOut = pManager->GetOutput();
-
     if (selected == nullptr)
     {
-        pOut->PrintMessage("You should only select one figure to cut");
+        pOut->PrintMessage("You should select one figure to cut");
         return;
     }
-
-    ;
+    if (pManager->GetIsCut())
+    {
+        pManager->Uncut();
+    }
+    /*pManager->SetCutColors(selected->GetDrawClr(), selected->GetFillClr());*/
+   /* selected->ChngDrawClr(GRAY);
+    selected->ChngFillClr(GRAY);*/
     pManager->SetClipboard(selected,true);
-
-    pManager->RemoveFig(selected);
-
+    /*pManager->SetCuttedFig(selected);*/
     pOut->PrintMessage("Figure cut successfully.");
 }
