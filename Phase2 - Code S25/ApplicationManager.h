@@ -64,7 +64,7 @@ int GetFigureCount() const;
 
 
 color StringToColor(string color); //Convert string to color
-
+ int x = maya;
 };
 
 #endif
