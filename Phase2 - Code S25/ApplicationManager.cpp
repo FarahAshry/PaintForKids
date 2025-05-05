@@ -249,6 +249,11 @@ int ApplicationManager::GetSelectedFigureCount(FigureType type) const {
         if (FigList[i]->IsSelected() && FigList[i]->getFigureType() == type) count++;
     return count;
 }
+
+CFigure** ApplicationManager::GetFigureList() const { return FigList; }
+
+int ApplicationManager::GetFigureCount() const { return FigCount; }
+
 //Destructor
 ApplicationManager::~ApplicationManager()
 {
