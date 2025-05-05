@@ -54,7 +54,7 @@ void Select::Execute(bool reading)
             clickedFigure->ChngDrawClr(MAGENTA);
 
             // Print figure ID
-            pOut->PrintMessage(clickedFigure->GetInfoString());
+            pOut->PrintMessage(clickedFigure->printInfo());
         }
         else // Clicked on empty space
         {
