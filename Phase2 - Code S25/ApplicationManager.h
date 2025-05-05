@@ -56,9 +56,7 @@ public:
 	void UpdateInterface() const;	//Redraws all the drawing window	
 	
 	CFigure* RemoveAction(Action* pAct);
-	
-	void LoadAll();
-	
+
 	void RemoveFig(CFigure* pFig);
 	
 	CFigure* GetSelected() const;
@@ -73,6 +71,8 @@ public:
 	void Uncut();
 
 	void saveAll(ofstream& file) const;
+
+	void LoadAll(ifstream& Infile);
 
 	bool GetIsCut();
 

@@ -39,7 +39,7 @@ public:
 	///It should be overridden by each inherited figure
 
 	///Decide the parameters that you should pass to each function	
-	FigureType getFigureType();	//returns the figure type
+	virtual FigureType getFigureType() const =0 ;	//returns the figure type
 	color getColor(); 	//returns the color of the figure for matching game check
 	color GetFillColor() const;
 	color GetDrawColor() const;
@@ -61,7 +61,8 @@ public:
 	string GetInfoString();
 	boolean ContainsPoint(int x, int y) const;	//checks if a point is inside the figure
 
-	void SetHidden(bool hide);
+	void SetHidden();
+	void SetShown();
 	bool isHidden();
 	string colourString(color c) const;
 };

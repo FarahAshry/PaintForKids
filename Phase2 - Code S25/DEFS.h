@@ -61,11 +61,17 @@ enum ColorID {
 };
 
 enum FigureType {
-	Rect_ID = 6,
+	RECT,
+	SQUARE,
+	TRI,
+	HEXAGON,
+	CIRCLE
+
+	/*Rect_ID = 6,
 	Square_ID = 7,
 	Tri_ID = 8,
 	Hexagon_ID = 9,
-	Circle_ID = 10
+	Circle_ID = 10*/
 };
 
 #endif
