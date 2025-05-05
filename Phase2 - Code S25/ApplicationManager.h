@@ -84,7 +84,7 @@ public:
 	CFigure** GetFigureList() const;
 
 	int GetFigureCount() const;
-	CFigure* Get2Selected(CFigure*) const;
+
 
 	/*color StringToColor(string color);*/ //Convert string to color
 };
