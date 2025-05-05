@@ -6,9 +6,11 @@
 #include "Actions\AddTriAction.h"
 #include "Actions\Select.h"
 #include "Actions\COPY.h"
-#include "Actions\COPY.h"
 #include"Actions\CUT.h"
 #include"Actions\PASTE.h"
+#include "Actions\Matching.h"
+#include "Actions\Missing.h"
+#include "Actions/LoadAction.h"
 
 #include <iostream>
 #include <fstream>
@@ -70,9 +72,26 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 	        pAct = new CUT(this);
 	        break;
 
-        case PASTE_FIG:
-	      pAct = new PASTE(this);
-	      break;
+    case PASTE_FIG:
+	    pAct = new PASTE(this);
+	    break;
+
+	case MISSING_SHAPES:
+		pAct = new Missing(this, 0);
+		break;
+
+	case MATCHING_PAIRS:
+		pAct = new Matching(this, 0);
+		break;
+
+	case TO_DRAW:
+		
+		break;
+
+	case TO_PLAY:
+
+		break;
+
 	}
 
 	//Execute the created action
