@@ -82,3 +82,7 @@ void CTriangle::Load(ifstream& Infile) {
 		FigGfxInfo.FillClr = StringToColor(fillColor);
 	}
 }
+FigureType CTriangle::getFigureType() const
+{
+	return TRI;
+}
