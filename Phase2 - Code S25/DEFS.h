@@ -61,7 +61,7 @@ enum ColorID {
 };
 
 enum FigureType {
-	RECT,
+	RECTANGLE,
 	SQUARE,
 	TRI,
 	HEXAGON,
