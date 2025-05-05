@@ -65,6 +65,7 @@ void CTriangle::printInfo()const
     	       << colourString(FigGfxInfo.DrawClr) << '\t';
 	if(FigGfxInfo.isFilled) cout << colourString(FigGfxInfo.FillClr);
     	else cout << "NO_FILL";
+	cout << '\n';
 }
 
 void CTriangle::save(ofstream& outputFile) const 
