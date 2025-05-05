@@ -32,6 +32,7 @@ void LoadAction::ReadActionParameters() {
 
 void LoadAction::Execute(bool readparameters) {
 	Output* pOut = pManager->GetOutput();
+	CFigure* pFig;
 	ReadActionParameters();
 	LoadFile.open(FileName, ios::in);
 
@@ -41,14 +42,14 @@ void LoadAction::Execute(bool readparameters) {
 	string drawColor, fillColor;
 	LoadFile >> drawColor >> fillColor; //reading draw and fill colors
 
-	color DrawColor = pManager->StringToColor(drawColor);
+	color DrawColor = pFig->StringToColor(drawColor);
 	pOut->setCrntDrawColor(DrawColor);
 
 	if (fillColor == "No_Fill")
 		pOut->setCrntFillColor(false);
 	else
 	{
-		color FillColor = pManager->StringToColor(fillColor);
+		color FillColor = pFig->StringToColor(fillColor);
 		pOut->setCrntFillColor(FillColor);
 		pOut->setCrntFillColor(true);
 	}
