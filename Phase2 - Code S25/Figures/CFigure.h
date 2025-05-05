@@ -30,6 +30,8 @@ public:
 
 	//function for SaveAction
 	virtual void save(ofstream& OutFile) const = 0;
+
+	//function for ptinting
 	virtual void printInfo() const = 0;
 
 	///The following functions should be supported by the figure class
