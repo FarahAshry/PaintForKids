@@ -1,5 +1,6 @@
 #include "CCircle.h"
 #include <fstream>
+#include "..\ApplicationManager.h"
 
 CCircle::CCircle(Point P1, double R, GfxInfo FigureGfxInfo) :CFigure(FigureGfxInfo)
 {
@@ -24,9 +25,6 @@ void CCircle::paste_clone(Point c)
 void CCircle::save(ofstream& OutFile) const
 {
 }
-void CCircle::Load(ifstream& Infile) {
-
-}
 
 //void CCircle::save(ofstream& OutFile) const 
 //{
@@ -43,18 +41,18 @@ void CCircle::Load(ifstream& Infile) {
 //    outputFile << '\n';
 //}
 
-//void CCircle::Load(ifstream& Infile) {
-//	// Read the circle's data from the file
-//	Infile >> centre.x >> centre.y >> radius;
-//
-//	string drawColor, fillColor;
-//	Infile >> drawColor >> fillColor;
-//	FigGfxInfo.DrawClr = StringToColor(drawColor);
-//	if (fillColor == "No_Fill")
-//		FigGfxInfo.isFilled = false;
-//	else
-//	{
-//		FigGfxInfo.isFilled = true;
-//		FigGfxInfo.FillClr = StringToColor(fillColor);
-//	}
-//}
+void CCircle::Load(ifstream& Infile) {
+	// Read the circle's data from the file
+	Infile >> centre.x >> centre.y >> radius;
+
+	string drawColor, fillColor;
+	Infile >> drawColor >> fillColor;
+	FigGfxInfo.DrawClr = StringToColor(drawColor);
+	if (fillColor == "No_Fill")
+		FigGfxInfo.isFilled = false;
+	else
+	{
+		FigGfxInfo.isFilled = true;
+		FigGfxInfo.FillClr = StringToColor(fillColor);
+	}
+}
