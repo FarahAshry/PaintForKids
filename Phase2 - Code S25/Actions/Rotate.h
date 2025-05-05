@@ -3,9 +3,12 @@
 #include "../GUI/Output.h"
 #include "../ApplicationManager.h"
 #include "../Figures/CFigure.h"
-#include "Action.h"
+#include "../Actions/Action.h"
 class Rotate : public Action
 {
-	Rotate(ApplicationManager* pApp, CFigure* C);
+	Rotate(ApplicationManager* pApp);
+	void ReadActionParameters();
+	void Execute();
+	
 };
 
