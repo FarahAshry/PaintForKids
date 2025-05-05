@@ -109,3 +109,10 @@ color CFigure::StringToColor(string color) {
 	else
 		return WHITE; // The function must return a color so let white be the default
 }
+void CFigure::SetHidden(bool hide) {
+	hidden = hide;
+}
+
+bool CFigure::isHidden() {
+	return hidden;
+}
