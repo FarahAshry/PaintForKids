@@ -28,7 +28,20 @@ void AddRectAction::ReadActionParameters()
 	RectGfxInfo.isFilled = false;	//default is not filled
 	//get drawing, filling colors and pen width from the interface
 	RectGfxInfo.DrawClr = pOut->getCrntDrawColor();
-	RectGfxInfo.FillClr = pOut->getCrntFillColor();
+
+	pOut->PrintMessage("Choose drawing color (b=Black, y=Yellow, o=Orange, r=Red, g=Green, u=blue.)");
+	RectGfxInfo.DrawClr = pIn->GetColour(pOut);
+
+	// Ask if user wants filled shape
+	pOut->PrintMessage("Fill shape? (y/n)");
+	string fill = pIn->GetSrting(pOut);
+	RectGfxInfo.isFilled = (tolower(fill[0]) == 'y');
+
+	if (RectGfxInfo.isFilled) {
+		pOut->PrintMessage("Choose fill color");
+		RectGfxInfo.FillClr = pIn->GetColour(pOut);
+	}
+	else RectGfxInfo.FillClr = UI.FillColor; // Default no-fill color
 
 	pOut->ClearStatusBar();
 }
