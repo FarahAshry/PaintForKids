@@ -11,6 +11,7 @@
 #include "Actions\Matching.h"
 #include "Actions\Missing.h"
 #include "Actions/LoadAction.h"
+#include"Actions\SwitchToPlay.h"
 
 #include <iostream>
 #include <fstream>
@@ -75,7 +76,9 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
     case PASTE_FIG:
 	    pAct = new PASTE(this);
 	    break;
-
+case TO_PLAY:
+	pAct = new SwitchToPlay(this);
+	break;
 	case MISSING_SHAPES:
 		pAct = new Missing(this, 0);
 		break;
