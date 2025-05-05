@@ -25,7 +25,7 @@ void CFigure::ChngFillClr(color Fclr)
 }
 //Farah added these 4 functions
 //Maya edited first function
-FigureType CFigure::getFigureType() {
+FigureType CFigure::getFigureType() const {
 	return this->type;	
 }
  
@@ -109,8 +109,12 @@ color CFigure::StringToColor(string color) {
 	else
 		return WHITE; // The function must return a color so let white be the default
 }
-void CFigure::SetHidden(bool hide) {
-	hidden = hide;
+void CFigure::SetHidden() {
+	hidden = true;
+}
+
+void CFigure::SetHidden() {
+	hidden = false;
 }
 
 bool CFigure::isHidden() {
