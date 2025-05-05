@@ -11,7 +11,6 @@ private:
 public:
 	CRectangle(Point, Point, GfxInfo FigureGfxInfo);
 	virtual void Draw(Output* pOut) const;
-	FigureType getFigureType() const;
 	virtual CFigure* Clone() const;
 	virtual void paste_clone(Point c);
 	virtual void printInfo()const;
