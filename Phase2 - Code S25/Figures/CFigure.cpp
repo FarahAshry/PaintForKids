@@ -113,10 +113,6 @@ void CFigure::SetHidden() {
 	hidden = true;
 }
 
-void CFigure::SetHidden() {
-	hidden = false;
-}
-
 bool CFigure::isHidden() {
 	return hidden;
 }
