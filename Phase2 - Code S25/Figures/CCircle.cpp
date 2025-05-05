@@ -38,15 +38,18 @@ void CCircle::paste_clone(Point c)
 	centre = c;
 }
 
-void CCircle::save(ofstream& OutFile) const 
+void CCircle::printInfo() const
 {
 	OutFile << "CIRC" << '\t'
-     	       << ID << '\t'
-               << centre.x << '\t' << centre.y << '\t'
-               << radius << '\t'
-    	       << colourString(FigGfxInfo.DrawClr) << '\t';
-    
-    if(FigGfxInfo.isFilled) OutFile << colourString(FigGfxInfo.FillClr);
-    else OutFile << "NO_FILL";
+	       << ID << '\t'
+	       << centre.x << '\t' << centre.y << '\t'
+	       << radius << '\t'
+	       << colourString(FigGfxInfo.DrawClr) << '\t';
+}
+void CCircle::save(ofstream& OutFile) const 
+{
+	printInfo();
+	if(FigGfxInfo.isFilled) OutFile << colourString(FigGfxInfo.FillClr);
+	else OutFile << "NO_FILL";
 	OutFile << '\n';
 }
