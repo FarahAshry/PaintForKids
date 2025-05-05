@@ -43,9 +43,9 @@ void CSquare::save(ofstream& OutFile) const
      	       << ID << '\t'
                << centre.x << '\t' << centre.y << '\t'
                << length << '\t'
-    	       << FigGfxInfo.DrawClr << '\t';
+    	       << colourString(FigGfxInfo.DrawClr) << '\t';
     
-    if(FigGfxInfo.isFilled) OutFile << FigGfxInfo.FillClr;
+    if(FigGfxInfo.isFilled) OutFile << colourString(FigGfxInfo.FillClr);
     else OutFile << "NO_FILL";
 	OutFile << '\n';
 }
