@@ -26,9 +26,6 @@ void CHexagon::save(ofstream& OutFile) const
 {
 }
 
-void CHexagon::Load(ifstream& Infile)
-{
-}
 
 //void CHexagon::save(ofstream& OutFile) const 
 //{
