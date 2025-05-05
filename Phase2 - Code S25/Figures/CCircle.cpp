@@ -28,11 +28,11 @@ void CCircle::paste_clone(Point c)
 void CCircle::printInfo() const
 {
 	cout << "CIRC" << '\t'
-		<< ID << '\t'
-		<< centre.x << '\t' << centre.y << '\t'
-		<< radius << '\t'
-		<< colourString(FigGfxInfo.DrawClr) << '\t';
-	if (FigGfxInfo.isFilled)cout << colourString(FigGfxInfo.FillClr);
+		 << ID << '\t'
+		 << centre.x << '\t' << centre.y << '\t'
+		 << radius << '\t'
+		 << colourString(FigGfxInfo.DrawClr) << '\t';
+	if (FigGfxInfo.isFilled) cout << colourString(FigGfxInfo.FillClr);
 	else cout << "NO_FILL";
 	cout << '\n';
 }
