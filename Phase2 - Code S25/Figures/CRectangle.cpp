@@ -59,6 +59,9 @@ void CRectangle::printInfo()
                << Corner1.x << '\t' << Corner1.y << '\t'
                << Corner2.x << '\t' << Corner2.y << '\t'
     	       << colourString(FigGfxInfo.DrawClr) << '\t';
+	if(FigGfxInfo.isFilled) cout << colourString(FigGfxInfo.FillClr);
+	else cout << "NO_FILL";
+	cout << '\n';
 }
 void CRectangle::save(ofstream& outputFile) const 
 {
