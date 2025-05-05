@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Uni\\Semester 2\\Programming Techniques\\Project\\PT Project Phase1 - Code S25\\Phase2 - Code S25\\",
+  "WorkspaceRootPath": "C:\\Users\\LEGION\\OneDrive\\Desktop\\PAINT\\Phase2 - Code S25\\",
   "Documents": [],
   "DocumentGroupContainers": [
     {
@@ -11,6 +11,10 @@
           "DockedWidth": 200,
           "SelectedChildIndex": -1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"

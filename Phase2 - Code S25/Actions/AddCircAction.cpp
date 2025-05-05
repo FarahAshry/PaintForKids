@@ -1,10 +1,10 @@
 #include "AddCircAction.h"
-#include "Figures/CCircle.h"
+#include "../Figures/CCircle.h"
 
-#include "ApplicationManager.h"
+#include "../ApplicationManager.h"
 
-#include "GUI/Output.h"
-#include"GUI/Input.h"
+#include "../GUI/Output.h"
+#include "../GUI/Input.h"
 
 using namespace std;
 

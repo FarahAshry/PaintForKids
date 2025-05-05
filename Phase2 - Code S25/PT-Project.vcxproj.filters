@@ -163,6 +163,19 @@
     <ClCompile Include="Actions\AddSqrAction.cpp">
       <Filter>Action Classes</Filter>
     </ClCompile>
+    <ClCompile Include="Actions\ClearAll.cpp" />
+    <ClCompile Include="Actions\COPY.cpp" />
+    <ClCompile Include="Actions\CUT.cpp" />
+    <ClCompile Include="Actions\LoadAction.cpp" />
+    <ClCompile Include="Actions\Matching.cpp" />
+    <ClCompile Include="Actions\Rotate.cpp" />
+    <ClCompile Include="Actions\PASTE.cpp" />
+    <ClCompile Include="Actions\Missing.cpp" />
+    <ClCompile Include="Actions\SaveAction.cpp" />
+    <ClCompile Include="Actions\Select.cpp" />
+    <ClCompile Include="Actions\AddCircAction.cpp" />
+    <ClCompile Include="Actions\AddHexAction.cpp" />
+    <ClCompile Include="Actions\AddTriAction.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CMUgraphicsLib\auxil.h">
@@ -265,8 +278,46 @@
     <ClInclude Include="Actions\AddSqrAction.h">
       <Filter>Action Classes</Filter>
     </ClInclude>
+    <ClInclude Include="Actions\ClearAll.h" />
+    <ClInclude Include="Actions\COPY.h" />
+    <ClInclude Include="Actions\CUT.h" />
+    <ClInclude Include="Actions\LoadAction.h" />
+    <ClInclude Include="Actions\Rotate.h" />
+    <ClInclude Include="Actions\PASTE.h" />
+    <ClInclude Include="Actions\Matching.h" />
+    <ClInclude Include="Actions\Missing.h" />
+    <ClInclude Include="Actions\SaveAction.h" />
+    <ClInclude Include="Actions\Select.h" />
+    <ClInclude Include="Actions\AddCircAction.h" />
+    <ClInclude Include="Actions\AddHexAction.h" />
+    <ClInclude Include="Actions\AddTriAction.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
+    <None Include="PT-Project.vcproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="images\MenuItems\Menu_Triangle.jpg" />
+    <Image Include="images\MenuItems\Menu_Swap.jpg" />
+    <Image Include="images\MenuItems\Menu_Square.jpg" />
+    <Image Include="images\MenuItems\Menu_Save.jpg" />
+    <Image Include="images\MenuItems\Menu_Rotate.jpg" />
+    <Image Include="images\MenuItems\Menu_Rect.JPG" />
+    <Image Include="images\MenuItems\Menu_Play.jpg" />
+    <Image Include="images\MenuItems\Menu_Paste.jpg" />
+    <Image Include="images\MenuItems\Menu_Missing.jpg" />
+    <Image Include="images\MenuItems\Menu_Matching.jpg" />
+    <Image Include="images\MenuItems\Menu_Load.jpg" />
+    <Image Include="images\MenuItems\Menu_Hex.jpg" />
+    <Image Include="images\MenuItems\Menu_Exit.jpg" />
+    <Image Include="images\MenuItems\Menu_Draw.jpg" />
+    <Image Include="images\MenuItems\Menu_Missing.png" />
+    <Image Include="images\MenuItems\Menu_Delete.jpg" />
+    <Image Include="images\MenuItems\Menu_Cut.jpg" />
+    <Image Include="images\MenuItems\Menu_Copy.jpg" />
+    <Image Include="images\MenuItems\Menu_Clear.jpg" />
+    <Image Include="images\MenuItems\Menu_Circ.jpg" />
+    <Image Include="images\MenuItems\Menu_Arrow.png" />
+    <Image Include="images\MenuItems\Menu_Add.jpg" />
   </ItemGroup>
 </Project>
