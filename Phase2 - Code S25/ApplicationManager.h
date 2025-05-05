@@ -57,6 +57,12 @@ CFigure* GetClipboard() const;
 void Clear_Clip();
 void Uncut();
 
+int GetSelectedFigureCount(FigureType type) const;
+int GetSelectedCount() const;
+CFigure**GetFigureList() const;
+int GetFigureCount() const;
+
+
 color StringToColor(string color); //Convert string to color
 
 };
