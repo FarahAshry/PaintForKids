@@ -219,6 +219,17 @@ void ApplicationManager::SetClipboard(CFigure* pFig,bool IsCut)
 
 }
 
+bool ApplicationManager::GetIsCut()
+{
+	if (IsClip_Cut)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
 void ApplicationManager::Clear_Clip()
 {
 	if (IsClip_Cut)
