@@ -12,7 +12,7 @@ void ReadActionParameters() {
 
 }
 void Execute() {
-	Output* pOut;
+	/*Output* pOut;
 
 	if (->IsSelected() == 1) {
 		int ID = C->getID();
@@ -26,5 +26,5 @@ void Execute() {
 	}
 	else {
 		pOut->PrintMessage("No object selected");
-	}
+	}*/
 }
