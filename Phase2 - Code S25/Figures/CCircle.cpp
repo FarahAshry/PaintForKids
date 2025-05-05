@@ -78,3 +78,6 @@ FigureID CCircle::getFigureID() const
  Point CCircle::getCentre() const  {
 	 return centre;
 }
+ void CCircle::setCentre(Point c) {
+	 centre = c;
+ }

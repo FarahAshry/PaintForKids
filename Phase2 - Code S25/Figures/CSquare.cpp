@@ -76,4 +76,8 @@ FigureID CSquare::getFigureID() const
 Point CSquare :: getCentre() const {
 	return centre;
 }
+void CSquare::setCentre(Point c)
+{
+	centre = c;
+}
 

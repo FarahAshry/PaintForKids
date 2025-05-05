@@ -100,3 +100,18 @@ Point CTriangle::getCentre() const {
 	center.y = N_Y;
 	return center;
  }
+void CTriangle::setCentre(Point c) {
+	Point OldC= getCentre();
+// calculaing difference in x and y from centre
+	int ChangeX = c.x - OldC.x;
+	int ChangeY = c.y - OldC.y;
+// updating new corners
+	Corner1.x = Corner1.x + ChangeX;
+	Corner2.x = Corner2.x + ChangeX;
+	Corner3.x = Corner3.x + ChangeX;
+	Corner1.y = Corner1.y + ChangeY;
+	Corner2.y = Corner2.y + ChangeY;
+	Corner3.y = Corner3.y + ChangeY;
+
+}
+

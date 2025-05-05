@@ -90,3 +90,21 @@ Point CRectangle::getCentre() const
 	center.y = (Corner1.y + Corner2.y) / 2;
 	return center;
 }
+void CRectangle::setCentre(Point c)
+{
+		// Calculate width and height
+		int w = (Corner2.x - Corner1.x);
+		int h = (Corner2.y - Corner1.y);
+		//check height and width are pos
+		if (w < 0)
+			w = -w;
+		if (h < 0)
+			h = -h;
+		// Calculate new corner
+		Corner1.x = c.x - w / 2;
+		Corner1.y = c.y - h / 2;
+
+		Corner2.x = c.x + w / 2;
+		Corner2.y = c.y + h / 2;
+	}
+}

@@ -21,5 +21,6 @@ public:
 	virtual FigureType getFigureType() const override;
 	virtual FigureID getFigureID() const override;
 	virtual Point getCentre() const override;
+	virtual void setCentre(Point)  override;
 };
 #endif

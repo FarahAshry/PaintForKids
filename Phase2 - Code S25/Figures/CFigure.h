@@ -68,6 +68,7 @@ public:
 	bool isHidden();
 	string colourString(color c) const;
 	virtual Point getCentre() const =0 ;
+	virtual void setCentre(Point)  =0 ;
 };
 
 #endif

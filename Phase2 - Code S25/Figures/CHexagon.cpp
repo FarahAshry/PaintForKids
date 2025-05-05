@@ -79,3 +79,6 @@ FigureID CHexagon::getFigureID() const {
 Point CHexagon::getCentre() const {
 	return centre;
 }
+void CHexagon::setCentre(Point c) {
+	centre = c;
+}

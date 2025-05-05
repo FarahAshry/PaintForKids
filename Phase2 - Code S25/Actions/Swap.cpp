@@ -62,8 +62,8 @@ void Swap::Execute() {
 	Point c1 = selected[0]->getCentre();
 	Point c2 = selected[1]->getCentre();
 	//move each shape from its center to new center
-	selected[0]->SetCentre(c2); 
-	selected[1]->SetCentre(c1);  
+	selected[0]->setCentre(c2); 
+	selected[1]->setCentre(c1);  
 
 	pManager->deselect();
 	pManager->UpdateInterface(); 
