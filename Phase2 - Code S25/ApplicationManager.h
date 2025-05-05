@@ -79,7 +79,7 @@ public:
 
 	int GetSelectedFigureCount(FigureType type) const;
 
-	CFigure** GetFigureList() const;
+	CFigure* GetFigureList() const;
 
 	int GetFigureCount() const;
 

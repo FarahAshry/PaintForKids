@@ -321,6 +321,6 @@ int ApplicationManager::GetSelectedFigureCount(FigureType type) const {
     return count;
 }
 
-CFigure** ApplicationManager::GetFigureList() const { return FigList;}
+CFigure* ApplicationManager::GetFigureList() const { return FigList; }
 
 int ApplicationManager::GetFigureCount() const { return FigCount;}
