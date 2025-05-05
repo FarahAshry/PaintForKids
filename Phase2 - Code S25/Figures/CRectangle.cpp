@@ -15,10 +15,6 @@ void CRectangle::Draw(Output* pOut) const
 	pOut->DrawRect(Corner1, Corner2, FigGfxInfo, Selected);
 }
 
-FigureType CRectangle::getFigureType() const {
-	return Rect_ID; // Return the correct enum value
-}
-
  CFigure* CRectangle::Clone() const {
 	return new CRectangle(*this);
 }
@@ -81,6 +77,12 @@ FigureType CRectangle::getFigureType() const
 {
 	return RECT;
 }
+
+FigureID CRectangle::getFigureID() const
+{
+	return Rect_ID;
+}
+
 Point CRectangle::getCentre() const
 {
 	Point center;
