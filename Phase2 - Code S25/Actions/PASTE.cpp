@@ -26,20 +26,17 @@ void PASTE::Execute()
 	CFigure* Clipboard = pManager->GetClipboard(); 
 	if (!Clipboard)
 	{
-		pOut->PrintMessage("Copy or Cut to be able to use clipboard");
+		pOut->PrintMessage("Copy or Cut to be able to use clipboard in pasting");
 		return;
 	}
 	else
 	{
 		if (c)
 		{
-			
 			Clipboard->paste_clone(p);
 			Clipboard->SetSelected(false);
-			pManager->AddFigure(Clipboard);
+			/*pManager->AddFigure(Clipboard);*/
 			pManager->Uncut();
-			
-
 		}
 		else
 		{
@@ -47,7 +44,6 @@ void PASTE::Execute()
 			copied->paste_clone(p);
 			copied->SetSelected(false);
 			pManager->AddFigure(copied);
-			
 		}
 		pOut->PrintMessage("Pasted :)");
 	}
