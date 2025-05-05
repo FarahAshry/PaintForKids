@@ -3,6 +3,8 @@
 
 class PASTE:public Action
 {
+private:
+Point p;
 public:
 	PASTE(ApplicationManager* pApp);
 	virtual void ReadActionParameters();
