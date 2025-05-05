@@ -78,8 +78,7 @@ public:
 
 	int GetSelectedCount() const;
 
-	int GetSelectedFigureCount(FigureType type) const;
-
+	int GetSelectedFigureCount(FigureID type) const;
 
 	CFigure** GetFigureList() const;
 

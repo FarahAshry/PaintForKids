@@ -71,6 +71,11 @@ void CHexagon::Load(ifstream& Infile)
 FigureType CHexagon::getFigureType() const {
     return HEXAGON;
 }
+
+FigureID CHexagon::getFigureID() const {
+    return Hexagon_ID;
+}
+
 Point CHexagon::getCentre() const {
 	return centre;
 }
