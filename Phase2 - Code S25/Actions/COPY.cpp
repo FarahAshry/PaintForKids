@@ -19,7 +19,7 @@ void COPY::Execute()
 
     if (selected == nullptr)
     {
-        pOut->PrintMessage("Error!! you can select only one figure to copy");
+        pOut->PrintMessage("You should select only one figure to copy");
         return;
     }
 
