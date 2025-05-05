@@ -7,8 +7,8 @@
 
 ClearAll::ClearAll(ApplicationManager* pApp) {
 	Output* pOut;
-	pOut->PrintMessage("Clearing all menus");
+
 	void ClearStatusBar();	
-	void ClearToolBar();
 	void ClearDrawArea();
+	pOut->PrintMessage("Clearing all menus");
 }
