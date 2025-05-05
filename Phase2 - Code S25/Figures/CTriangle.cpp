@@ -39,10 +39,6 @@ void CTriangle::save(ofstream& OutFile) const
 {
 }
 
-void CTriangle::Load(ifstream& Infile)
-{
-}
-
 //void CTriangle::save(ofstream& OutFile) const 
 //{
 //	OutFile << "TRI" << '\t'
@@ -60,20 +56,20 @@ void CTriangle::Load(ifstream& Infile)
 //    OutFile << '\n';
 //}
 
-//void CTriangle::Load(ifstream& Infile) {
-//	// Read the triangle's data from the file
-//	Infile >> Corner1.x >> Corner1.y >> Corner2.x >> Corner2.y >> Corner3.x >> Corner3.y;
-//
-//	// Read the figure's graphics info (e.g., colors, pen width)
-//	string drawColor, fillColor;
-//	Infile >> drawColor >> fillColor;
-//
-//	FigGfxInfo.DrawClr = StringToColor(drawColor);
-//	if (fillColor == "No_Fill")
-//		FigGfxInfo.isFilled = false;
-//	else
-//	{
-//		FigGfxInfo.isFilled = true;
-//		FigGfxInfo.FillClr = StringToColor(fillColor);
-//	}
-//}
+void CTriangle::Load(ifstream& Infile) {
+	// Read the triangle's data from the file
+	Infile >> Corner1.x >> Corner1.y >> Corner2.x >> Corner2.y >> Corner3.x >> Corner3.y;
+
+	// Read the figure's graphics info (e.g., colors, pen width)
+	string drawColor, fillColor;
+	Infile >> drawColor >> fillColor;
+
+	FigGfxInfo.DrawClr = StringToColor(drawColor);
+	if (fillColor == "No_Fill")
+		FigGfxInfo.isFilled = false;
+	else
+	{
+		FigGfxInfo.isFilled = true;
+		FigGfxInfo.FillClr = StringToColor(fillColor);
+	}
+}
