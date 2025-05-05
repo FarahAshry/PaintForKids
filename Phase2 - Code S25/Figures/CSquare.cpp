@@ -22,22 +22,27 @@ void CSquare::paste_clone(Point c)
 	centre = c;
 }
 
-void CSquare::save(ofstream& OutFile) const
+void CSquare::printInfo() const
 {
+	cout << "SQR" << '\t'
+    	     << ID << '\t'
+             << centre.x << '\t' << centre.y << '\t'
+             << length << '\t'
+	     << colouString(FigGfxInfo.DrawClr0 << '\t';
 }
 
-//void CSquare::save(ofstream& OutFile) const 
-//{
-//   outputFile << "SQR" << '\t'
-//     	       << ID << '\t'
-//               << centre.x << '\t' << centre.y << '\t'
-//               << length << '\t'
-//    	       << FigGfxInfo.DrawClr << '\t';
-//    
-//    if(FigGfxInfo.isFilled) outputFile << FigGfxInfo.FillClr;
-//    else outputFile << "NO_FILL";
-//    outputFile << '\n';
-//}
+void CSquare::save(ofstream& outputFile) const 
+{
+	outputFile << "SQR" << '\t'
+    	     	<< ID << '\t'
+            	<< centre.x << '\t' << centre.y << '\t'
+             	<< length << '\t'
+		<< colouString(FigGfxInfo.DrawClr << '\t';
+   
+	if (FigGfxInfo.isFilled)outputFile << colourString(FigGfxInfo.FillClr);
+   	else outputFile << "NO_FILL";
+	outputFile << '\n';
+}
 
 void CSquare::Load(ifstream& Infile) {
 	// read the square's data from the file
