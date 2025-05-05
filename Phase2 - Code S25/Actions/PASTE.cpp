@@ -11,34 +11,44 @@ PASTE::PASTE(ApplicationManager* pApp) :Action(pApp)
 void PASTE::ReadActionParameters()
 {
 	Input* pIn = pManager->GetInput();
-	int x;
-	int y;
 	Output* pOut = pManager->GetOutput();
-	pOut->PrintMessage("Please click on the place you want to paste at");
-	pIn->GetPointClicked(x, y);
+	pOut->PrintMessage("Please click anywhere to paste");
+	pIn->GetPointClicked(p.x, p.y);
 	
 }
 
 void PASTE::Execute()
 {
-	Input* pIn = pManager->GetInput();
+	ReadActionParameters();
 	Output* pOut = pManager->GetOutput();
-	CFigure* Clipboard = pManager->GetClipboard();
+	pOut->PrintMessage("Click anywhere to paste ");
+	bool c = pManager->GetIsCut();
+	CFigure* Clipboard = pManager->GetClipboard(); 
 	if (!Clipboard)
 	{
 		pOut->PrintMessage("Copy or Cut to be able to use clipboard");
 		return;
+	}
+	else
+	{
+		if (c)
+		{
+			
+			Clipboard->paste_clone(p);
+			Clipboard->SetSelected(false);
+			pManager->AddFigure(Clipboard);
+			pManager->Uncut();
+			
 
-}
-	pOut->PrintMessage("Click anywhere to paste ");
-	int x;
-	int y;
-	pIn->GetPointClicked(x, y);
-	Point c= { x, y };
-	CFigure* paste = Clipboard->Clone();
-	paste->paste_clone(c);
-	paste->SetSelected(false);
-	pManager->AddFigure(paste);
-	pManager->Uncut();
-	pOut->PrintMessage("Pasted :)");
+		}
+		else
+		{
+			CFigure* copied = Clipboard->Clone();
+			copied->paste_clone(p);
+			copied->SetSelected(false);
+			pManager->AddFigure(copied);
+			
+		}
+		pOut->PrintMessage("Pasted :)");
+	}
 }
