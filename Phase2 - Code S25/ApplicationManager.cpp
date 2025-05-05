@@ -5,10 +5,10 @@
 #include "Actions\AddSqrAction.h"
 #include "Actions\AddTriAction.h"
 #include "Actions\Select.h"
-#include "Actions/COPY.h"
-#include "Actions\CopyAction.h"
-#include"Actions/CUT.h"
-#include"Actions/PASTE.h"
+#include "COPY.h"
+#include "ActionsCopyAction.h"
+#include"CUT.h"
+#include"PASTE.h"
 
 
 

@@ -1,5 +1,6 @@
 #include "CHexagon.h"
-#include <ofstream>
+#include <fstream>
+#include "../ApplicationManager.h"
 
 CHexagon::CHexagon(Point P1, double L, GfxInfo FigureGfxInfo) :CFigure(FigureGfxInfo)
 {
@@ -40,13 +41,13 @@ void CHexagon::paste_clone(Point c)
 
 void CHexagon::save(ofstream& OutFile) const 
 {
-    outputFile << "HEX" << '\t'
+	OutFile << "HEX" << '\t'
      	       << ID << '\t'
                << centre.x << '\t' << centre.y << '\t'
                << length << '\t'
     	       << FigGfxInfo.DrawClr << '\t';
     
-    if(FigGfxInfo.isFilled) outputFile << FigGfxInfo.FillClr;
-    else outputFile << "NO_FILL";
-    outputFile << '\n';
+    if(FigGfxInfo.isFilled) OutFile << FigGfxInfo.FillClr;
+    else OutFile << "NO_FILL";
+	OutFile << '\n';
 }

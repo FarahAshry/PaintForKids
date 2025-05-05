@@ -1,5 +1,6 @@
 #include "CTriangle.h"
-#include <ofstream>
+#include <fstream>
+#include "../ApplicationManager.h"
 
 CTriangle::CTriangle(Point P1, Point P2, Point P3, GfxInfo FigureGfxInfo) :CFigure(FigureGfxInfo)
 {
@@ -55,14 +56,14 @@ void CTriangle::paste_clone(Point c)
 
 void CTriangle::save(ofstream& OutFile) const 
 {
-    outputFile << "TRI" << '\t'
+	OutFile << "TRI" << '\t'
      	       << ID << '\t'
                << Corner1.x << '\t' << Corner1.y << '\t'
                << Corner2.x << '\t' << Corner2.y << '\t'
 	       << Corner3.x << '\t' << Corner3.y << '\t'
     	       << FigGfxInfo.DrawClr << '\t';
     
-    if(FigGfxInfo.isFilled) outputFile << FigGfxInfo.FillClr;
-    else outputFile << "NO_FILL";
-    outputFile << '\n';
+    if(FigGfxInfo.isFilled) OutFile << FigGfxInfo.FillClr;
+    else OutFile << "NO_FILL";
+	OutFile << '\n';
 }

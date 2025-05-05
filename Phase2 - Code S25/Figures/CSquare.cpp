@@ -1,5 +1,6 @@
 #include "CSquare.h"
-#include <ofstream>
+#include <fstream>
+#include "../ApplicationManager.h"
 
 CSquare::CSquare(Point P1, double L, GfxInfo FigureGfxInfo) :CFigure(FigureGfxInfo)
 {
@@ -38,13 +39,13 @@ void CSquare::paste_clone(Point c)
 }
 void CSquare::save(ofstream& OutFile) const 
 {
-    outputFile << "SQR" << '\t'
+    OutFile << "SQR" << '\t'
      	       << ID << '\t'
                << centre.x << '\t' << centre.y << '\t'
                << length << '\t'
     	       << FigGfxInfo.DrawClr << '\t';
     
-    if(FigGfxInfo.isFilled) outputFile << FigGfxInfo.FillClr;
-    else outputFile << "NO_FILL";
-    outputFile << '\n';
+    if(FigGfxInfo.isFilled) OutFile << FigGfxInfo.FillClr;
+    else OutFile << "NO_FILL";
+	OutFile << '\n';
 }

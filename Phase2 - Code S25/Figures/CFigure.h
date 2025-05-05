@@ -13,6 +13,7 @@ protected:
 	GfxInfo FigGfxInfo;	//Figure graphis info
 	color FigColor;
 	int incFig;
+	string FigType; //to get the type of the figure
 
 	/// Add more parameters if needed.
 

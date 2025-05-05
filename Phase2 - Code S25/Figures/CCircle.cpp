@@ -1,5 +1,6 @@
 #include "CCircle.h"
-#include <ofstream>
+#include <fstream>
+#include "../ApplicationManager.h"
 
 CCircle::CCircle(Point P1, double R, GfxInfo FigureGfxInfo) :CFigure(FigureGfxInfo)
 {
@@ -39,13 +40,13 @@ void CCircle::paste_clone(Point c)
 
 void CCircle::save(ofstream& OutFile) const 
 {
-    outputFile << "CIRC" << '\t'
+	OutFile << "CIRC" << '\t'
      	       << ID << '\t'
                << centre.x << '\t' << centre.y << '\t'
                << radius << '\t'
     	       << FigGfxInfo.DrawClr << '\t';
     
-    if(FigGfxInfo.isFilled) outputFile << FigGfxInfo.FillClr;
-    else outputFile << "NO_FILL";
-    outputFile << '\n';
+    if(FigGfxInfo.isFilled) OutFile << FigGfxInfo.FillClr;
+    else OutFile << "NO_FILL";
+	OutFile << '\n';
 }

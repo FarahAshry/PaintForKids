@@ -1,4 +1,6 @@
 #include "CFigure.h"
+#include <iostream>
+using namespace std;
 
 CFigure::CFigure(GfxInfo FigureGfxInfo)
 { 
