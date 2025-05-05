@@ -26,14 +26,19 @@ void Missing::Execute() {
 	ReadActionParameters();
 	fig = pManager->GetFigure(P1.x, P1.y);
 	Output* pOut = pManager->GetOutput();
-	int c = 0;
+	Input* pIn;
+	ActionType ActType;
 	do {
 		HideFigure(*fig, true);
+		pOut->PrintMessage("A shape is now hidden, hit one of the following keys to determine its type: rectangle (r), circle (c), square (s), hexagon (h), triangle (t)");
 		std::this_thread::sleep_for(std::chrono::seconds(5));
+		pIn->GetSrting(pOut);
 
-		ShowFigure(*fig, false);
-		c++;
-	} while (c<5);
+
+
+		/*ShowFigure(*fig, false);*/
+	
+	} while (ActType!=EXIT);
 }
 
 
@@ -41,14 +46,14 @@ void Missing::compare(CFigure& fig, CFigure& fig2) {
 	Output* pOut = new Output;
 	//
 
-	/*if (fig == fig2) {
+	if (fig.getID() == fig2.getID()) {
 		pOut->PrintMessage("Match found!");
 		incScore();
 	}
 	else {
 		pOut->PrintMessage("Match not found!");
 		decScore();
-	}*/
+	}
 }
 void Missing::incScore() {
 	score++;
