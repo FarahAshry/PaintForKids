@@ -12,6 +12,8 @@
 #include "Actions\Missing.h"
 #include "Actions/LoadAction.h"
 #include"Actions\SwitchToPlay.h"
+#include"Actions/SaveAction.h"
+#include "Actions/Select.h"
 
 #include <iostream>
 #include <fstream>
@@ -56,6 +58,24 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 	{
 	case DRAW_RECT:
 		pAct = new AddRectAction(this);
+		break;
+	case DRAW_SQUARE:
+		pAct = new AddSqrAction(this);
+		break;
+	case DRAW_TRI:
+		pAct = new AddTriAction(this);
+		break;
+	case DRAW_HEX:
+		pAct = new AddHexAction(this);
+		break;
+	case DRAW_CIRCLE:
+		pAct = new AddCircAction(this);
+		break;
+	case SAVE_GRAPH:
+		pAct = new SaveAction(this);
+		break;
+	case SELECT:
+		pAct = new Select(this);
 		break;
 
 	case EXIT:

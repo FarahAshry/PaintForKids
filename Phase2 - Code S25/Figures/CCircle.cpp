@@ -65,3 +65,7 @@ void CCircle::Load(ifstream& Infile) {
 		FigGfxInfo.FillClr = StringToColor(fillColor);
 	}
 }
+FigureType CCircle::getFigureType() const
+{
+	return CIRCLE;
+}
