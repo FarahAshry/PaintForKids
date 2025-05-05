@@ -167,17 +167,6 @@ CFigure* ApplicationManager::RemoveAction(Action* pAct)
 	return nullptr;
 }
 
-//LOAD all figures
-void ApplicationManager::LoadAll(ifstream& Infile)
-{
-	int count;
-	Infile >> count;
-	for (int i = 0; i < count; i++)
-	{
-		FigList[i]->Load(Infile);
-	}
-}
-
 ////////////////////////////////////////////////////////////////////////////////////
 //Return a pointer to the input
 Input* ApplicationManager::GetInput() const
@@ -325,6 +314,16 @@ void ApplicationManager:: saveAll(ofstream & file) const
 	for (int i = 0; i < FigCount; i++)FigList[i]->save(file);
 }
 
+//Load all figures
+void ApplicationManager::LoadAll(ifstream& Infile)
+{
+	int count;
+	Infile >> count;
+	for (int i = 0; i < count; i++)
+	{
+		FigList[i]->Load(Infile);
+	}
+}
 
 int ApplicationManager::GetSelectedCount() const 
 {
@@ -334,7 +333,7 @@ int ApplicationManager::GetSelectedCount() const
     return count;
 }
 
-int ApplicationManager::GetSelectedFigureCount(FigureType type) const {
+int ApplicationManager::GetSelectedFigureCount(FigureID type) const {
 	int count = 0;
     for (int i = 0; i < FigCount; i++)
         if (FigList[i]->IsSelected() && FigList[i]->getFigureType() == type) count++;
