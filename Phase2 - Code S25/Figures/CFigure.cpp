@@ -1,5 +1,8 @@
 #include "CFigure.h"
 
+#include <iostream>
+#include <fstream>
+
 CFigure::CFigure(GfxInfo FigureGfxInfo)
 { 
 	FigGfxInfo = FigureGfxInfo;	//Default status is non-filled.
@@ -22,8 +25,8 @@ void CFigure::ChngFillClr(color Fclr)
 }
 //Farah added these 4 functions
 string CFigure::getFigureType() {
-	cout << FigType << endl;
-	return FigType;	
+	cout << this->FigType << endl;
+	return this->FigType;	
 }
  
 //to get the color of the figure
@@ -66,6 +69,10 @@ int CFigure::getID() {
 int CFigure::incrementFig()
 {
 	return incFig++;
+}
+string CFigure::GetInfoString()
+{
+	return string();
 }
 color CFigure::GetFillColor() const
 {

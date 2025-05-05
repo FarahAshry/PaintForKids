@@ -19,6 +19,9 @@
     <Filter Include="Application Manager">
       <UniqueIdentifier>{be3a4e10-d854-4bf8-9add-2f85904b4103}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Images">
+      <UniqueIdentifier>{f6e0e576-1cba-4fe5-aebe-68f218f01c21}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CMUgraphicsLib\auxil.cpp">
@@ -163,6 +166,51 @@
     <ClCompile Include="Actions\AddSqrAction.cpp">
       <Filter>Action Classes</Filter>
     </ClCompile>
+    <ClCompile Include="Actions\AddCircAction.cpp">
+      <Filter>Action Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Actions\AddHexAction.cpp">
+      <Filter>Action Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Actions\AddTriAction.cpp">
+      <Filter>Action Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Actions\SaveAction.cpp">
+      <Filter>Action Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Actions\Select.cpp">
+      <Filter>Action Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Actions\ClearAll.cpp">
+      <Filter>Action Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Actions\COPY.cpp">
+      <Filter>Action Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Actions\CUT.cpp">
+      <Filter>Action Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Actions\LoadAction.cpp">
+      <Filter>Action Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Actions\Matching.cpp">
+      <Filter>Action Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Actions\Missing.cpp">
+      <Filter>Action Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Actions\PASTE.cpp">
+      <Filter>Action Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Actions\Rotate.cpp">
+      <Filter>Action Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Actions\Swap.cpp">
+      <Filter>Action Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Actions\Delete.cpp">
+      <Filter>Action Classes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CMUgraphicsLib\auxil.h">
@@ -265,8 +313,121 @@
     <ClInclude Include="Actions\AddSqrAction.h">
       <Filter>Action Classes</Filter>
     </ClInclude>
+    <ClInclude Include="Actions\AddCircAction.h">
+      <Filter>Action Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Actions\AddHexAction.h">
+      <Filter>Action Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Actions\AddTriAction.h">
+      <Filter>Action Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Actions\SaveAction.h">
+      <Filter>Action Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Actions\Select.h">
+      <Filter>Action Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Actions\Missing.h">
+      <Filter>Action Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Actions\ClearAll.h">
+      <Filter>Action Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Actions\COPY.h">
+      <Filter>Action Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Actions\CUT.h">
+      <Filter>Action Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Actions\LoadAction.h">
+      <Filter>Action Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Actions\Matching.h">
+      <Filter>Action Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Actions\PASTE.h">
+      <Filter>Action Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Actions\Rotate.h">
+      <Filter>Action Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Actions\Swap.h">
+      <Filter>Action Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Actions\Delete.h">
+      <Filter>Action Classes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="images\MenuItems\Menu_Add.jpg">
+      <Filter>Images</Filter>
+    </Image>
+    <Image Include="images\MenuItems\Menu_Arrow.png">
+      <Filter>Images</Filter>
+    </Image>
+    <Image Include="images\MenuItems\Menu_Circ.jpg">
+      <Filter>Images</Filter>
+    </Image>
+    <Image Include="images\MenuItems\Menu_Clear.jpg">
+      <Filter>Images</Filter>
+    </Image>
+    <Image Include="images\MenuItems\Menu_Copy.jpg">
+      <Filter>Images</Filter>
+    </Image>
+    <Image Include="images\MenuItems\Menu_Cut.jpg">
+      <Filter>Images</Filter>
+    </Image>
+    <Image Include="images\MenuItems\Menu_Delete.jpg">
+      <Filter>Images</Filter>
+    </Image>
+    <Image Include="images\MenuItems\Menu_Draw.jpg">
+      <Filter>Images</Filter>
+    </Image>
+    <Image Include="images\MenuItems\Menu_Exit.jpg">
+      <Filter>Images</Filter>
+    </Image>
+    <Image Include="images\MenuItems\Menu_Hex.jpg">
+      <Filter>Images</Filter>
+    </Image>
+    <Image Include="images\MenuItems\Menu_Load.jpg">
+      <Filter>Images</Filter>
+    </Image>
+    <Image Include="images\MenuItems\Menu_Missing.png">
+      <Filter>Images</Filter>
+    </Image>
+    <Image Include="images\MenuItems\Menu_Missing.jpg">
+      <Filter>Images</Filter>
+    </Image>
+    <Image Include="images\MenuItems\Menu_Matching.jpg">
+      <Filter>Images</Filter>
+    </Image>
+    <Image Include="images\MenuItems\Menu_Paste.jpg">
+      <Filter>Images</Filter>
+    </Image>
+    <Image Include="images\MenuItems\Menu_Play.jpg">
+      <Filter>Images</Filter>
+    </Image>
+    <Image Include="images\MenuItems\Menu_Rect.JPG">
+      <Filter>Images</Filter>
+    </Image>
+    <Image Include="images\MenuItems\Menu_Rotate.jpg">
+      <Filter>Images</Filter>
+    </Image>
+    <Image Include="images\MenuItems\Menu_Save.jpg">
+      <Filter>Images</Filter>
+    </Image>
+    <Image Include="images\MenuItems\Menu_Square.jpg">
+      <Filter>Images</Filter>
+    </Image>
+    <Image Include="images\MenuItems\Menu_Swap.jpg">
+      <Filter>Images</Filter>
+    </Image>
+    <Image Include="images\MenuItems\Menu_Triangle.jpg">
+      <Filter>Images</Filter>
+    </Image>
   </ItemGroup>
 </Project>

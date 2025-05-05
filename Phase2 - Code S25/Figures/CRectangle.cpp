@@ -1,5 +1,5 @@
 #include "CRectangle.h"
-#include <ofstream>
+#include <fstream>
 
 CRectangle::CRectangle(Point P1, Point P2, GfxInfo FigureGfxInfo):CFigure(FigureGfxInfo)
 {
@@ -39,7 +39,8 @@ void CRectangle::paste_clone(Point c)
 
 void CRectangle::save(ofstream& OutFile) const 
 {
-    outputFile << "RECT" << '\t'
+    // NADA TODO
+   /* outputFile << "RECT" << '\t'
      	       << ID << '\t'
                << Corner1.x << '\t' << Corner1.y << '\t'
                << Corner2.x << '\t' << Corner2.y << '\t'
@@ -47,6 +48,6 @@ void CRectangle::save(ofstream& OutFile) const
     
     if(FigGfxInfo.isFilled) outputFile << FigGfxInfo.FillClr;
     else outputFile << "NO_FILL";
-    outputFile << '\n';
+    outputFile << '\n';*/
 }
 

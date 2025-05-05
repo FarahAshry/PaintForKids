@@ -5,6 +5,7 @@
 #include "Figures\CFigure.h"
 #include "GUI\input.h"
 #include "GUI\output.h"
+#include "Actions\Action.h"
 
 //Main class that manages everything in the application.
 class ApplicationManager
@@ -22,10 +23,13 @@ private:
 	Output *pOut;
 
 	CFigure* Clipboard;  //Pointer to copied/cut figure
-CFigure* CuttedFig;
+	CFigure* CuttedFig;
 
-color DrawOg_Cut;
-color FillOg_Cut;
+	color DrawOg_Cut;
+	color FillOg_Cut;
+
+	boolean IsClip_Cut;
+	boolean IsFilled_Cut;
 
 public:	
 	ApplicationManager(); 
@@ -48,6 +52,12 @@ public:
 	void LoadAll();
 	void RemoveFig(CFigure* pFig);
 
+	CFigure* GetFigureList();
+	int GetFigureCount();
+	int GetSelectedCount();
+	int GetSelectedFigureCount(DrawMenuItem item);
+
+
 CFigure* GetSelected() const;
 
 void SetClipboard(CFigure* pFig,bool IsCut);
@@ -55,6 +65,8 @@ CFigure* GetClipboard() const;
 
 void Clear_Clip();
 void Uncut();
+
+void saveAll(ofstream& file) const;
 };
 
 #endif

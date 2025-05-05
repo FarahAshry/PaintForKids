@@ -14,6 +14,8 @@ protected:
 	color FigColor;
 	int incFig;
 
+	string FigType;
+
 	/// Add more parameters if needed.
 
 public:
@@ -52,6 +54,9 @@ public:
 	virtual void Load(ofstream &Infile) = 0;	//Load the figure parameters to the file
 
 	//virtual void PrintInfo(Output* pOut) = 0;	//print all figure info on the status bar
+
+	string GetInfoString();
+
 };
 
 #endif

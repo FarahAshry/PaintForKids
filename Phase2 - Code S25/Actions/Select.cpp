@@ -1,7 +1,7 @@
 #include "Select.h"
-#include "Figures/CFigure.h" 
-#include "GUI/Input.h"     
-#include "GUI/Output.h"
+#include "../Figures/CFigure.h" 
+#include "../GUI/Input.h"     
+#include "../GUI/Output.h"
 
 Select::Select(ApplicationManager* pApp) : Action(pApp) {}
 
@@ -18,15 +18,15 @@ void Select::ReadActionParameters()
 void Select::ClearSelection()
 {
     // Get figures and their count from ApplicationManager
-    CFigure** figList = pManager->GetFigureList();
+    CFigure* figList = pManager->GetFigureList();
     int figCount = pManager->GetFigureCount();
 
     for (int i = 0; i < figCount; i++)
     {
-        if (figList[i]->IsSelected())
+        if (figList[i].IsSelected())
         {
-            figList[i]->SetSelected(false);
-            figList[i]->ChngDrawClr(BLACK);
+            figList[i].SetSelected(false);
+            figList[i].ChngDrawClr(BLACK);
         }
     }
 }

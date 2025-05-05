@@ -4,7 +4,7 @@
 
 Input::Input(window* pW)
 {
-	pWind = pW; //point to the passed window
+	this->pWind = pW; //point to the passed window
 }
 
 void Input::GetPointClicked(int& x, int& y) const

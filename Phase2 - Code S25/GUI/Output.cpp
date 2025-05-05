@@ -93,7 +93,7 @@ void Output::CreateDrawToolBar() const
 	MenuItemImages[ITM_RECT] = "images\\MenuItems\\Menu_Rect.jpg";
 	MenuItemImages[ITM_SQUARE] = "images\\MenuItems\\Menu_Square.jpg";
 	MenuItemImages[ITM_TRI] = "images\\MenuItems\\Menu_Triangle.jpg";
-	MenuItemImages[ITM_CIRCLE] = "images\\MenuItems\\Menu_Circle.jpg";
+	MenuItemImages[ITM_CIRCLE] = "images\\MenuItems\\Menu_Circ.jpg";
 	MenuItemImages[ITM_HEX] = "images\\MenuItems\\Menu_Hex.jpg";
 	MenuItemImages[ITM_ADD_FIG] = "images\\MenuItems\\Menu_Add.jpg";
 	MenuItemImages[ITM_SELECT] = "images\\MenuItems\\Menu_Arrow.png";

@@ -987,9 +987,111 @@
 				</File>
 			</Filter>
 		</Filter>
+
+		<Filter
+			Name="Images"
+			>
+			<File
+				RelativePath=".\images\MenuItems\Menu_Add.jpg"
+				>
+			</File>
+			<File
+				RelativePath=".\images\MenuItems\Menu_Arrow.png"
+				>
+			</File>
+			<File
+				RelativePath=".\images\MenuItems\Menu_Circ.jpg"
+				>
+			</File>
+			<File
+				RelativePath=".\images\MenuItems\Menu_Clear.jpg"
+				>
+			</File>
+			<File
+				RelativePath=".\images\MenuItems\Menu_Copy.jpg"
+				>
+			</File>
+			<File
+				RelativePath=".\images\MenuItems\Menu_Cut.jpg"
+				>
+			</File>
+			<File
+				RelativePath=".\images\MenuItems\Menu_Delete.jpg"
+				>
+			</File>
+			<File
+				RelativePath=".\images\MenuItems\Menu_Draw.jpg"
+				>
+			</File>
+			<File
+				RelativePath=".\images\MenuItems\Menu_Exit.jpg"
+				>
+			</File>
+			<File
+				RelativePath=".\images\MenuItems\Menu_Hex.jpg"
+				>
+			</File>
+			<File
+				RelativePath=".\images\MenuItems\Menu_Load.jpg"
+				>
+			</File>
+			<File
+				RelativePath=".\images\MenuItems\Menu_Matching.jpg"
+				>
+			</File>
+			<File
+				RelativePath=".\images\MenuItems\Menu_Missing.jpg"
+				>
+			</File>
+			<File
+				RelativePath=".\images\MenuItems\Menu_Missing.png"
+				>
+			</File>
+			<File
+				RelativePath=".\images\MenuItems\Menu_Paste.jpg"
+				>
+			</File>
+			<File
+				RelativePath=".\images\MenuItems\Menu_Play.jpg"
+				>
+			</File>
+			<File
+				RelativePath=".\images\MenuItems\Menu_Rect.JPG"
+				>
+			</File>
+			<File
+				RelativePath=".\images\MenuItems\Menu_Rotate.jpg"
+				>
+			</File>
+			<File
+				RelativePath=".\images\MenuItems\Menu_Save.jpg"
+				>
+			</File>
+			<File
+				RelativePath=".\images\MenuItems\Menu_Square.jpg"
+				>
+			</File>
+			<File
+				RelativePath=".\images\MenuItems\Menu_Swap.jpg"
+				>
+			</File>
+			<File
+				RelativePath=".\images\MenuItems\Menu_Triangle.jpg"
+				>
+			</File>
+		</Filter>	
 		<Filter
 			Name="Figures Classes"
 			>
+			<File
+				RelativePath=".\Figures\CCircle.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Figures\CCircle.h"
+				>
+			</File>
+			
 			<File
 				RelativePath=".\Figures\CFigure.cpp"
 				>
@@ -998,12 +1100,40 @@
 				RelativePath=".\Figures\CFigure.h"
 				>
 			</File>
+			
+			<File
+				RelativePath=".\Figures\CHexagon.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Figures\CHexagon.h"
+				>
+			</File>
+
 			<File
 				RelativePath=".\Figures\CRectangle.cpp"
 				>
 			</File>
 			<File
 				RelativePath=".\Figures\CRectangle.h"
+				>
+			</File>
+
+			<File
+				RelativePath=".\Figures\CSquare.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Figures\CSquare.h"
+				>
+			</File>
+
+			<File
+				RelativePath=".\Figures\CTriangle.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Figures\CTriangle.h"
 				>
 			</File>
 		</Filter>
@@ -1014,6 +1144,7 @@
 				RelativePath=".\Actions\Action.h"
 				>
 			</File>
+			
 			<File
 				RelativePath=".\Actions\AddRectAction.cpp"
 				>
@@ -1022,6 +1153,151 @@
 				RelativePath=".\Actions\AddRectAction.h"
 				>
 			</File>
+
+			<File
+				RelativePath=".\Actions\AddSqrAction.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Actions\AddSqrAction.h"
+				>
+			</File>
+
+			<File
+				RelativePath=".\Actions\AddTriAction.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Actions\AddTriAction.h"
+				>
+			</File>
+
+			<File
+				RelativePath=".\Actions\AddHexAction.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Actions\AddHexAction.h"
+				>
+			</File>
+			
+			<File
+				RelativePath=".\Actions\AddCircAction.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Actions\AddCircAction.h"
+				>
+			</File>
+
+			<File
+				RelativePath=".\Actions\Select.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Actions\Select.h"
+				>
+			</File>
+
+			<File
+				RelativePath=".\Actions\Swap.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Actions\Swap.h"
+				>
+			</File>
+
+			<File
+				RelativePath=".\Actions\Rotate.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Actions\Rotate.h"
+				>
+			</File>
+
+			<File
+				RelativePath=".\Actions\Delete.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Actions\Delete.h"
+				>
+			</File>
+				
+			<File
+				RelativePath=".\Actions\ClearAll.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Actions\ClearAll.h"
+				>
+			</File>
+
+			<File
+				RelativePath=".\Actions\COPY.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Actions\COPY.h"
+				>
+			</File>
+
+			<File
+				RelativePath=".\Actions\CUT.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Actions\CUT.h"
+				>
+			</File>
+
+			<File
+				RelativePath=".\Actions\PASTE.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Actions\PASTE.h"
+				>
+			</File>
+
+			<File
+				RelativePath=".\Actions\SaveAction.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Actions\SaveAction.h"
+				>
+			</File>
+			
+			<File
+				RelativePath=".\Actions\LoadAction.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Actions\LoadAction.h"
+				>
+			</File>
+
+			<File
+				RelativePath=".\Actions\Matching.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Actions\Matching.h"
+				>
+			</File>
+
+			<File
+				RelativePath=".\Actions\Missing.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Actions\Missing.h"
+				>
+			</File>
+			
 		</Filter>
 		<Filter
 			Name="GUI Classes"

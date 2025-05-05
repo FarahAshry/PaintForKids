@@ -1,10 +1,10 @@
 #include "AddCircAction.h"
-#include "Figures/CCircle.h"
+#include "../Figures/CCircle.h"
 
-#include "ApplicationManager.h"
+#include "../ApplicationManager.h"
 
-#include "GUI/Output.h"
-#include"GUI/Input.h"
+#include "../GUI/Output.h"
+#include"../GUI/Input.h"
 
 using namespace std;
 
@@ -44,7 +44,7 @@ void AddCircAction::Execute()
 	ReadActionParameters();
 
 	//Create a circle with the parameters read from the user
-	CCircle C = new CCircle(P1, radius, CircGfxInfo);
+	CCircle *C = new CCircle(P1, radius, CircGfxInfo);
 
 	//Add the circle to the list of figures
 	pManager->AddFigure(C);

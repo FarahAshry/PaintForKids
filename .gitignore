@@ -1,0 +1,14 @@
+**/.vs/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+x64/
+[Bb]in/
+[Oo]bj/

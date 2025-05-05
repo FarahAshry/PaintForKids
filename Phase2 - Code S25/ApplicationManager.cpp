@@ -5,10 +5,13 @@
 #include "Actions\AddSqrAction.h"
 #include "Actions\AddTriAction.h"
 #include "Actions\Select.h"
-#include "Actions/COPY.h"
-#include "C:\Users\LOQ\Desktop\Sem 2\PT\PROJECT\phase 2\Phase2 - Code S25\Actions\CopyAction.h"
-#include"Actions/CUT.h"
-#include"Actions/PASTE.h"
+#include "Actions\COPY.h"
+#include "Actions\COPY.h"
+#include"Actions\CUT.h"
+#include"Actions\PASTE.h"
+
+#include <iostream>
+#include <fstream>
 
 
 
@@ -27,6 +30,7 @@ ApplicationManager::ApplicationManager()
 		FigList[i] = NULL;
 	Clipboard = nullptr;
 	CuttedFig = nullptr;
+
 IsClip_Cut = false;
 IsFilled_Cut = false;
 	
@@ -98,9 +102,13 @@ CFigure* ApplicationManager::GetFigure(int x, int y) const
 	//if this point (x,y) does not belong to any figure return NULL
 	//Add your code here to search for a figure given a point x,y	
 	//Remember that ApplicationManager only calls functions do NOT implement it.
-	for (int i = FigCount-1; i >= 0; i--) {
+	
+	// NADA TODO
+
+	/*for (int i = FigCount-1; i >= 0; i--) {
         	if (FigList[i]->ContainsPoint(x, y)) return FigList[i];
-    	}
+    	}*/
+
     	return nullptr;
 }
 //==================================================================================//
@@ -112,6 +120,13 @@ void ApplicationManager::UpdateInterface() const
 {
 	for (int i = 0; i < FigCount; i++)
 		FigList[i]->Draw(pOut);		//Call Draw function (virtual member fn)
+}
+CFigure* ApplicationManager::RemoveAction(Action* pAct)
+{
+	return nullptr;
+}
+void ApplicationManager::LoadAll()
+{
 }
 ////////////////////////////////////////////////////////////////////////////////////
 //Return a pointer to the input
@@ -142,6 +157,26 @@ void ApplicationManager::RemoveFig(CFigure* pFig)
 			break;
 		}
 	}
+}
+
+CFigure* ApplicationManager::GetFigureList()
+{
+	return nullptr;
+}
+
+int ApplicationManager::GetFigureCount()
+{
+	return 0;
+}
+
+int ApplicationManager::GetSelectedCount()
+{
+	return 0;
+}
+
+int ApplicationManager::GetSelectedFigureCount(DrawMenuItem item)
+{
+	return 0;
 }
 
 CFigure* ApplicationManager::GetSelected() const {
@@ -231,9 +266,13 @@ CFigure* ApplicationManager::GetClipboard() const
 // Save all figures 
 void ApplicationManager:: saveAll(ofstream & file) const
 {
-	file<< FigCount<< endl;
-	for (int i = 0; i < FigCount; i++)FigList[i]->Save(file);
+	file << FigCount<< endl;
+
+	// NADA TODO
+	//for (int i = 0; i < FigCount; i++)FigList[i]->Save(file);
 }
+
+
 
 //Destructor
 ApplicationManager::~ApplicationManager()

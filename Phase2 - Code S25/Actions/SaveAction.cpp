@@ -1,10 +1,10 @@
 #include "SaveAction.h"
-#include "Figures\CFigure.h"
+#include "../Figures\CFigure.h"
 #include <fstream>
 #include <string>
-#include "GUI/Input.h"
-#include "GUI/Output.h"
-#include "ApplicationManager.h"
+#include "../GUI/Input.h"
+#include "../GUI/Output.h"
+#include "../ApplicationManager.h"
 
 SaveAction::SaveAction(ApplicationManager* pApplication) : Action(pApplication){}
 
@@ -25,19 +25,22 @@ void SaveAction::Execute(bool readparameters)
 	ReadActionParameters();
 	ofstream file;
 	file.open(name, ios::out);
-	if (CFigure::IsFilled() == false)
+
+	// NADA TODO
+
+	/*if (CFigure::IsFilled() == false)
 	{
 		file << (pOut->getCrntDrawColor()) << "  " << "No_Fill" << endl;
 	}
 	else
 		file << (pOut->getCrntDrawColor()) << "  " << (pOut->getCrntFillColor()) << endl;
 
-	for (int i = 0; i < pManager->getFigurCount(); i++)
+	for (int i = 0; i < pManager->getFigureCount(); i++)
 	{
 		CFigure* fig = pManager->GetFigureByIndex(i);
 		fig->save(file);
 	}
-	file.close();
+	file.close();*/
 }
 
 SaveAction::~SaveAction(void){}

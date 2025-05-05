@@ -921,7 +921,7 @@ void window::DrawTriangle(const int iX1, const int iY1, const int iX2, const int
 	
 }
 
-void window::DrawPolygon(const int* ipX, const int* ipY, const int iVertices, const drawstyle dsStyle) {
+void window::DrawPolygon(const double* ipX, const double* ipY, const int iVertices, const drawstyle dsStyle) {
 
 	HRGN rgnTemp;
 	POINT *ptVertices;
