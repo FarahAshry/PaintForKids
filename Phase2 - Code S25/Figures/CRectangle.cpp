@@ -37,9 +37,6 @@ void CRectangle::save(ofstream& OutFile) const
 {
 }
 
-void CRectangle::Load(ifstream& Infile)
-{
-}
 
 //void CRectangle::save(ofstream& OutFile) const 
 //{
@@ -54,20 +51,20 @@ void CRectangle::Load(ifstream& Infile)
 //    outputFile << '\n';
 //}
 
-//void CRectangle::Load(ifstream& Infile) {
-//	// Read the rectangle's data from the file
-//	Infile >> Corner1.x >> Corner1.y >> Corner2.x >> Corner2.y;
-//
-//	// Read the figure's graphics info (e.g., colors, pen width)
-//	string drawColor, fillColor;
-//	Infile >> drawColor >> fillColor;
-//
-//	FigGfxInfo.DrawClr = StringToColor(drawColor);
-//	if (fillColor == "No_Fill")
-//		FigGfxInfo.isFilled = false;
-//	else
-//	{
-//		FigGfxInfo.isFilled = true;
-//		FigGfxInfo.FillClr = StringToColor(fillColor);
-//	}
-//}
+void CRectangle::Load(ifstream& Infile) {
+	// Read the rectangle's data from the file
+	Infile >> Corner1.x >> Corner1.y >> Corner2.x >> Corner2.y;
+
+	// Read the figure's graphics info (e.g., colors, pen width)
+	string drawColor, fillColor;
+	Infile >> drawColor >> fillColor;
+
+	FigGfxInfo.DrawClr = StringToColor(drawColor);
+	if (fillColor == "No_Fill")
+		FigGfxInfo.isFilled = false;
+	else
+	{
+		FigGfxInfo.isFilled = true;
+		FigGfxInfo.FillClr = StringToColor(fillColor);
+	}
+}
