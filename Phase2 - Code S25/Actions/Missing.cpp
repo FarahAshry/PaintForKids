@@ -17,8 +17,8 @@ void Missing::ReadActionParameters() {
 	Output* pOut = pManager->GetOutput();
 	Input* pIn = pManager->GetInput();
 	pOut->PrintMessage("Missing Game: Click on a figure.");
-	pIn->GetPointClicked(P1.x, P1.y); 
-	
+	pIn->GetPointClicked(P1.x, P1.y);
+
 	pOut->ClearStatusBar();
 }
 
@@ -34,24 +34,24 @@ void Missing::Execute() {
 		std::this_thread::sleep_for(std::chrono::seconds(5));
 		pIn->GetSrting(pOut);
 
+		ShowFigure(*fig, false);
+		std::this_thread::sleep_for(std::chrono::seconds(1));
 
 
-		/*ShowFigure(*fig, false);*/
-	
-	} while (ActType!=EXIT);
+	} while (ActType != EXIT);
 }
 
 
 void Missing::compare(CFigure& fig, CFigure& fig2) {
 	Output* pOut = new Output;
-	//
+	
 
-	if (fig.getID() == fig2.getID()) {
-		pOut->PrintMessage("Match found!");
+	if (fig.getFigureType() == fig2.getFigureType()) {
+		pOut->PrintMessage("Correct guess!");
 		incScore();
 	}
 	else {
-		pOut->PrintMessage("Match not found!");
+		pOut->PrintMessage("Incorrect guess!");
 		decScore();
 	}
 }
@@ -68,6 +68,7 @@ int Missing::getScore() {
 
 void Missing::HideFigure(CFigure& fig, bool hide) {
 	hidden = hide;
+	hidden = true;
 	Output* pOut = pManager->GetOutput();
 	if (hidden) {
 		fig.SetSelected(false);
@@ -83,8 +84,6 @@ void Missing::ShowFigure(CFigure& fig, bool show) {
 	}
 }
 
-bool Missing::isHidden() {
-	return hidden;
-}
+
 
 Missing::~Missing() {}
