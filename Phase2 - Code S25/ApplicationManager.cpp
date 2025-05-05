@@ -165,8 +165,15 @@ CFigure* ApplicationManager::RemoveAction(Action* pAct)
 	return nullptr;
 }
 
-void ApplicationManager::LoadAll()
+//LOAD all figures
+void ApplicationManager::LoadAll(ifstream& Infile)
 {
+	int count;
+	Infile >> count;
+	for (int i = 0; i < count; i++)
+	{
+		FigList[i]->Load(Infile);
+	}
 }
 
 ////////////////////////////////////////////////////////////////////////////////////
