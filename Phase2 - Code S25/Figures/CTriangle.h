@@ -17,6 +17,7 @@ public:
 	virtual void printInfo()const;
 	virtual void save(ofstream& outputFile) const;
 	virtual void Load(ifstream& Infile);
+	virtual FigureType getFigureType() const override;
 };
 
 #endif
