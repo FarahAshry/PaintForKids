@@ -235,6 +235,20 @@ void ApplicationManager:: saveAll(ofstream & file) const
 	for (int i = 0; i < FigCount; i++)FigList[i]->Save(file);
 }
 
+int ApplicationManager::GetSelectedCount() const 
+{
+    int count = 0;
+    for (int i = 0; i < FigCount; i++)
+        if (FigList[i]->IsSelected()) count++;
+    return count;
+}
+
+int ApplicationManager::GetSelectedFigureCount(FigureType type) const {
+    int count = 0;
+    for (int i = 0; i < FigCount; i++)
+        if (FigList[i]->IsSelected() && FigList[i]->getFigureType() == type) count++;
+    return count;
+}
 //Destructor
 ApplicationManager::~ApplicationManager()
 {
@@ -245,19 +259,3 @@ ApplicationManager::~ApplicationManager()
 
 }
 
-color ApplicationManager::StringToColor(string color) {
-	if (color == "RED")
-		return RED;
-	else if (color == "GREEN")
-		return GREEN;
-	else if (color == "BLUE")
-		return BLUE;
-	else if (color == "YELLOW")
-		return YELLOW;
-	else if (color == "BLACK")
-		return BLACK;
-	else if (color == "WHITE")
-		return WHITE;
-	else
-		return;
-}
