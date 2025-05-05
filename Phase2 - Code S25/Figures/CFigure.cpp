@@ -24,9 +24,9 @@ void CFigure::ChngFillClr(color Fclr)
 	FigGfxInfo.FillClr = Fclr; 
 }
 //Farah added these 4 functions
-string CFigure::getFigureType() {
-	cout << this->FigType << endl;
-	return this->FigType;	
+//Maya edited first function
+FigureType CFigure::getFigureType() {
+	return this->type;	
 }
  
 //to get the color of the figure

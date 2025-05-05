@@ -81,11 +81,11 @@ void Select::Execute(bool reading)
             clickedFigure->ChngDrawClr(MAGENTA);
 
             // Print count of selected figures by type
-            int rectCount = pManager->GetSelectedFigureCount(ITM_RECT);
-            int sqrCount = pManager->GetSelectedFigureCount(ITM_SQUARE);
-            int triCount = pManager->GetSelectedFigureCount(ITM_TRI);
-            int circCount = pManager->GetSelectedFigureCount(ITM_CIRCLE);
-            int hexCount = pManager->GetSelectedFigureCount(ITM_HEX);
+            int rectCount = pManager->GetSelectedFigureCount(Rect_ID);
+            int sqrCount = pManager->GetSelectedFigureCount(Square_ID);
+            int triCount = pManager->GetSelectedFigureCount(Tri_ID);
+            int circCount = pManager->GetSelectedFigureCount(Circle_ID);
+            int hexCount = pManager->GetSelectedFigureCount(Hexagon_ID);
 
             pOut->PrintMessage("Selected: " + to_string(rectCount) + " Rectangle(s), " + 
                                               to_string(sqrCount) + " Square(s)" +

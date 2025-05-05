@@ -15,7 +15,7 @@ protected:
 	color FigColor;
 	int incFig;
 
-	string FigType;
+	FigureType type; //return figure type from DEFS.h file
 	bool hidden;
 	/// Add more parameters if needed.
 
@@ -32,13 +32,14 @@ public:
 
 	//function for SaveAction
 	virtual void save(ofstream& OutFile) const = 0;
+
 	virtual void Load(ifstream& Infile) = 0;	//Load the figure parameters to the file
 
 	///The following functions should be supported by the figure class
 	///It should be overridden by each inherited figure
 
 	///Decide the parameters that you should pass to each function	
-	string getFigureType();	//returns the figure type for matching game check
+	FigureType getFigureType();	//returns the figure type
 	color getColor(); 	//returns the color of the figure for matching game check
 	color GetFillColor() const;
 	color GetDrawColor() const;
@@ -52,10 +53,10 @@ public:
 	virtual color StringToColor(string color);
 
 
-	//virtual void Save(ofstream &OutFile) = 0;	//Save the figure parameters to the file
+	virtual void Save(ofstream &outputFile) const= 0;	//Save the figure parameters to the file
 	//virtual void Load(ifstream &Infile) = 0;	//Load the figure parameters to the file
 
-	//virtual void PrintInfo(Output* pOut) = 0;	//print all figure info on the status bar
+	virtual void printInfo() const = 0;	//print all figure info on the status bar
 
 	string GetInfoString();
 	boolean ContainsPoint(int x, int y) const;	//checks if a point is inside the figure
