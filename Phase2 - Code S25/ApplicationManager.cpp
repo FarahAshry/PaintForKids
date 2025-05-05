@@ -344,7 +344,7 @@ CFigure* ApplicationManager::GetFigureList() const { return FigList; }
 
 int ApplicationManager::GetFigureCount() const { return FigCount;}
 
-void ApplicationManager::deselect() const{
+void ApplicationManager::deselect() {
 
 		for (int i = 0; i < FigCount; i++)
 	{
