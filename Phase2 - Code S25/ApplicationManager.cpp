@@ -273,24 +273,6 @@ ApplicationManager::~ApplicationManager()
 	delete pOut;
 }
 
-//color ApplicationManager::StringToColor(string color) {
-//	if (color == "RED")
-//		return RED;
-//	else if (color == "GREEN")
-//		return GREEN;
-//	else if (color == "BLUE")
-//		return BLUE;
-//	else if (color == "YELLOW")
-//		return YELLOW;
-//	else if (color == "BLACK")
-//		return BLACK;
-//	else if (color == "WHITE")
-//		return WHITE;
-//	else
-//		return WHITE; // The function must return a color so let white be the default
-//}
-
-// HOPE GIRLS
 CFigure* ApplicationManager::GetFigureList()
 {
 	return nullptr;
@@ -310,3 +292,21 @@ int ApplicationManager::GetSelectedFigureCount(DrawMenuItem item)
 {
 	return 0;
 }
+int ApplicationManager::GetSelectedCount() const 
+{
+    int count = 0;
+    for (int i = 0; i < FigCount; i++)
+        if (FigList[i]->IsSelected()) count++;
+    return count;
+}
+
+int ApplicationManager::GetSelectedFigureCount(FigureType type) const {
+    int count = 0;
+    for (int i = 0; i < FigCount; i++)
+        if (FigList[i]->IsSelected() && FigList[i]->getFigureType() == type) count++;
+    return count;
+}
+
+CFigure** ApplicationManager::GetFigureList() const { return FigList; }
+
+int ApplicationManager::GetFigureCount() const { return FigCount; }
