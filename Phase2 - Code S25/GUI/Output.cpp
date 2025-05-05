@@ -342,6 +342,7 @@ string Output::colourString(color c)
 	if (c == ORANGE) return "ORANGE";
 	if (c == RED) return "RED";
 	if (c == GREEN) return "GREEN";
+	if (c == BLUE) return "BLUE";
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
