@@ -11,16 +11,16 @@ private:
 	CFigure *fig2;
 	int score; 
 	bool hidden;
+	string in;
 
 public:
 	Missing(ApplicationManager* pApp, int score);
 	void ReadActionParameters();
-	void Execute(ActionType ActType);
-	virtual void Execute();
+	void Execute();
 	void incScore();
 	void decScore();
 	int getScore();
-	void compare(CFigure& fig, CFigure& fig2);
+	void compare(CFigure& fig, string in);
 	void HideFigure(CFigure* fig, bool hide);
 	void ShowFigure(CFigure& fig, bool show);
 

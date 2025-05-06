@@ -46,9 +46,7 @@ void AddSqrAction::ReadActionParameters()
 		SqrGfxInfo.FillClr = pIn->GetColour(pOut);
 	}
 	else SqrGfxInfo.FillClr = UI.FillColor; // Default no-fill color
-	//get drawing, filling colors and pen width from the interface
-	SqrGfxInfo.DrawClr = pOut->getCrntDrawColor();
-	SqrGfxInfo.FillClr = pOut->getCrntFillColor();
+
 	pOut->ClearStatusBar();
 }
 
