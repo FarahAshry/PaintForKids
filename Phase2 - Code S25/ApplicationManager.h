@@ -60,7 +60,6 @@ public:
 	void RemoveFig(CFigure* pFig);
 	
 	CFigure* GetSelected() const;
-	CFigure* Get2Selected() const;
 
 	void SetClipboard(CFigure* pFig,bool IsCut);
 	

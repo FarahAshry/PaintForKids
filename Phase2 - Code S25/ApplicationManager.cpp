@@ -54,7 +54,7 @@ ActionType ApplicationManager::GetUserAction() const
 //Creates an action and executes it
 void ApplicationManager::ExecuteAction(ActionType ActType)
 {
-	Action* pAct = NULL;
+	Action* pAct = nullptr;
 
 	//According to Action Type, create the corresponding action object
 	switch (ActType)
@@ -89,7 +89,7 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 		break;
 
 	case STATUS:	//a click on the status bar ==> no action
-		return;
+		break;
 
 	case COPY_FIG:
 		pAct = new COPY(this);
@@ -117,7 +117,7 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 	case TO_DRAW:
 
 		break;
-
+	}
 		//Execute the created action
 		if (pAct != NULL)
 		{
@@ -126,7 +126,6 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			pAct = NULL;
 		}
 	}
-}
 
 
 //==================================================================================//
