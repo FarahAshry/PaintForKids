@@ -16,7 +16,6 @@ public:
 	virtual void printInfo()const;
 	virtual void save(ofstream& outputFile) const;
 	virtual void Load(ifstream& Infile);
-	virtual color StringToColor(string color);
 	virtual FigureType getFigureType() const override;
 	virtual FigureID getFigureID() const override;
 	virtual Point getCentre() const override;

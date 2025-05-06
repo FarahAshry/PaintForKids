@@ -76,11 +76,11 @@ public:
 
 	bool GetIsCut();
 
+    CFigure** GetFigureList(); 
 	int GetSelectedCount() const;
 
 	int GetSelectedFigureCount(FigureID type) const;
 
-	CFigure** GetFigureList() const;
 
 	int GetFigureCount() const;
 	void deselect() ;

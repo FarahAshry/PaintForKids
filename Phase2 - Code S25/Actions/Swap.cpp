@@ -18,15 +18,15 @@ void Swap::ReadActionParameters() {
 		else
 			pOut->PrintMessage("Select only 2 figures to swap");
 
-		CFigure* figList = pManager->GetFigureList();
+		CFigure** figList = pManager->GetFigureList();
 		int figCount = pManager->GetFigureCount();
 
 		for (int i = 0; i < figCount; i++)
 		{
-			if (figList[i].IsSelected())
+			if (figList[i]->IsSelected())
 			{
-				figList[i].SetSelected(false);
-				figList[i].ChngDrawClr(BLACK);
+				figList[i]->SetSelected(false);
+				figList[i]->ChngDrawClr(BLACK);
 			
 			}
 		}
@@ -42,7 +42,7 @@ void Swap::ReadActionParameters() {
 }
 void Swap::Execute() {
 	Output* pOut = pManager->GetOutput();
-	CFigure* figList = pManager->GetFigureList();
+	CFigure** figList = pManager->GetFigureList();
 	int figCount = pManager->GetFigureCount();
 
 	CFigure* selected[2];
@@ -51,8 +51,8 @@ void Swap::Execute() {
 	// Get 2 figures 
 	for (int i = 0; i < pManager->GetFigureCount(); i++) {
 
-		if (figList[i].IsSelected()) {
-			selected[j++] = &figList[i];
+		if (figList[i]->IsSelected()) {
+			selected[j++] = figList[i];
 		}
 		if (j == 2) 
 			break;

@@ -12,5 +12,6 @@ public:
     Select(ApplicationManager* pApp); // Constructor
     virtual void ReadActionParameters();
     virtual void Execute(bool reading = false);
+    virtual void Execute();
     CFigure* GetTopFigureAtPoint(int x, int y) const;
 };

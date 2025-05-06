@@ -37,6 +37,10 @@ ApplicationManager::ApplicationManager()
 	IsFilled_Cut = false;	
 }
 
+ApplicationManager::~ApplicationManager()
+{
+}
+
 
 //==================================================================================//
 //								Actions Related Functions							//
@@ -342,7 +346,9 @@ int ApplicationManager::GetSelectedFigureCount(FigureID type) const {
     return count;
 }
 
-CFigure* ApplicationManager::GetFigureList() const { return FigList; }
+CFigure** ApplicationManager::GetFigureList() {
+	return (CFigure**)FigList;
+}
 
 int ApplicationManager::GetFigureCount() const { return FigCount;}
 

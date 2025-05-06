@@ -73,13 +73,13 @@ void CTriangle::Load(ifstream& Infile) {
 	string drawColor, fillColor;
 	Infile >> drawColor >> fillColor;
 
-	FigGfxInfo.DrawClr = StringToColor(drawColor);
+	FigGfxInfo.DrawClr = CFigure::StringToColor(drawColor);
 	if (fillColor == "No_Fill")
 		FigGfxInfo.isFilled = false;
 	else
 	{
 		FigGfxInfo.isFilled = true;
-		FigGfxInfo.FillClr = StringToColor(fillColor);
+		FigGfxInfo.FillClr = CFigure::StringToColor(fillColor);
 	}
 }
 FigureType CTriangle::getFigureType() const

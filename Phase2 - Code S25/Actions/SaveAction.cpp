@@ -27,12 +27,14 @@ void SaveAction::Execute()
 	ofstream file;
 	file.open(name, ios::out);
 
-	if (CFigure::IsFilled() == false)
+	CFigure* CurrFig = pManager->GetSelected();
+
+	if (CurrFig->IsFilled() == false)
 	{
-		file << colourString(pOut->getCrntDrawColor()) << "  " << "No_Fill" << endl;
+		file << CurrFig->colourString(pOut->getCrntDrawColor()) << "  " << "No_Fill" << endl;
 	}
 	else
-		file << colourString(pOut->getCrntDrawColor()) << "  " << colourString(pOut->getCrntFillColor()) << endl;
+		file << CurrFig->colourString(pOut->getCrntDrawColor()) << "  " << CurrFig->colourString(pOut->getCrntFillColor()) << endl;
 
 	for (int i = 0; i < pManager->GetFigureCount(); i++)
 	{

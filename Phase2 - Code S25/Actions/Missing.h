@@ -16,6 +16,7 @@ public:
 	Missing(ApplicationManager* pApp, int score);
 	void ReadActionParameters();
 	void Execute(ActionType ActType);
+	virtual void Execute();
 	void incScore();
 	void decScore();
 	int getScore();

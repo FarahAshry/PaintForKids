@@ -41,6 +41,10 @@ void Missing::Execute(ActionType ActType) {
 	} while (ActType != EXIT);
 }
 
+void Missing::Execute()
+{
+}
+
 
 void Missing::compare(CFigure& fig, CFigure& fig2) {
 	Output* pOut = new Output;

@@ -1144,6 +1144,24 @@
 				RelativePath=".\Actions\Action.h"
 				>
 			</File>
+
+			<File
+				RelativePath=".\Actions\SwitchToPlay.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Actions\SwitchToPlay.h"
+				>
+			</File>
+
+			<File
+				RelativePath=".\Actions\SwitchToDraw.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Actions\SwitchToDraw.h"
+				>
+			</File>
 			
 			<File
 				RelativePath=".\Actions\AddRectAction.cpp"

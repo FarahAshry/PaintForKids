@@ -8,6 +8,12 @@
 Rotate::Rotate(ApplicationManager* pApp) :Action(pApp) {
 
 }
+void Rotate::ReadActionParameters()
+{
+}
+void Rotate::Execute()
+{
+}
 void ReadActionParameters() {
 
 }
