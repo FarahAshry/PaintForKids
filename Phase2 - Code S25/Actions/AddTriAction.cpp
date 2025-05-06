@@ -45,6 +45,7 @@ void AddTriAction::ReadActionParameters()
 	TriGfxInfo.isFilled = (tolower(fill[0]) == 'y');
 
 	if (TriGfxInfo.isFilled) {
+		//take colour from user
 		pOut->PrintMessage("Choose fill color");
 		TriGfxInfo.FillClr = pIn->GetColour(pOut);
 	}
