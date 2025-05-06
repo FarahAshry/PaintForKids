@@ -49,9 +49,6 @@ void AddTriAction::ReadActionParameters()
 		TriGfxInfo.FillClr = pIn->GetColour(pOut);
 	}
 	else TriGfxInfo.FillClr = UI.FillColor; // Default no-fill color
-	//get drawing, filling colors and pen width from the interface
-	TriGfxInfo.DrawClr = pOut->getCrntDrawColor();
-	TriGfxInfo.FillClr = pOut->getCrntFillColor();
 
 	pOut->ClearStatusBar();
 }

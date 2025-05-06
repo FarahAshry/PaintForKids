@@ -47,8 +47,6 @@ void AddCircAction::ReadActionParameters()
 	}
 	else CircGfxInfo.FillClr = UI.FillColor; // Default no-fill color
 	//get drawing, filling colors and pen width from the interface
-	CircGfxInfo.DrawClr = pOut->getCrntDrawColor();
-	CircGfxInfo.FillClr = pOut->getCrntFillColor();
 
 	pOut->ClearStatusBar();
 }
