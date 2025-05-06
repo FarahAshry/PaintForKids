@@ -22,42 +22,65 @@ void Missing::ReadActionParameters() {
 	pOut->ClearStatusBar();
 }
 
-void Missing::Execute(ActionType ActType) {
+void Missing::Execute() {
 	ReadActionParameters();
-	fig = pManager->GetFigure(P1.x, P1.y);
 	Output* pOut = pManager->GetOutput();
-	Input* pIn;
-	
+	Input* pIn = pManager->GetInput();
+	ActionType ActType;
+
 	do {
-		HideFigure(fig, true);
-		pOut->PrintMessage("A shape is now hidden, hit one of the following keys to determine its type: rectangle (r), circle (c), square (s), hexagon (h), triangle (t)");
-		std::this_thread::sleep_for(std::chrono::seconds(5));
-		pIn->GetSrting(pOut);
 
-		ShowFigure(*fig, false);
-		std::this_thread::sleep_for(std::chrono::seconds(1));
+		pOut->PrintMessage("Missing Game: Click on a point to start.");
+		pIn->GetPointClicked(P1.x, P1.y);
+		
+		if (fig == nullptr) {
+			pOut->PrintMessage("No figure found at the clicked point.");
+			return;
+		}
+		else {
 
+			HideFigure(fig, true);
+			pOut->PrintMessage("A shape is now hidden, hit one of the following keys to determine its type: rectangle (r), circle (c), square (s), hexagon (h), triangle (t)");
+			std::this_thread::sleep_for(std::chrono::seconds(5));
+			in = pIn->GetSrting(pOut);
+			char key = tolower(in[0]);
 
+			ShowFigure(*fig, false);
+			std::this_thread::sleep_for(std::chrono::seconds(1));
+		}
+		compare(*fig, in);
 	} while (ActType != EXIT);
 }
 
-void Missing::Execute()
-{
-}
-
-
-void Missing::compare(CFigure& fig, CFigure& fig2) {
+void Missing::compare(CFigure& fig, string in) {
 	Output* pOut = new Output;
-	
+	bool guess = false;
 
-	if (fig.getFigureType() == fig2.getFigureType()) {
+	if (fig.getFigureType() == RECTANGLE && in == "r") {
 		pOut->PrintMessage("Correct guess!");
 		incScore();
 	}
-	else {
+	else if (fig.getFigureType() == CIRCLE && in == "c") {
+			pOut->PrintMessage("Correct guess!");
+			incScore();
+	}
+	else if (fig.getFigureType() == SQUARE && in == "s") {
+		pOut->PrintMessage("Correct guess!");
+		incScore();
+	}
+	else if (fig.getFigureType() == HEXAGON && in == "h") {
+		pOut->PrintMessage("Correct guess!");
+		incScore();
+	}
+	else if (fig.getFigureType() == TRI && in == "t") {
+		pOut->PrintMessage("Correct guess!");
+		incScore();
+	}
+	else if (in != "r" || in != "c" || in != "s" || in != "h" || in != "t") {
 		pOut->PrintMessage("Incorrect guess!");
 		decScore();
 	}
+	
 }
 void Missing::incScore() {
 	score++;
