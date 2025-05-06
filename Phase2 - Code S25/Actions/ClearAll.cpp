@@ -9,8 +9,7 @@ ClearAll::ClearAll(ApplicationManager* pApp) :Action(pApp) {
 }
 void ClearAll::ReadActionParameters() {}
 void ClearAll::Execute() {
-	Output* pOut;
-	pOut = pManager->GetOutput();
+	Output* pOut = pManager->GetOutput();
 	pOut->ClearStatusBar();
 	pOut->ClearDrawArea();
 	pOut->PrintMessage("Cleared Everything");

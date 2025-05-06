@@ -13,6 +13,14 @@
 #include "Actions/LoadAction.h"
 #include"Actions\SwitchToPlay.h"
 #include"Actions/SaveAction.h"
+#include "Actions\SwitchToDraw.h"
+#include "Actions\Delete.h"
+#include "Actions\Rotate.h"
+#include "Actions\ClearAll.h"
+#include "Actions\Swap.h"
+
+
+
 
 #include <iostream>
 #include <fstream>
@@ -86,6 +94,7 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 		pOut->PrintMessage("EXIT");
 		pOut->ClearStatusBar();
 		pOut->ClearDrawArea();
+
 		break;
 
 	case STATUS:	//a click on the status bar ==> no action
@@ -115,8 +124,22 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 		break;
 
 	case TO_DRAW:
-
+		pAct = new SwitchToDraw(this);
 		break;
+	/*case LOAD_GRAPH:
+		pAct = new LoadAction(this);
+		break;*/
+	case DELETE_FIG:
+		pAct = new Delete(this);
+		break;
+
+	case CLEAR_ALL:
+		pAct = new ClearAll(this);
+		break;
+	case SWAP:
+		pAct = new Swap(this);
+		break;
+
 	}
 		//Execute the created action
 		if (pAct != NULL)
