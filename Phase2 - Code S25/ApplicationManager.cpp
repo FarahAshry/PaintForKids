@@ -126,9 +126,11 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 	case TO_DRAW:
 		pAct = new SwitchToDraw(this);
 		break;
+
 	/*case LOAD_GRAPH:
 		pAct = new LoadAction(this);
 		break;*/
+
 	case DELETE_FIG:
 		pAct = new Delete(this);
 		break;
@@ -345,11 +347,53 @@ void ApplicationManager:: saveAll(ofstream & file) const
 //Load all figures
 void ApplicationManager::LoadAll(ifstream& Infile)
 {
+	for (int i = 0; i < FigCount; i++) {
+		delete FigList[i];
+		FigList[i] = nullptr;
+	}
+	FigCount = 0;
+
+	Point center, p1, p2, p3;
+	double length;
+	GfxInfo gfxInfo;
+
 	int count;
 	Infile >> count;
 	for (int i = 0; i < count; i++)
 	{
-		FigList[i]->Load(Infile);
+
+		int figureType;
+		Infile >> figureType; // Read the figure type identifier
+
+		CFigure* newFigure = nullptr;
+
+		// Create the appropriate figure based on the type
+		switch (figureType) {
+		case RECTANGLE:
+			newFigure = new CRectangle(p1, p2, gfxInfo);
+			break;
+		case SQUARE:
+			newFigure = new CSquare(center, length, gfxInfo);
+			break;
+		case TRI:
+			newFigure = new CTriangle(p1, p2, p3, gfxInfo);
+			break;
+		case HEXAGON:
+			newFigure = new CHexagon(p1, length, gfxInfo);
+			break;
+		case CIRCLE:
+			newFigure = new CCircle(center, length, gfxInfo);
+			break;
+		default:
+			// Handle unknown figure type
+			continue;
+		}
+
+		// Load the figure's data
+		
+			newFigure->Load(Infile);
+			AddFigure(newFigure); // Add the figure to the list
+	
 	}
 }
 
