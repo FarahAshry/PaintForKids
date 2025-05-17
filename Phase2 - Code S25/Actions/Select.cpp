@@ -100,4 +100,5 @@ void Select::Execute(bool reading)
 
 void Select::Execute()
 {
+    Execute(true);  
 }

@@ -23,11 +23,19 @@ void LoadAction::ReadActionParameters() {
 	
 	Output* pOut = pManager->GetOutput();
 	Input* pIn = pManager->GetInput();
-	pOut->PrintMessage("Load Figures: Click to load");
+	pOut->PrintMessage("Load Figures: Enter file name ro load");
+	FileName = pIn->GetSrting(pOut);
+
+	if (!LoadFile.is_open()) {
+		pOut->PrintMessage("Error opening file. Please check the file name");
+	}
+	else {
+		pOut->PrintMessage("File opened successfully");
+	}
+
+	pOut->PrintMessage("Click anywhere to continue");
 	pIn->GetPointClicked(P1.x, P1.y);
 	pOut->ClearStatusBar();
-	pOut->PrintMessage("Load: Enter file name: ");
-	this->FileName = pIn->GetSrting(pOut);
 }
 
 void LoadAction::Execute(bool readparameters) {
@@ -36,8 +44,10 @@ void LoadAction::Execute(bool readparameters) {
 	ReadActionParameters();
 	LoadFile.open(FileName, ios::in);
 
-	if (!LoadFile.is_open()) {
-		cout << "Error opening file" << endl;
+	if (LoadFile.is_open()) {
+		pManager->LoadAll(LoadFile);
+		LoadFile.close();
+		pOut->PrintMessage("Graph loaded successfully!");
 	}
 	string drawColor, fillColor;
 	LoadFile >> drawColor >> fillColor; //reading draw and fill colors
@@ -53,44 +63,15 @@ void LoadAction::Execute(bool readparameters) {
 		pOut->setCrntFillColor(FillColor);
 		pOut->setCrntFillColor(true);
 	}
-	string figureType;
-	while (LoadFile >> figureType) //reading figure type
-	{
-		CFigure* pFig = nullptr;
-
-		Point center, p1, p2, p3;
-		double length;
-		GfxInfo gfxInfo;
 
 
-		if (figureType == "RECT")
-			pFig = new CRectangle(p1,p2,gfxInfo);
-		else if (figureType == "CIRC")
-			pFig = new CCircle(center, length, gfxInfo);
-		else if (figureType == "SQR")
-			pFig = new CSquare(center, length, gfxInfo);
-		else if (figureType == "TRI")
-			pFig = new CTriangle(p1,p2, p3, gfxInfo);
-		else if (figureType == "HEX")
-			pFig = new CHexagon(p1, length, gfxInfo);
-
-			pFig->Load(LoadFile);
-			pManager->AddFigure(pFig); // Add to ApplicationManager
-		
-	}
-
-	LoadFile.close();
-	pOut->PrintMessage("Graph loaded successfully!");
 }
 
 LoadAction::~LoadAction() {
+	// Close the file if it is open
+	if (LoadFile.is_open())
 	LoadFile.close();
-	//Destructor
-	pManager->RemoveAction(this);
-	pManager->UpdateInterface();
-	pManager->GetOutput()->ClearStatusBar();
-	pManager->GetInput()->GetPointClicked(P1.x, P1.y);
-	pManager->GetOutput()->ClearStatusBar();
+	
 	
 	delete this;
 }
