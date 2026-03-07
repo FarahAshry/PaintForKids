@@ -30,31 +30,24 @@ The window is split into three areas:
 
 ### 🖊️ Draw Mode
 
-| Feature | Who | Status |
-|---|---|---|
-| Add Rectangle, Square, Triangle, Hexagon, Circle | Maya | ✅ Working |
-| Select (single & multi-select, highlight) | Maya | ✅ Working |
-| Save Graph to file | Maya | ✅ Working |
-| Copy Figure | Dai Khaled | ✅ Working |
-| Cut Figure (grays out until pasted) | Dai Khaled | ✅ Working |
-| Paste Figure | Dai Khaled | ✅ Working |
-| Load Graph from file | Farah | ⚠️ Disabled |
-| Swap two figures' positions | Nada | ✅ Working |
-| Delete selected figure(s) | Nada | ✅ Working |
-| Clear All | Nada | ✅ Working |
-| Switch to Play Mode | Nada | ✅ Working |
-| Switch to Draw Mode | Nada | ✅ Working |
-| Exit | Nada | ✅ Working |
-| Rotate Figure | — | ⚠️ Not implemented |
+| Feature | Who |
+|---|---|
+| Add Rectangle, Square, Triangle, Hexagon, Circle | Maya |
+| Select (single & multi-select, highlight) | Maya |
+| Save Graph to file | Maya |
+| Copy Figure | Dai Khaled |
+| Cut Figure (grays out until pasted) | Dai Khaled |
+| Paste Figure | Dai Khaled |
+| Load Graph from file | Farah |
+| Matching Pairs | Farah |
+| Missing Shapes | Farah |
+| Swap two figures' positions | Nada |
+| Delete selected figure(s) | Nada |
+| Clear All | Nada |
+| Switch to Play / Draw Mode | Nada |
+| Exit | Nada |
 
-### 🎮 Play Mode
 
-| Feature | Who | Status |
-|---|---|---|
-| Matching Pairs (match by shape or color) | Farah | ✅ Working |
-| Missing Shapes (hidden figure every 5s) | Farah | ✅ Working |
-
----
 
 ## 🏗️ Architecture
 
