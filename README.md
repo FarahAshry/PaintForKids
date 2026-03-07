@@ -4,7 +4,7 @@ A C++ graphical drawing application built for the **Programming Techniques (CMPS
 
 Kids can draw colorful shapes, edit them, and play shape-recognition mini-games — all through a mouse-driven GUI window.
 
-> We didn't start from scratch. The course provided a partial OOP framework and we completed it — learning how to read, understand, and extend someone else's code, which is honestly more realistic than building from zero.
+> Built on a partial OOP framework provided by the course, which we extended and completed.
 
 ---
 
@@ -38,16 +38,14 @@ The window is split into three areas:
 | Copy Figure | Dai Khaled | ✅ Working |
 | Cut Figure (grays out until pasted) | Dai Khaled | ✅ Working |
 | Paste Figure | Dai Khaled | ✅ Working |
-| Load Graph from file | Farah | ⚠️ Implemented but disabled* |
+| Load Graph from file | Farah | ⚠️ Disabled |
 | Swap two figures' positions | Nada | ✅ Working |
 | Delete selected figure(s) | Nada | ✅ Working |
 | Clear All | Nada | ✅ Working |
 | Switch to Play Mode | Nada | ✅ Working |
 | Switch to Draw Mode | Nada | ✅ Working |
 | Exit | Nada | ✅ Working |
-| Rotate Figure | — | ⚠️ Class exists, not wired up |
-
-> *Load is commented out in `ApplicationManager::ExecuteAction` — the `LoadAction` class exists and is included, it just needs to be uncommented to enable.
+| Rotate Figure | — | ⚠️ Not implemented |
 
 ### 🎮 Play Mode
 
